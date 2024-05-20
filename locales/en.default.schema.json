@@ -518,6 +518,75 @@
         "name": "Apps"
       }
     },
+    "products-slideshow": {
+      "name": "Products Slideshow",
+      "settings": {
+        "title": {
+          "label": "Title"
+        },
+        "collection": {
+          "label": "Collection"
+        },
+        "products_to_show": {
+          "label": "Number of products to show"
+        },
+        "slideshow_type": {
+          "label": "Slideshow Type",
+          "options__1": {
+            "label": "Carousel"
+          },
+          "options__2": {
+            "label": "Fade"
+          }
+        },
+        "slideshow_speed": {
+          "label": "Slideshow Speed"
+        },
+        "autoplay": {
+          "label": "Autoplay"
+        },
+        "navigation_arrows": {
+          "label": "Show Navigation Arrows"
+        },
+        "pagination_dots": {
+          "label": "Show Pagination Dots"
+        },
+        "image_ratio": {
+          "label": "Image Ratio",
+          "options__1": {
+            "label": "Adapt"
+          },
+          "options__2": {
+            "label": "Portrait"
+          },
+          "options__3": {
+            "label": "Square"
+          }
+        },
+        "show_secondary_image": {
+          "label": "Show Secondary Image"
+        },
+        "show_vendor": {
+          "label": "Show Vendor"
+        },
+        "show_rating": {
+          "label": "Show Rating",
+          "info": "Rating is based on customer reviews"
+        },
+        "quick_add": {
+          "label": "Quick Add",
+          "info": "Enable quick add to cart",
+          "options": {
+            "option_1": "None",
+            "option_2": "Standard",
+            "option_3": "Bulk"
+          }
+        }
+      },
+      "presets": {
+        "name": "Default"
+      }
+    },
     "collage": {
       "name": "Collage",
       "settings": {

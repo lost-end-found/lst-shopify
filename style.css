@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply lst-bg-black lst-text-white lst-border-0 lst-uppercase lst-border-transparent ;
+  }
+}
+
