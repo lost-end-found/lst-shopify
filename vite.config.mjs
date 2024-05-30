@@ -12,7 +12,14 @@ export default defineConfig(({ command, mode }) => {
       manifest: false,
       rollupOptions: {
         // overwrite default .html entry
-        input: ['./src/js/component-product-slideshow.js', './main.js', './src/css/component-product-slideshow.css'],
+        input: [
+          './src/js/component-product-slideshow.js',
+          './src/js/component-carousel-swipe-content.js',
+          './src/js/component-carousel.js',
+          './main.js',
+          './src/css/component-carousel.css',
+          './src/css/component-product-slideshow.css',
+        ],
         output: {
           entryFileNames: '[name]-vite.js',
           assetFileNames: '[name]-vite.[ext]',
@@ -30,7 +37,7 @@ export default defineConfig(({ command, mode }) => {
         // exclude?: string | RegExp | (string | RegExp)[];
         // include?: string | RegExp | (string | RegExp)[];
         // skipWrite?: boolean;
-        skipWrite: true,
+        // skipWrite: true,
 
         chokidar: {
           ignored: [

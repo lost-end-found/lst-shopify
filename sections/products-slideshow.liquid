@@ -17,49 +17,59 @@
 {%- endif -%}
 
 <section class="page-width lst-my-2">
-  <div class="carousel lst-relative flex flex-col js-carousel" data-drag="on">
+  <div class="lst-border-b lst-border-black lst-border-solid">
     {% if section.settings.title != blank %}
-      <p class="lst-sr-only">{{ section.settings.title }}</p>
+      <div class="lst-flex lst-gap-4 lst-my-4 lst-items-center">
+        <p class="lst-text-black lst-uppercase">{{ section.settings.title }}</p>
+        <a
+          href="{{ section.settings.collection.url }}"
+          class="lst-inline-block lst-bg-black lst-text-white lst-p-2 lst-leading-none lst-text-sm"
+        >
+          {{ 'sections.products-slideshow.view_all' | t }}
+        </a>
+      </div>
     {% endif %}
-    <div class="carousel__wrapper order-2 overflow-hidden">
-      <ol class="carousel__list">
-        {% for product in section.settings.collection.products limit: section.settings.products_to_show %}
-          <li class="carousel__item">
-            {% render 'card-product-lst',
-              card_product: product,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              quick_add: section.settings.quick_add
-            %}
+    <div class="carousel lst-relative flex flex-col js-carousel" data-drag="on">
+      <div class="carousel__wrapper order-2 overflow-hidden">
+        <ol class="carousel__list">
+          {% for product in section.settings.collection.products limit: section.settings.products_to_show %}
+            <li class="carousel__item">
+              {% render 'card-product-lst',
+                card_product: product,
+                media_aspect_ratio: section.settings.image_ratio,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                quick_add: section.settings.quick_add
+              %}
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <nav class="lst-mb-2 lg:lst-mb-3 lst-order-1 no-js:is-hidden">
+        <ul>
+          <li class="lst-absolute lst-transform -lst-translate-y-1/2 lst-left-0 lst-top-1/2">
+            <button
+              class="lst-appearance-none lst-p-2 carousel__control--prev js-carousel__control js-tab-focus"
+            >
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.4248 12.8866L7.2698 14.0206L0.591797 7.34262V6.98562L7.2698 0.307617L8.4248 1.44162L3.4898 6.33462H14.3048V7.99362H3.5108L8.4248 12.8866Z" fill="black"/>
+              </svg>
+            </button>
           </li>
-        {% endfor %}
-      </ol>
-    </div>
-    <nav class="lst-mb-2 lg:lst-mb-3 lst-order-1 no-js:is-hidden">
-      <ul>
-        <li class="lst-absolute lst-transform -lst-translate-y-1/2 lst-left-0 lst-top-1/2">
-          <button
-            class="lst-appearance-none lst-p-2 carousel__control--prev js-carousel__control js-tab-focus"
-          >
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.4248 12.8866L7.2698 14.0206L0.591797 7.34262V6.98562L7.2698 0.307617L8.4248 1.44162L3.4898 6.33462H14.3048V7.99362H3.5108L8.4248 12.8866Z" fill="black"/>
-            </svg>
-          </button>
-        </li>
 
-        <li class="lst-absolute lst-transform -lst-translate-y-1/2 lst-right-0 lst-top-1/2">
-          <button
-            class="lst-appearance-none lst-p-2 carousel__control--next js-carousel__control js-tab-focus"
-          >
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.55383 12.8866L11.4678 7.99362H0.673828V6.33462H11.4888L6.55383 1.44162L7.70883 0.307617L14.3868 6.98562V7.34262L7.70883 14.0206L6.55383 12.8866Z" fill="black"/>
-            </svg>
-          </button>
-        </li>
-      </ul>
-    </nav>
+          <li class="lst-absolute lst-transform -lst-translate-y-1/2 lst-right-0 lst-top-1/2">
+            <button
+              class="lst-appearance-none lst-p-2 carousel__control--next js-carousel__control js-tab-focus"
+            >
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.55383 12.8866L11.4678 7.99362H0.673828V6.33462H11.4888L6.55383 1.44162L7.70883 0.307617L14.3868 6.98562V7.34262L7.70883 14.0206L6.55383 12.8866Z" fill="black"/>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </section>
 {% schema %}

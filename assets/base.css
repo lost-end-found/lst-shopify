@@ -5,6 +5,26 @@
   --alpha-badge-border: 0.1;
 }
 
+@font-face {
+  font-family: 'Fabriga';
+  src: url("{{ 'Fabriga-Bold.woff2' | asset_url }}") format("woff2"), 
+        url("{{ 'Fabriga-Bold.woff' | asset_url }}") format("woff") ;
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fabriga';
+  src: url("{{ 'Fabriga.woff2' | asset_url }}") format("woff2"), 
+  url("{{ 'Fabriga.woff' | asset_url }}") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 .product-card-wrapper .card,
 .contains-card--product {
   --border-radius: var(--product-card-corner-radius);
@@ -482,7 +502,6 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.4rem;
   font-family: inherit;
 }
 

@@ -618,7 +618,7 @@
     if (!carousel.options.ariaLive) return;
     // create an element that will be used to announce the new visible slide to SR
     var srLiveArea = document.createElement('div');
-    srLiveArea.setAttribute('class', 'sr-only js-carousel__aria-live');
+    srLiveArea.setAttribute('class', 'lst-sr-only js-carousel__aria-live');
     srLiveArea.setAttribute('aria-live', 'polite');
     srLiveArea.setAttribute('aria-atomic', 'true');
     carousel.element.appendChild(srLiveArea);

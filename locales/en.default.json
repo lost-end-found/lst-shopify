@@ -270,7 +270,17 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
+    "carousel": {
+      "name" : "Carousel",
+      "presets" : {
+        "default" : {
+          "name" : "Default"
+        }
+      }
+    },
+    "products-slideshow": {
+      "view_all": "View all"
+    },
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",

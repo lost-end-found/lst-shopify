@@ -518,8 +518,38 @@
         "name": "Apps"
       }
     },
+    "carousel": {
+      "name": "Carousel",
+      "presets": {
+        "name": "Carousel"
+      },
+      "blocks": {
+        "slide": {
+          "name": "Slide",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "heading": {
+              "label": "Heading"
+            },
+            "subheading": {
+              "label": "Subheading"
+            },
+            "button_label": {
+              "label": "Button Label",
+              "info": "This is the label for the button"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      }
+    },
     "products-slideshow": {
       "name": "Products Slideshow",
+      "view_all": "View all",
       "settings": {
         "title": {
           "label": "Title"
@@ -584,7 +614,7 @@
         }
       },
       "presets": {
-        "name": "Default"
+        "name": "Products Slideshow"
       }
     },
     "collage": {
