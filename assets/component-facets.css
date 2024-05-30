@@ -59,7 +59,7 @@
   font-size: 1.4rem;
   cursor: pointer;
   height: 4.5rem;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   min-width: 25rem;
   margin-top: 2.4rem;
   border: 0.1rem solid rgba(var(--color-foreground), 0.55);
@@ -177,7 +177,7 @@
   display: block;
   color: rgba(var(--color-foreground), 0.85);
   font-size: 1.4rem;
-  margin: -1.5rem 2rem 0 0;
+  margin: -1rem 2rem 0 0;
 }
 
 .facets__reset {
@@ -192,7 +192,7 @@
   color: rgba(var(--color-foreground), 0.75);
   font-size: 1.4rem;
   padding: 0 1.75rem 0 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .facets__disclosure fieldset {
@@ -273,7 +273,7 @@
 
 .facets__header {
   border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   font-size: 1.4rem;
@@ -546,7 +546,7 @@
 }
 
 .facets__price .field__label {
-  left: 1.5rem;
+  left: 1rem;
 }
 
 button.facets__button {
@@ -568,8 +568,8 @@ button.facets__button {
 
 .active-facets__button {
   display: block;
-  margin-right: 1.5rem;
-  margin-top: 1.5rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   text-decoration: none;
@@ -596,7 +596,7 @@ span.active-facets__button-inner:after {
   align-items: center;
   display: flex;
   justify-content: center;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 
 .active-facets__button-wrapper * {
@@ -605,7 +605,7 @@ span.active-facets__button-inner:after {
 
 @media screen and (min-width: 990px) {
   .active-facets__button {
-    margin-right: 1.5rem;
+    margin-right: 1rem;
   }
 
   .active-facets__button-wrapper *,
@@ -890,7 +890,7 @@ details.menu-opening .mobile-facets__close svg {
   font-size: 1.4rem;
   font: inherit;
   letter-spacing: inherit;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   padding: 1.2rem 2.6rem;
   text-decoration: none;
 
@@ -1000,7 +1000,7 @@ input.mobile-facets__checkbox {
 }
 
 .mobile-facets__label {
-  padding: 1.5rem 2rem 1.5rem 2.5rem;
+  padding: 1rem 2rem 1rem 2.5rem;
   width: 100%;
   transition: background-color 0.2s ease;
   word-break: break-word;
@@ -1077,7 +1077,7 @@ input.mobile-facets__checkbox {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   padding-left: 0.5rem;
-  padding-right: 1.5rem;
+  padding-right: 1rem;
 }
 
 .product-count {
@@ -1129,23 +1129,23 @@ input.mobile-facets__checkbox {
   }
 
   .facets-vertical .facets__summary {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     margin-bottom: 0;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
 
   .facets__heading--vertical {
-    margin: 0 0 1.5rem 0;
-    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
   }
 
   .facets__header-vertical {
-    padding: 1.5rem 2rem 1.5rem 0;
+    padding: 1rem 2rem 1rem 0;
     font-size: 1.4rem;
   }
 
   .facets__display-vertical {
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
 
   .facets-vertical .facets-wrapper {
@@ -1183,7 +1183,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets-vertical .active-facets__button {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .facets-vertical .facet-checkbox input[type='checkbox'] {

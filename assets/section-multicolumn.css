@@ -45,7 +45,7 @@
 }
 
 .multicolumn .button {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -114,8 +114,8 @@
   }
 
   .multicolumn-list:not(.slider) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -169,7 +169,7 @@
 }
 
 .background-none .slider .multicolumn-card__image-wrapper + .multicolumn-card__info {
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
 
 .background-none .multicolumn-list:not(.slider) .center .multicolumn-card__info {
@@ -189,14 +189,14 @@
 
 @media screen and (min-width: 750px) {
   .background-none .multicolumn-card__image-wrapper {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .background-none .multicolumn-list .multicolumn-card__info,
   .background-none .multicolumn-list:not(.slider) .center .multicolumn-card__info {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -218,7 +218,7 @@
 .multicolumn-card__info .link {
   text-decoration: none;
   font-size: inherit;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .multicolumn-card__info .icon-wrap {

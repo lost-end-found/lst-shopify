@@ -26,7 +26,7 @@
 
 .js .mega-menu__content {
   opacity: 0;
-  transform: translateY(-1.5rem);
+  transform: translateY(-1rem);
 }
 
 .mega-menu[open] .mega-menu__content {

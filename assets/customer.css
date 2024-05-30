@@ -1,8 +1,8 @@
 .customer:not(.account):not(.order) {
   margin: 0 auto;
   max-width: 33.4rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .customer button {
-  margin: 4rem 0 1.5rem;
+  margin: 4rem 0 1rem;
 }
 
 .customer ul {
@@ -345,11 +345,11 @@
 }
 
 .login p {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .login h3 {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: left;
   font-size: calc(var(--font-heading-scale) * 1.6rem);
 }
@@ -464,7 +464,7 @@
 }
 
 .account a svg {
-  width: 1.5rem;
+  width: 1rem;
   margin-bottom: -0.03rem;
   margin-right: 1rem;
 }
@@ -482,7 +482,7 @@
 }
 
 .account table td:first-of-type a {
-  padding: 1.1rem 1.5rem;
+  padding: 1.1rem 1rem;
   text-decoration: none;
   box-shadow: 0 0 0 0.1rem rgba(var(--color-link), 0.2);
   border: 0.1rem solid transparent;
@@ -507,7 +507,7 @@
 .order tfoot tr:last-of-type td,
 .order tfoot tr:last-of-type th {
   font-size: 2.2rem;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   padding-bottom: 4rem;
 }
 
@@ -751,5 +751,5 @@ li[data-address] > h2 {
 
 .addresses form > div:nth-of-type(7),
 .addresses form > div:nth-of-type(7) + div[id] {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }

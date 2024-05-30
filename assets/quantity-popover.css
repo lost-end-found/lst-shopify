@@ -35,8 +35,8 @@ quantity-popover quick-order-list-remove-button .button {
   display: flex;
   align-items: center;
   margin: 0 0.4rem 0 0;
-  min-width: 1.5rem;
-  min-height: 1.5rem;
+  min-width: 1rem;
+  min-height: 1rem;
   --shadow-opacity: 0;
   --border-opacity: 0;
 }
@@ -105,8 +105,8 @@ quantity-popover quick-order-list-remove-button .button {
 }
 
 .quantity-popover__info .button .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 quantity-popover volume-pricing {

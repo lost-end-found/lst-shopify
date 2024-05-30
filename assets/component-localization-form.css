@@ -64,7 +64,7 @@
 .localization-form__select {
   border-radius: var(--inputs-radius-outset);
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding-left: 1rem;
   text-align: left;
   min-height: calc(4rem + var(--inputs-border-width) * 2);
@@ -80,7 +80,7 @@
   position: absolute;
   content: '';
   height: 0.6rem;
-  right: calc(var(--inputs-border-width) + 1.5rem);
+  right: calc(var(--inputs-border-width) + 1rem);
   top: calc(50% - 0.2rem);
 }
 
@@ -92,11 +92,11 @@
   color: rgb(var(--color-foreground));
   width: 100%;
   padding-right: 4rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .disclosure .localization-form__select {
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 
 .localization-selector option {
@@ -117,7 +117,7 @@
   cursor: pointer;
   display: flex;
   height: 4rem;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1rem 0 1rem;
   font-size: 1.3rem;
   background-color: transparent;
 }
@@ -169,7 +169,7 @@
   justify-content: end;
   align-items: center;
   gap: 0.5rem;
-  padding: 1.5rem 1.5rem 0.6rem;
+  padding: 1rem 1rem 0.6rem;
   position: sticky;
   top: -0.02rem;
   background-color: rgb(var(--color-background));
@@ -278,7 +278,7 @@
   }
 
   .country-filter {
-    padding: 1.5rem 2rem 0.6rem 1.5rem;
+    padding: 1rem 2rem 0.6rem 1rem;
   }
 }
 
@@ -306,7 +306,7 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 0.5rem;
-  padding: 0.9rem 1.5rem;
+  padding: 0.9rem 1rem;
   text-decoration: none;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   color: rgba(var(--color-foreground), 0.75);

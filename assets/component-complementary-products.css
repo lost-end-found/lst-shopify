@@ -5,11 +5,11 @@
 }
 
 product-recommendations:not(.is-accordion) .complementary-products__container {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .complementary-products__container > details[open] {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .complementary-slider {
@@ -59,7 +59,7 @@ product-recommendations:not(.is-accordion) .complementary-products__container {
 .complementary-products > .summary__title {
   display: flex;
   line-height: 1;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 }
 
 .accordion + product-recommendations .accordion,
@@ -116,7 +116,7 @@ product-recommendations.is-accordion + .accordion {
 }
 
 .complementary-products__container .quick-add__submit {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   min-height: inherit;
 }
 

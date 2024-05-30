@@ -151,8 +151,8 @@ cart-remove-button .button:not([disabled]):hover {
 }
 
 cart-remove-button .icon-remove {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1rem;
+  width: 1rem;
 }
 
 .cart-item .loading__spinner {
@@ -192,8 +192,8 @@ cart-remove-button .icon-remove {
 
 .cart-item__error-text + svg {
   flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   margin-right: 0.7rem;
   margin-top: 0.25rem;
 }
@@ -233,7 +233,7 @@ cart-remove-button .icon-remove {
   .cart-item {
     display: grid;
     grid-template: repeat(2, auto) / repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 3.5rem;
   }
 
@@ -307,7 +307,7 @@ cart-remove-button .icon-remove {
   }
 
   .cart-item cart-remove-button {
-    margin: 0.5rem 0 0 1.5rem;
+    margin: 0.5rem 0 0 1rem;
   }
 
   .cart-item__price-wrapper > *:only-child:not(.cart-item__discounted-prices) {

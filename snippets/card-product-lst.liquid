@@ -44,7 +44,7 @@
       class="card lst-aspect-[298/371] lst-justify-between lst-w-full lst-h-auto lst-relative"
     >
       <div
-        class="card__inner"
+        class="card__inner lst-flex lst-flex-col lst-justify-between lst-h-full lst-bg-transparent"
       >
         {%- if card_product.featured_media -%}
           <div class="card__media lst-aspect-square">
@@ -106,23 +106,25 @@
           </div>
         {%- endif -%}
         <div class="card__content lst-flex lst-flex-col lst-justify-end">
-          <div class="card__information !lst-px-3 !lst-pb-1 !lst-pt-3">
-            <h3
-              class="card__heading lst-text-sm lst-truncate {% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
-              {% if card_product.featured_media or settings.card_style == 'card' %}
-                id="title-{{ section_id }}-{{ card_product.id }}"
-              {% endif %}
-            >
-              <a
-                href="{{ card_product.url }}"
-                id="CardLink-{{ section_id }}-{{ card_product.id }}"
-                class="full-unstyled-link"
-                aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+          <div class="card__information lst-flex lst-gap-4 lst-justify-between lst-items-end !lst-px-3 !lst-pb-1 !lst-pt-3">
+            <div class="lst-text-sm lst-min-w-0">
+              <h3
+                class="card__heading lst-truncate lst-inline"
+                {% if card_product.featured_media or settings.card_style == 'card' %}
+                  id="title-{{ section_id }}-{{ card_product.id }}"
+                {% endif %}
               >
-                {{ card_product.title | escape }}
-              </a>
-            </h3>
-            <div class="card-information">
+                <a
+                  href="{{ card_product.url }}"
+                  id="CardLink-{{ section_id }}-{{ card_product.id }}"
+                  class="full-unstyled-link lst-truncate"
+                  aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+                >
+                  {{ card_product.title | escape }}
+                </a>
+              </h3>
+            </div>
+            <div class="card-information lst-shrink-0 lst-block">
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
                 <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
@@ -533,13 +535,13 @@
         </div>
       </div>
       <div class="card__content">
-        <div class="card__information">
+        <div class="card__information lst-flex">
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
               {{ 'onboarding.product_title' | t }}
             </a>
           </h3>
-          <div class="card-information">
+          <div class="card-information lst-grow">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
