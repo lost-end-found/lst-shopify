@@ -37,7 +37,7 @@ Usage: codyhouse.co/license
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--slideshow-height);
+  min-height: var(--slideshow-height);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -320,7 +320,7 @@ Usage: codyhouse.co/license
 }
 
 .slideshow__navigation {
-  position: absolute;
+  /* position: absolute; */
   z-index: 4;
   bottom: 0;
   width: 100%;
@@ -376,7 +376,7 @@ Usage: codyhouse.co/license
 
 @media (min-width: 64rem) {
   .slideshow__navigation {
-    height: 40px;
+    height: 52px;
   }
 
   .slideshow__nav-item button {

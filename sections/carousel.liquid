@@ -3,32 +3,60 @@
 <div class="slideshow js-slideshow slideshow--transition-fade" data-swipe="on">
   <p class="lst-sr-only">Slideshow Items</p>
 
-  <ul class="slideshow__content">
+  <ul class="slideshow__content lst-border-b lst-border-black">
     {%- for block in section.blocks -%}
       <li
         class="slideshow__item js-slideshow__item"
-        style="
-          {% if block.settings.image != blank %}
-            background-image: url('{{ block.settings.image | img_url: 'master' }}');
-          {% endif %}
-        "
       >
-        <div class="lst-w-[calc(100%_-_2.5rem)] lg:lst-w-[calc(100%_-_4rem)] lst-text-center lst-mx-auto lst-max-w-3xl">
-          <div>
-            {% if block.settings.heading != blank %}
-              <h2 class="lst-text-9xl lst-mb-2">{{ block.settings.heading }}</h2>
-            {% endif %}
-            {% if block.settings.subheading != blank %}
-              <p class="lst-text-lg">
-                {{ block.settings.subheading }}
+        <div class="lst-text-center lst-w-full">
+          {% if block.settings.image != blank %}
+            <img
+              src="{{ block.settings.image | img_url: 'master'  }}"
+              class="lst-w-full lst-h-[calc(100vh-153px)]"
+              alt=""
+            >
+          {% else %}
+            <div class="lst-w-full lst-h-[calc(100vh-153px)] lst-bg-primary lst-aspect-video">
+              <div class="lst-flex lst-items-center lst-justify-center lst-h-full">
+                <p class="lst-text-white lst-text-2xl lst-sr-only">No image selected</p>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="lst-w-full">
+            <div class="lst-grid lst-h-[52px] lst-border-t lst-border-black lst-items-center lst-grid-cols-[minmax(200px,0.3fr)_minmax(200px,0.3fr)_minmax(100px,0.2fr)_minmax(100px,0.2fr)] lst-gap-x-6 lst-divide-x lst-divide-black">
+              {% if block.settings.heading != blank %}
+                <h2 class="lst-py-3 lst-text-left lst-text-lg lst-text-black lst-pl-6">
+                  {{ block.settings.heading }}
+                </h2>
+              {% else %}
+                <div></div>
+              {% endif %}
+              <p class="lst-pl-6 lst-py-3 lst-text-left lst-text-lg lst-text-black">
+                {% if block.settings.subheading != blank %}
+                  {{ block.settings.subheading }}
+                {% endif %}
               </p>
-            {% endif %}
+              {% if block.settings.link != blank %}
+                <a
+                  href="{{ block.settings.link }}"
+                  class="lst-py-3 lst-pl-6 lst-text-left lst-text-lg lst-text-black md:lst-col-start-4 lst-group"
+                >
+                  {{- block.settings.button_label -}}
+                  <span class="icon-wrap lst-ml-2 group-hover:lst-ml-4 lst-transition-all">
+                    {%- render 'icon-arrow' -%}
+                  </span>
+                </a>
+              {% endif %}
+            </div>
           </div>
         </div>
       </li>
     {%- endfor -%}
   </ul>
-
+  <div
+    class="lst-grid lst-grid-cols-[minmax(200px,0.3fr)_minmax(200px,0.3fr)_minmax(100px,0.2fr)_minmax(100px,0.2fr)] lst-gap-x-6 js-slideshow-bullets lst-h-[52px] -lst-mt-[52px]"
+  ></div>
   <ul>
     <li class="slideshow__control js-slideshow__control">
       <button class="slideshow__btn js-tab-focus">
