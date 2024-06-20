@@ -1,0 +1,67 @@
+{{ 'component-ticker-vite.css' | asset_url | stylesheet_tag }}
+<div
+  class="ticker js-ticker"
+  data-ticker-pause-hover="{% if section.settings.pause_on_hover %}on{% else %}off{% endif %}"
+>
+  <ul class="ticker__list">
+    {% for block in section.blocks %}
+      {% if block.type == 'announcement' %}
+        {% if block.settings.link %}
+          <a href="{{ block.settings.link }}" class="ticker__item">
+            <span>{{ block.settings.text }}</span>
+          </a>
+        {% else %}
+          <li class="ticker__item">
+            <span>{{ block.settings.text }}</span>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.ticker.name",
+  "max_blocks": 12,
+  "class": "ticker-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "default": true,
+      "label": "t:sections.ticker.settings.pause_on_hover.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.ticker.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.ticker.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.ticker.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.ticker.presets.name",
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<script src="{{ 'component-ticker-vite.js' | asset_url }}" defer="defer"></script>

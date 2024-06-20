@@ -507,6 +507,33 @@
         "name": "Announcement bar"
       }
     },
+    "ticker": {
+      "name": "Sliding Announcement bar",
+      "settings": {
+        "show_line_separator": {
+          "label": "Show separator line"
+        },
+        "pause_on_hover": {
+          "label": "Pause on hover"
+        }
+      },
+      "blocks": {
+        "announcement": {
+          "name": "Announcement",
+          "settings" : {
+            "text": {
+              "label": "Text"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Ticker Slider"
+      }
+    },
     "apps": {
       "name": "Apps",
       "settings": {

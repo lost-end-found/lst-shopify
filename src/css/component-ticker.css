@@ -1,0 +1,139 @@
+/* --------------------------------
+
+File#: _1_ticker
+Title: Ticker
+Descr: News-like Horizontal Scrolling List
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+  --ticker-animation-duration: 10s;
+  --ticker-gap-x: 1.25rem;
+  /* horizontal gap */
+  --ticker-img-width: 280px;
+}
+@media (min-width: 48rem) {
+  :root {
+    --ticker-img-width: 400px;
+  }
+}
+@media (min-width: 64rem) {
+  :root {
+    --ticker-img-width: 550px;
+    --ticker-gap-x:2rem;
+  }
+}
+
+.ticker {
+  overflow: hidden;
+}
+
+.ticker__list {
+  display: flex;
+  overflow: auto;
+  will-change: transform;
+  transform: translateZ(0px);
+          backface-visibility: hidden;
+          @apply lst-bg-primary lst-py-3 lst-text-2xl;
+}
+
+/* class added in JS to trigger the scrolling animation */
+.ticker--animate .ticker__list {
+  -webkit-animation: ticker-animation var(--ticker-animation-duration) infinite;animation: ticker-animation var(--ticker-animation-duration) infinite;animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+/* pause animation on hover or using an external control button */
+.ticker[data-ticker-pause-hover=on] .ticker__list:hover,
+.ticker--paused .ticker__list {
+  -webkit-animation-play-state: paused;animation-play-state: paused;
+}
+
+.ticker__item {
+  flex-shrink: 0;
+  margin-right: calc(var(--ticker-gap-x)/2);
+  margin-left: calc(var(--ticker-gap-x)/2);
+}
+
+.ticker__item span {
+@apply lst-text-black
+}
+
+.ticker__img {
+  display: block;
+  width: var(--ticker-img-width);
+}
+
+.ticker-control {
+  /* pause/play button */
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  @apply lst-bg-gray-900/75;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.ticker-control i {
+  /* icon */
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  @apply lst-text-white;
+  /* icon color */
+}
+.ticker-control i::before, .ticker-control i::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: clip-path 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.ticker-control i::before {
+  clip-path: polygon(1px 1px, 5px 1px, 5px calc(100% - 1px), 1px calc(100% - 1px));
+}
+.ticker-control i::after {
+  clip-path: polygon(calc(100% - 5px) 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(100% - 1px), calc(100% - 5px) calc(100% - 1px));
+}
+.ticker-control:hover {
+  cursor: pointer;
+  @apply lst-bg-gray-900/95;
+}
+.ticker-control[aria-pressed=true] i::before {
+  clip-path: polygon(2px 0%, 100% 50%, 100% 50%, 2px 100%);
+}
+.ticker-control[aria-pressed=true] i::after {
+  clip-path: polygon(calc(100% - 5px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 5px) calc(100% - 1px));
+}
+
+.ticker:not(.ticker--anim-off) .ticker__list {
+  overflow: visible;
+}
+.ticker--reverse:not(.ticker--anim-off) .ticker__list {
+  flex-direction: row-reverse;
+}
+.ticker--reverse.ticker--animate:not(.ticker--anim-off) .ticker__list {
+  transform: translateX(calc(100vw - 100%));
+  animation-name: ticker-animation-reverse;
+}
+
+@keyframes ticker-animation {
+  0% {
+    -webkit-transform: translateX(0%);  transform: translateX(0%);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+@keyframes ticker-animation-reverse {
+  0% {
+    -webkit-transform: translateX(calc(100vw - 100%));  transform: translateX(calc(100vw - 100%));
+  }
+  100% {
+    -webkit-transform: translateX(calc(100vw - 50%));  transform: translateX(calc(100vw - 50%));
+  }
+}

@@ -767,10 +767,6 @@ video {
   white-space: nowrap;
 }
 
-.lst-text-ellipsis {
-  text-overflow: ellipsis;
-}
-
 .\!lst-border-r {
   border-right-width: 1px !important;
 }
@@ -818,6 +814,11 @@ video {
 .\!lst-px-3 {
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
+}
+
+.lst-px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .lst-px-6 {
