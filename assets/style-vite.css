@@ -640,6 +640,10 @@ video {
   margin-right: 0.25rem;
 }
 
+.lst-mb-0 {
+  margin-bottom: 0px;
+}
+
 .lst-block {
   display: block;
 }
@@ -767,6 +771,11 @@ video {
   white-space: nowrap;
 }
 
+.lst-border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
 .\!lst-border-r {
   border-right-width: 1px !important;
 }
@@ -824,6 +833,11 @@ video {
 .lst-px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.lst-py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .\!lst-pb-1 {
