@@ -6,9 +6,18 @@
   .button {
     @apply lst-bg-primary lst-text-black lst-border lst-border-black lst-uppercase lst-border-transparent ;
   }
+  .h2 {
+    @apply lst-text-[32px] lst-leading-tight;
+  }
+  .h3 {
+    @apply lst-text-2xl lst-leading-tight;
+  }
+  .h3 {
+    @apply lst-text-xl lst-leading-tight;
+  
+  }
 }
-.shopify-section-group-footer-group:nth-child(3) {
-  @apply lst-col-span-2;
 
+[id*="footer_socials"], [id$="_footer"] {
+    @apply md:lst-col-span-2;
 }
-

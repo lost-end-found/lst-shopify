@@ -1,10 +1,4 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-{{ 'section-footer.css' | asset_url | stylesheet_tag }}
-{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
-{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
-{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
-{{ 'style-vite.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .footer {
@@ -80,8 +74,15 @@
                     </button>
                   </div>
                   <div class="lst-flex lst-items-start">
-                    <input class="lst-shrink-0" type="checkbox" name="contact[accepts_marketing]" value="true" required>
-                    <label for="ContactFooter-accepts-marketing" class="lst-text-xs">
+                    <input
+                      class="lst-shrink-0"
+                      type="checkbox"
+                      name="contact[accepts_marketing]"
+                      id="accepts_marketing"
+                      value="true"
+                      required
+                    >
+                    <label for="accepts_marketing" class="lst-text-xs lst-cursor-pointer">
                       {{ block.settings.newsletter_info_privacy_text }}
                     </label>
                   </div>
@@ -125,13 +126,13 @@
   </div>
   <div class="lst-border-l lst-border-black lst-border-b lst-border-t">
     <div class="footer-block--links">
-      <ul class="lst-flex lst-divide-x lst-divide-black lst-text-base lst-justify-between lst-items-center">
+      <ul class="lst-grid lst-grid-cols-2 md:lst-flex lst-divide-y md:lst-divide-y-0 md:lst-divide-x lst-divide-black lst-text-base lst-justify-between lst-items-center">
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'links_list' %}
               <a
                 href="{{ block.settings.links_list_link_url }}"
-                class="lst-text-black lst-text-xs lst-transition-colors lst-px-2 h-full w-full hover:lst-bg-primary/20 lst-text-center lst-h-[44px] lst-flex lst-justify-center lst-items-center lst-flex-grow"
+                class="lst-text-black lst-text-xs lst-transition-colors lst-px-2 h-full w-full hover:lst-bg-primary lst-text-center lst-h-[44px] lst-flex lst-justify-center lst-items-center lst-flex-grow"
               >
                 {{ block.settings.links_list_link_text }}
               </a>

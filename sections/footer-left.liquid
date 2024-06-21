@@ -1,5 +1,4 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-{{ 'style-vite.css' | asset_url | stylesheet_tag }}
 
 <section class="lst-bg-primary">
   <div class="footer">
@@ -13,13 +12,13 @@
         {% endcase %}
       {% endfor %}
     </div>
-    <div class="section-{{ section.id }} lst-grid lst-grid-cols-3 lst-mt-10 lst-divide-x lst-divide-black lst-border-y lst-border-black">
+    <div class="section-{{ section.id }} lst-grid md:lst-grid-cols-3 lst-flex-wrap md:lst-flex-nowrap lst-mt-10 md:lst-divide-x lst-divide-y md:lst-divide-y-0 lst-divide-black lst-border-y lst-border-black">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'link_with_icon' %}
             <a
               href="{{ block.settings.link_with_icon_url }}"
-              class="lst-flex lst-space-x-4 lst-items-center lst-justify-center lst-py-1"
+              class="lst-flex lst-space-x-4 lst-items-center lst-justify-center lst-py-1 lst-min-w-52"
             >
               <span class="lst-text-base">{{ block.settings.link_with_icon_text }}</span>
               <img

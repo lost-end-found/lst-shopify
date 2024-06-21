@@ -26,13 +26,13 @@
           <div class="lst-w-full">
             <div class="lst-grid lst-h-[52px] lst-border-t lst-border-black lst-items-center lst-grid-cols-[minmax(200px,0.3fr)_minmax(200px,0.3fr)_minmax(100px,0.2fr)_minmax(100px,0.2fr)] lst-gap-x-6 lst-divide-x lst-divide-black">
               {% if block.settings.heading != blank %}
-                <h2 class="lst-py-3 lst-text-left lst-text-lg lst-text-black lst-pl-6">
+                <h2 class="lst-py-3 lst-text-left h4 lst-text-black lst-pl-6">
                   {{ block.settings.heading }}
                 </h2>
               {% else %}
                 <div></div>
               {% endif %}
-              <p class="lst-pl-6 lst-py-3 lst-text-left lst-text-lg lst-text-black">
+              <p class="lst-pl-6 lst-py-3 lst-text-left h4 lst-text-black">
                 {% if block.settings.subheading != blank %}
                   {{ block.settings.subheading }}
                 {% endif %}
@@ -40,7 +40,7 @@
               {% if block.settings.link != blank %}
                 <a
                   href="{{ block.settings.link }}"
-                  class="lst-py-3 lst-pl-6 lst-text-left lst-text-lg lst-text-black md:lst-col-start-4 lst-group"
+                  class="lst-py-3 lst-pl-6 lst-text-left h4 lst-text-black md:lst-col-start-4 lst-group hover:lst-bg-primary"
                 >
                   {{- block.settings.button_label -}}
                   <span class="icon-wrap lst-ml-2 group-hover:lst-ml-4 lst-transition-all">

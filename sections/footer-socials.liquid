@@ -1,0 +1,54 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+
+<section class="lst-flex lst-flex-col lst-justify-between lst-h-full lst-bg-black lst-text-white">
+  <div class="lst-px-5 lst-py-2">
+    <div class="lst-flex lst-gap-5">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'social_link' %}
+            <a
+              href="{{ block.settings.social_link_url }}"
+              class="lst-flex h4 lst-items-center lst-justify-center lst-text-white lst-pl-5 lst-border-l lst-border-white lst-py-1"
+            >
+              {{ block.settings.social_link_text }}
+            </a>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Social Media Accounts",
+  "blocks": [
+    {
+      "type": "social_link",
+      "name": "Social Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "social_link_text",
+          "label": "Link Text"
+        },
+        {
+          "type": "url",
+          "id": "social_link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Media",
+      "category": "Footer"
+    }
+  ]
+}
+{% endschema %}
