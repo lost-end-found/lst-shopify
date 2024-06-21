@@ -300,7 +300,9 @@
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    <footer class="lst-grid lst-grid-cols-2 lst-border-y lst-border-black">
+      {% sections 'footer-group' %}
+    </footer>
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

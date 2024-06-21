@@ -1,0 +1,200 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+{{ 'style-vite.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .footer {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .footer {
+      margin-top: {{ section.settings.margin_top }}px;
+    }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="lst-flex lst-flex-col lst-justify-between lst-h-full">
+  <div class="lst-p-5">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'newsletter_info' %}
+          <div
+            class="{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+            {% endif %}
+          >
+            <div class="lst-w-full">
+              {%- form 'customer', id: 'ContactFooter', class: 'lst-w-full' -%}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div>
+                  <div class="lst-flex lst-text-base lst-justify-between lst-mb-5">
+                    <div>
+                      <label class="lst-text-xl lst-text-black" for="NewsletterForm--{{ block.id }}">
+                        {{ block.settings.newsletter_info_label }}
+                      </label>
+                      <input
+                        id="NewsletterForm--{{ block.id }}"
+                        type="email"
+                        name="contact[email]"
+                        value="{{ form.email }}"
+                        class="lst-font-thin lst-text-xl"
+                        aria-required="true"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        autocomplete="email"
+                        {% if form.errors %}
+                          autofocus
+                          aria-invalid="true"
+                          aria-describedby="ContactFooter-error"
+                        {% elsif form.posted_successfully? %}
+                          aria-describedby="ContactFooter-success"
+                        {% endif %}
+                        placeholder="{{ block.settings.newsletter_info_placeholder }}"
+                        required
+                      >
+                    </div>
+                    <button
+                      type="submit"
+                      name="commit"
+                      id="Subscribe"
+                      class="lst-text-xl lst-text-black"
+                      aria-label="{{ block.settings.newsletter_info_button_text }}"
+                    >
+                      {{ block.settings.newsletter_info_button_text }}
+                    </button>
+                  </div>
+                  <div class="lst-flex lst-items-start">
+                    <input class="lst-shrink-0" type="checkbox" name="contact[accepts_marketing]" value="true" required>
+                    <label for="ContactFooter-accepts-marketing" class="lst-text-xs">
+                      {{ block.settings.newsletter_info_privacy_text }}
+                    </label>
+                  </div>
+                  {%- if form.errors -%}
+                    <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                      {%- render 'icon-error' -%}
+                      {{- form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email -}}
+                    </small>
+                  {%- endif -%}
+                </div>
+                {%- if form.posted_successfully? -%}
+                  <h3
+                    class="newsletter-form__message newsletter-form__message--success form__message"
+                    id="ContactFooter-success"
+                    tabindex="-1"
+                    autofocus
+                  >
+                    {% render 'icon-success' -%}
+                    {{- 'newsletter.success' | t }}
+                  </h3>
+                {%- endif -%}
+              {%- endform -%}
+            </div>
+
+            {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+              <div class="footer__follow-on-shop">
+                {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
+                {% # theme-check-disable %}
+                {{ shop | login_button: action: 'follow' }}
+                {% # theme-check-enable %}
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.show_social and has_social_icons -%}
+              {%- render 'social-icons', class: 'footer__list-social' -%}
+            {%- endif -%}
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+  <div class="lst-border-l lst-border-black lst-border-b lst-border-t">
+    <div class="footer-block--links">
+      <ul class="lst-flex lst-divide-x lst-divide-black lst-text-base lst-justify-between lst-items-center">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'links_list' %}
+              <a
+                href="{{ block.settings.links_list_link_url }}"
+                class="lst-text-black lst-text-xs lst-transition-colors lst-px-2 h-full w-full hover:lst-bg-primary/20 lst-text-center lst-h-[44px] lst-flex lst-justify-center lst-items-center lst-flex-grow"
+              >
+                {{ block.settings.links_list_link_text }}
+              </a>
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Footer Right",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "links_list",
+      "name": "Links List",
+      "settings": [
+        {
+          "type": "text",
+          "id": "links_list_link_text",
+          "label": "Link Text"
+        },
+        {
+          "type": "url",
+          "id": "links_list_link_url",
+          "label": "Link URL"
+        }
+      ]
+    },
+    {
+      "type": "newsletter_info",
+      "name": "Newsletter Info",
+      "settings": [
+        {
+          "type": "text",
+          "id": "newsletter_info_label",
+          "label": "Newsletter Label"
+        },
+        {
+          "type": "text",
+          "id": "newsletter_info_placeholder",
+          "label": "Input Placeholder"
+        },
+        {
+          "type": "text",
+          "id": "newsletter_info_button_text",
+          "label": "Subscribe Button Text"
+        },
+        {
+          "type": "richtext",
+          "id": "newsletter_info_privacy_text",
+          "label": "Privacy Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default Footer Right",
+      "category": "Footer"
+    }
+  ]
+}
+{% endschema %}

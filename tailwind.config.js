@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 export default {
   prefix: 'lst-',
-  content: ['./sections/**/*', './snippets/**/*'],
+  content: ['./sections/**/*', './snippets/**/*', './src/**/*'],
   theme: {
     extend: {
       fontFamily: {

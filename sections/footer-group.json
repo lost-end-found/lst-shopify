@@ -2,52 +2,144 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "footer": {
-      "type": "footer",
+    "footer_left_pTgYy6": {
+      "type": "footer-left",
       "blocks": {
-        "footer-0": {
-          "type": "link_list",
+        "rich_text_TBtwbY": {
+          "type": "rich_text",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "rich_text_content": "<p>2, rue Auguste Barbier 75011 ParisOpen Monday to Saturday from 10.30am to 8pmand Sunday from 11am to 7pm<\/p>"
           }
         },
-        "footer-1": {
-          "type": "link_list",
+        "rich_text_9XhUDD": {
+          "type": "rich_text",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "rich_text_content": "<p>+ 31 1 56 86 34 24 15 | contact@librairiesanstitre.com<\/p>"
           }
         },
-        "footer-2": {
-          "type": "text",
+        "link_with_icon_dFHFcp": {
+          "type": "link_with_icon",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "link_with_icon_text": "Question",
+            "link_with_icon_url": "shopify:\/\/collections\/frontpage",
+            "link_with_icon_icon": "shopify:\/\/shop_images\/Icone_about_1.svg"
+          }
+        },
+        "link_with_icon_YFCEiW": {
+          "type": "link_with_icon",
+          "settings": {
+            "link_with_icon_text": "Question",
+            "link_with_icon_url": "shopify:\/\/collections\/frontpage",
+            "link_with_icon_icon": "shopify:\/\/shop_images\/Icone_about_1.svg"
+          }
+        },
+        "link_with_icon_kYNnHd": {
+          "type": "link_with_icon",
+          "settings": {
+            "link_with_icon_text": "Secure payment",
+            "link_with_icon_url": "shopify:\/\/products\/animal-print-hair-band-various-colours",
+            "link_with_icon_icon": "shopify:\/\/shop_images\/Icone_about_1.svg"
           }
         }
       },
       "block_order": [
-        "footer-0",
-        "footer-1",
-        "footer-2"
+        "rich_text_TBtwbY",
+        "rich_text_9XhUDD",
+        "link_with_icon_dFHFcp",
+        "link_with_icon_YFCEiW",
+        "link_with_icon_kYNnHd"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+      }
+    },
+    "footer_right_bw6wbC": {
+      "type": "footer-right",
+      "blocks": {
+        "newsletter_info_8UjjWM": {
+          "type": "newsletter_info",
+          "settings": {
+            "newsletter_info_label": "Subscribe to our newsletter:",
+            "newsletter_info_placeholder": "Your e-mail address",
+            "newsletter_info_button_text": "Subscribe",
+            "newsletter_info_privacy_text": "<p>I understand that by subscribing, I am explicitly choosing to receive the newsletter from the untitled bookshop and that I can easily unsubscribe at any time. unsubscribe at any time.<\/p>"
+          }
+        },
+        "links_list_RnteVh": {
+          "type": "links_list",
+          "settings": {
+            "links_list_link_text": "c.v.g",
+            "links_list_link_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "links_list_BEWzqT": {
+          "type": "links_list",
+          "settings": {
+            "links_list_link_text": "Legal informations",
+            "links_list_link_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "links_list_Uci87C": {
+          "type": "links_list",
+          "settings": {
+            "links_list_link_text": "Deliveries",
+            "links_list_link_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "links_list_MjJn7K": {
+          "type": "links_list",
+          "settings": {
+            "links_list_link_text": "Deliveries",
+            "links_list_link_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "links_list_LwWkk9": {
+          "type": "links_list",
+          "settings": {
+            "links_list_link_text": "Press inquiries",
+            "links_list_link_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "links_list_GHaBYQ": {
+          "type": "links_list",
+          "settings": {
+            "links_list_link_text": "Location and hours",
+            "links_list_link_url": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_info_8UjjWM",
+        "links_list_RnteVh",
+        "links_list_BEWzqT",
+        "links_list_Uci87C",
+        "links_list_MjJn7K",
+        "links_list_LwWkk9",
+        "links_list_GHaBYQ"
+      ],
+      "settings": {
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "color_scheme": "",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
         "show_social": true,
-        "enable_country_selector": false,
-        "enable_language_selector": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
         "payment_enable": true,
         "show_policy": false,
-        "margin_top": 48,
+        "margin_top": 0,
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
+    "footer_left_pTgYy6",
+    "footer_right_bw6wbC",
     "footer"
   ]
 }

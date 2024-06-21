@@ -1,0 +1,84 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'style-vite.css' | asset_url | stylesheet_tag }}
+
+<section class="lst-bg-primary">
+  <div class="footer">
+    <div class="section-{{ section.id }} lst-px-5 lst-py-8">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'rich_text' %}
+            <div class="footer__rich-text lst-prose prose lst-text-black">
+              {{ block.settings.rich_text_content }}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    <div class="section-{{ section.id }} lst-grid lst-grid-cols-3 lst-mt-10 lst-divide-x lst-divide-black lst-border-y lst-border-black">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'link_with_icon' %}
+            <a
+              href="{{ block.settings.link_with_icon_url }}"
+              class="lst-flex lst-space-x-4 lst-items-center lst-justify-center lst-py-1"
+            >
+              <span class="lst-text-base">{{ block.settings.link_with_icon_text }}</span>
+              <img
+                height="36"
+                width="36"
+                class="lst-shrink-0 lst-max-w-[36px] lst-max-h-[36px] lst-object-contain "
+                src="{{ block.settings.link_with_icon_icon | img_url: '50x' }}"
+                alt="{{ block.settings.link_with_icon_text }}"
+              >
+            </a>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Footer Left",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "rich_text",
+      "name": "Rich Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "rich_text_content",
+          "label": "Rich Text Content"
+        }
+      ]
+    },
+    {
+      "type": "link_with_icon",
+      "name": "Link with Icon",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_with_icon_text",
+          "label": "Link Text"
+        },
+        {
+          "type": "url",
+          "id": "link_with_icon_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "link_with_icon_icon",
+          "label": "Link Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default Footer Left",
+      "category": "Footer"
+    }
+  ]
+}
+{% endschema %}
