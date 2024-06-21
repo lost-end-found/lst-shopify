@@ -2,6 +2,39 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "footer_socials_VRdna3": {
+      "type": "footer-socials",
+      "blocks": {
+        "social_link_MaD4BM": {
+          "type": "social_link",
+          "settings": {
+            "social_link_text": "Instagram",
+            "social_link_url": "https:\/\/www.instagram.com\/librairiesanstitre\/"
+          }
+        },
+        "social_link_qY79wa": {
+          "type": "social_link",
+          "settings": {
+            "social_link_text": "Facebook",
+            "social_link_url": "https:\/\/www.facebook.com\/librairiesanstitre\/"
+          }
+        },
+        "social_link_gyEmLM": {
+          "type": "social_link",
+          "settings": {
+            "social_link_text": "Threads",
+            "social_link_url": "https:\/\/www.threads.net\/@librairiesanstitre"
+          }
+        }
+      },
+      "block_order": [
+        "social_link_MaD4BM",
+        "social_link_qY79wa",
+        "social_link_gyEmLM"
+      ],
+      "settings": {
+      }
+    },
     "footer_left_pTgYy6": {
       "type": "footer-left",
       "blocks": {
@@ -138,6 +171,7 @@
     }
   },
   "order": [
+    "footer_socials_VRdna3",
     "footer_left_pTgYy6",
     "footer_right_bw6wbC",
     "footer"
