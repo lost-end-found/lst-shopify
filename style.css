@@ -4,7 +4,7 @@
 
 @layer components {
   .button {
-    @apply lst-bg-black lst-text-white lst-border-0 lst-uppercase lst-border-transparent ;
+    @apply lst-bg-primary lst-text-black lst-border lst-border-black lst-uppercase lst-border-transparent ;
   }
 }
 

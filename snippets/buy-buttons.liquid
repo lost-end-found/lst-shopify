@@ -3,13 +3,20 @@
   Accepts:
   - product: {Object} product object.
   - block: {Object} passing the block information.
+  - button_class: {String} class name for the product form.
   - product_form_id: {String} product form id.
+  - top_width: {String} top border width for the button.
   - section_id: {String} id of section to which this snippet belongs.
   - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
 
   Usage:
-  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+  {% render 'buy-buttons', block: block, product: product, button_class: button_class, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
+<style>
+  button.button::after {
+    --buttons-border-width--top: {{ top_width }};
+  }
+</style>
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -25,7 +32,7 @@
     -%}
 
     <product-form
-      class="product-form"
+      class="product-form !lst-my-0"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
     >
@@ -79,7 +86,8 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            style="--buttons-border-width--top: {{ top_width }}"
+            class="product-form__submit !lst-mb-0 button button--full-width {{ button_class }} {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
@@ -105,7 +113,7 @@
         <button
           type="submit"
           name="add"
-          class="product-form__submit button button--full-width button--primary"
+          class="product-form__submit lst-mb-0 button button--full-width button--primary"
           disabled
         >
           {{ 'products.product.sold_out' | t }}

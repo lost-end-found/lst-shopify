@@ -1253,9 +1253,10 @@ button.shopify-payment-button__button--unbranded {
 .shopify-challenge__button:after,
 .customer button:after,
 .shopify-payment-button__button--unbranded:after {
+  --buttons-border-width--top: var(--buttons-border-width);
   content: '';
   position: absolute;
-  top: var(--buttons-border-width);
+  top: var(--buttons-border-width--top);
   right: var(--buttons-border-width);
   bottom: var(--buttons-border-width);
   left: var(--buttons-border-width);
