@@ -1197,6 +1197,10 @@ video {
   margin-top: 0.75rem;
 }
 
+.-lst-mt-\[45px\] {
+  margin-top: -45px;
+}
+
 .lst-block {
   display: block;
 }
@@ -1255,6 +1259,10 @@ video {
 
 .lst-h-full {
   height: 100%;
+}
+
+.lst-h-\[45px\] {
+  height: 45px;
 }
 
 .lst-max-h-\[36px\] {

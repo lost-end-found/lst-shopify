@@ -1,0 +1,21 @@
+{%- style -%}
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  {{ shop.metaobjects.events | json }}
+  {% for event in shop.metaobjects.events %}
+    {{ event.title }}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Events List",
+  "tag": "section",
+  "class": "section section-collection-list",
+  "max_blocks": 15,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  }
+}
+{% endschema %}
