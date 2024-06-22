@@ -6,6 +6,9 @@
   .button {
     @apply lst-bg-primary lst-text-black lst-border lst-border-black lst-uppercase lst-border-transparent ;
   }
+  .h1 {
+    @apply lst-text-[48px] lst-leading-tight;
+  }
   .h2 {
     @apply lst-text-[32px] lst-leading-tight;
   }

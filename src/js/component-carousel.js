@@ -87,12 +87,15 @@ Util.extend = function () {
     this.moveFocus = false;
     this.animating = false;
     this.supportAnimation = Util.cssSupports('transition');
+    this.counter = this.element.getElementsByClassName('js-carousel__counter');
+    this.counterTor = this.element.getElementsByClassName('js-carousel__counter-tot');
     this.animationOff =
       !Util.hasClass(this.element, 'slideshow--transition-fade') &&
       !Util.hasClass(this.element, 'slideshow--transition-slide') &&
       !Util.hasClass(this.element, 'slideshow--transition-prx');
     this.animationType = Util.hasClass(this.element, 'slideshow--transition-prx') ? 'prx' : 'slide';
     this.animatingClass = 'slideshow--is-animating';
+    initCarouselCounter(this);
     initSlideshow(this);
     initSlideshowEvents(this);
     initAnimationEndEvents(this);
@@ -127,6 +130,19 @@ Util.extend = function () {
     }
   };
 
+  function initCarouselCounter(carousel) {
+    console.log(carousel);
+    if (carousel.counterTor.length > 0) carousel.counterTor[0].textContent = carousel.items.length;
+    setCounterItem(carousel);
+  }
+
+  function setCounterItem(carousel) {
+    if (carousel.counter.length == 0) return;
+    var totalItems = carousel.selectedSlide + 1;
+    if (totalItems > carousel.items.length) totalItems = carousel.items.length;
+    carousel.counter[0].textContent = totalItems;
+  }
+
   function initSlideshow(slideshow) {
     // basic slideshow settings
     // if no slide has been selected -> select the first one
@@ -144,7 +160,6 @@ Util.extend = function () {
       'aria-atomic': 'true',
     });
     const bulletsWrapper = slideshow.element.getElementsByClassName('js-slideshow-bullets')[0];
-    console.log(bulletsWrapper);
     bulletsWrapper.appendChild(srLiveArea);
     slideshow.ariaLive = srLiveArea;
   }
@@ -382,6 +397,7 @@ Util.extend = function () {
       slideshow.animating = false;
       Util.removeClass(slideshow.element, slideshow.animatingClass);
     }
+    setCounterItem(slideshow);
   }
 
   function getExitItemClass(slideshow, bool, oldIndex, newIndex) {
