@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "shopify theme dev --store librairie-sans-titre-2 & vite build & npx tailwindcss -i ./style.css -o ./assets/style-vite.css --watch",
     "vite:dev": "vite dev",
-    "vite:build": "vite build"
+    "vite:build": "vite build",
+    "push": "shopify theme push",
+    "pull": "shopify theme pull"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
     "chokidar": "^3.6.0",
