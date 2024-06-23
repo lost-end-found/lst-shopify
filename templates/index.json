@@ -144,11 +144,17 @@
       "settings": {
         "title": "Our Favorites"
       }
+    },
+    "events_list_DEtdVK": {
+      "type": "events-list",
+      "settings": {
+      }
     }
   },
   "order": [
     "carousel_BJXnET",
     "collection_list_brCEnF",
-    "featured_products_qAGAaa"
+    "featured_products_qAGAaa",
+    "events_list_DEtdVK"
   ]
 }
