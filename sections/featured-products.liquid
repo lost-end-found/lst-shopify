@@ -1,0 +1,50 @@
+<div class="lst-border-b lst-border-black">
+  <div>
+    <div class="lst-px-5 lst-py-2 lst-border-b lst-border-black">
+      <h2 class="h2">{{ section.settings.title }}</h2>
+    </div>
+    <div class="lst-grid lst-grid-cols-4">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'product' %}
+            {% render 'card-product', card_product: block.settings.product %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured products",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

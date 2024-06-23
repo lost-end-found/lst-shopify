@@ -106,10 +106,49 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "featured_products_qAGAaa": {
+      "type": "featured-products",
+      "blocks": {
+        "product_LaTEH7": {
+          "type": "product",
+          "settings": {
+            "product": "bejewelled-black-diamond-skull-belt-buckle"
+          }
+        },
+        "product_xNnFxP": {
+          "type": "product",
+          "settings": {
+            "product": "black-and-green-skull-fingerless-gloves"
+          }
+        },
+        "product_q7VPAP": {
+          "type": "product",
+          "settings": {
+            "product": "black-fingerless-gloves-with-skull-and-cobweb-pattern"
+          }
+        },
+        "product_iVLgjR": {
+          "type": "product",
+          "settings": {
+            "product": "black-and-white-striped-polo-shirt"
+          }
+        }
+      },
+      "block_order": [
+        "product_LaTEH7",
+        "product_xNnFxP",
+        "product_q7VPAP",
+        "product_iVLgjR"
+      ],
+      "settings": {
+        "title": "Our Favorites"
+      }
     }
   },
   "order": [
     "carousel_BJXnET",
-    "collection_list_brCEnF"
+    "collection_list_brCEnF",
+    "featured_products_qAGAaa"
   ]
 }

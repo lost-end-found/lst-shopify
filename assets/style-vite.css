@@ -1445,6 +1445,10 @@ select {
   aspect-ratio: 16 / 9;
 }
 
+.\!lst-h-5 {
+  height: 1.25rem !important;
+}
+
 .lst-h-11 {
   height: 2.75rem;
 }
@@ -1469,18 +1473,6 @@ select {
   height: 100%;
 }
 
-.lst-h-4 {
-  height: 1rem;
-}
-
-.\!lst-h-4 {
-  height: 1rem !important;
-}
-
-.\!lst-h-5 {
-  height: 1.25rem !important;
-}
-
 .lst-max-h-\[36px\] {
   max-height: 36px;
 }
@@ -1489,20 +1481,12 @@ select {
   min-height: 0px;
 }
 
-.lst-w-full {
-  width: 100%;
-}
-
-.lst-w-4 {
-  width: 1rem;
-}
-
-.\!lst-w-4 {
-  width: 1rem !important;
-}
-
 .\!lst-w-5 {
   width: 1.25rem !important;
+}
+
+.lst-w-full {
+  width: 100%;
 }
 
 .lst-min-w-0 {
@@ -1692,6 +1676,11 @@ select {
   border-bottom-width: 1px;
 }
 
+.lst-border-x {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
 .\!lst-border-r {
   border-right-width: 1px !important;
 }
@@ -1728,11 +1717,6 @@ select {
 .lst-border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.lst-border-gray-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .lst-bg-\[\#D9D9D9\] {
@@ -1824,6 +1808,11 @@ select {
 .lst-py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.\!lst-px-5 {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
 }
 
 .\!lst-pb-1 {
@@ -1921,22 +1910,12 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.lst-text-primary {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 0 / var(--tw-text-opacity));
-}
-
 .lst-no-underline {
   text-decoration-line: none;
 }
 
 .lst-outline {
   outline-style: solid;
-}
-
-.lst-ring-primary {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(255 255 0 / var(--tw-ring-opacity));
 }
 
 .lst-transition-all {
@@ -1960,16 +1939,6 @@ select {
 .hover\:lst-bg-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 0 / var(--tw-bg-opacity));
-}
-
-.focus\:lst-text-primary:focus {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 0 / var(--tw-text-opacity));
-}
-
-.focus\:lst-ring-primary:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(255 255 0 / var(--tw-ring-opacity));
 }
 
 .focus\:lst-ring-black:focus {
