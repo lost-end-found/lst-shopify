@@ -6,7 +6,7 @@
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 
 <section class="lst-flex lst-flex-col lst-justify-between lst-h-full lst-bg-black lst-text-white">
-  <div class="lst-px-5 lst-py-2">
+  <div class="lst-px-3 lg:lst-px-5 lst-py-2">
     <div class="lst-flex lst-gap-5">
       {% for block in section.blocks %}
         {% case block.type %}

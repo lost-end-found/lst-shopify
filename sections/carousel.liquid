@@ -12,11 +12,11 @@
           {% if block.settings.image != blank %}
             <img
               src="{{ block.settings.image | img_url: 'master'  }}"
-              class="lst-w-full lst-h-[calc(100vh-153px)]"
+              class="lst-w-full lg:lst-h-[calc(100vh-153px)]"
               alt=""
             >
           {% else %}
-            <div class="lst-w-full lst-h-[calc(100vh-153px)] lst-bg-primary lst-aspect-video">
+            <div class="lst-w-full lg:lst-h-[calc(100vh-153px)] lst-bg-primary lst-aspect-video">
               <div class="lst-flex lst-items-center lst-justify-center lst-h-full">
                 <p class="lst-text-white lst-text-2xl lst-sr-only">No image selected</p>
               </div>
@@ -24,7 +24,7 @@
           {% endif %}
 
           <div class="lst-w-full">
-            <div class="lst-grid lst-h-[45px] lst-border-t lst-border-black lst-items-center lst-grid-cols-[minmax(200px,0.3fr)_minmax(200px,0.3fr)_minmax(100px,0.2fr)_minmax(100px,0.2fr)] lst-gap-x-6 lst-divide-x lst-divide-black">
+            <div class="lst-grid lg:lst-h-[45px] lst-border-t lst-border-black lst-items-center lg:lst-grid-cols-[minmax(200px,0.3fr)_minmax(200px,0.3fr)_minmax(100px,0.2fr)_minmax(100px,0.2fr)] lst-gap-x-6 lst-divide-y lg:lst-divide-y-0 lg:lst-divide-x lst-divide-black">
               {% if block.settings.heading != blank %}
                 <h2 class="lst-py-3 lst-text-left h4 lst-text-black lst-pl-6">
                   {{ block.settings.heading }}
@@ -55,7 +55,7 @@
     {%- endfor -%}
   </ul>
   <div
-    class="lst-grid lst-grid-cols-[minmax(200px,0.3fr)_minmax(200px,0.3fr)_minmax(100px,0.2fr)_minmax(100px,0.2fr)] lst-gap-x-6 js-slideshow-bullets lst-h-[45px] -lst-mt-[45px]"
+    class="lst-grid lg:lst-grid-cols-[minmax(200px,0.3fr)_minmax(200px,0.3fr)_minmax(100px,0.2fr)_minmax(100px,0.2fr)] lst-gap-x-6 js-slideshow-bullets lst-h-[45px] lg:-lst-mt-[45px]"
   ></div>
   <ul>
     <li class="slideshow__control js-slideshow__control">

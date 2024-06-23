@@ -4,11 +4,11 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient lst-border-x lst-border-b  lst-border-black">
   <div class="slideshow js-slideshow " data-swipe="on">
-    <p class="h2 lst-text-black lst-px-5 lst-py-2">Events</p>
+    <p class="h2 lst-text-black lst-px-3 lg:lst-px-5 lst-py-2">Events</p>
 
     <ul class="slideshow__content">
       {% for event in shop.metaobjects.events.values %}
-        <div class="lst-grid lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-y lst-border-black">
+        <div class="lst-grid lg:lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-y lst-border-black">
           <div class="lst-bg-[#F7F2EB] lst-p-5 lst-border-r lst-border-black">
             <div class="lst-grid lst-grid-cols-2">
               {%- assign start_date = event.start_date_time | date: '%d %b %Y' -%}
@@ -35,9 +35,9 @@
               alt="{{ event.image.alt }}"
             >
           </div>
-          <div class="lst-col-span-2 lst-grid lst-grid-cols-4 lst-h-[45px] lst-items-center lst-border-t lst-border-black">
+          <div class="lg:lst-col-span-2 lst-grid lg:lst-grid-cols-4 lst-h-[45px] lst-items-center lst-border-t lst-border-black">
             <a
-              class="h4 lst-text-black hover:lst-bg-primary lst-px-5 lst-h-full lst-flex lst-items-center lst-space-x-2 lst-col-span-2"
+              class="h4 lst-text-black hover:lst-bg-primary lst-px-3 lg:lst-px-5 lst-h-full lst-flex lst-items-center lst-space-x-2 lg:lst-col-span-2"
               href="{{ event.system.url }}"
             >
               {% render 'icon-arrow' %}
@@ -47,8 +47,8 @@
         </div>
       {% endfor %}
     </ul>
-    <div class="lst-h-[45px] lst-grid lst-grid-cols-4 -lst-mt-[45px] lst-py-2">
-      <ul class="lst-col-start-3 lst-flex lst-px-5 lst-divide-x lst-divide-black">
+    <div class="lst-h-[45px] lst-grid lst-grid-cols-4 lg:-lst-mt-[45px] lst-py-2">
+      <ul class="lst-col-start-3 lst-flex lst-px-3 lg:lst-px-5 lst-divide-x lst-divide-black">
         <li class="js-slideshow__control  lst-h-full lst-transform lst-rotate-180 lst-flex lst-items-center lst-relative lst-z-10 lst-pl-3">
           <button class="js-tab-focus lst-flex lst-items-center lst-h-full">
             {% render 'icon-arrow' %}
@@ -60,7 +60,7 @@
           </button>
         </li>
       </ul>
-      <div class="js-slideshow__numbers lst-px-5 lst-flex lst-items-center lst-justify-end">
+      <div class="js-slideshow__numbers lst-px-3 lg:lst-px-5 lst-flex lst-items-center lst-justify-end">
         <p class="h4 lst-text-right">
           <i class="lst-not-italic js-carousel__counter"></i>/<i class="lst-not-italic js-carousel__counter-tot"></i>
         </p>

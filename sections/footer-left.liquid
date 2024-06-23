@@ -2,7 +2,7 @@
 
 <section class="lst-bg-primary">
   <div class="footer">
-    <div class="section-{{ section.id }} lst-px-5 lst-py-8">
+    <div class="section-{{ section.id }} lst-px-3 lg:lst-px-5 lst-py-8">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'rich_text' %}
@@ -18,9 +18,9 @@
           {% when 'link_with_icon' %}
             <a
               href="{{ block.settings.link_with_icon_url }}"
-              class="lst-flex lst-space-x-4 lst-items-center lst-justify-center lst-py-1 lst-min-w-52"
+              class="lst-flex lst-space-x-4 lst-items-center lg:lst-justify-center lst-py-1 lst-min-w-52 lst-px-3 lg:lst-px-5"
             >
-              <span class="lst-text-base">{{ block.settings.link_with_icon_text }}</span>
+              <span class="lst-text-base lst-text-black">{{ block.settings.link_with_icon_text }}</span>
               <img
                 height="36"
                 width="36"
