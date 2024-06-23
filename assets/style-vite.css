@@ -1397,16 +1397,16 @@ select {
   margin-right: 0.25rem;
 }
 
+.lst-mr-2 {
+  margin-right: 0.5rem;
+}
+
 .lst-mt-10 {
   margin-top: 2.5rem;
 }
 
 .lst-mt-3 {
   margin-top: 0.75rem;
-}
-
-.lst-mr-2 {
-  margin-right: 0.5rem;
 }
 
 .lst-block {
@@ -1453,6 +1453,10 @@ select {
   height: 1.25rem !important;
 }
 
+.\!lst-h-6 {
+  height: 1.5rem !important;
+}
+
 .lst-h-11 {
   height: 2.75rem;
 }
@@ -1477,14 +1481,6 @@ select {
   height: 100%;
 }
 
-.lst-h-6 {
-  height: 1.5rem;
-}
-
-.\!lst-h-6 {
-  height: 1.5rem !important;
-}
-
 .lst-max-h-\[36px\] {
   max-height: 36px;
 }
@@ -1497,20 +1493,16 @@ select {
   width: 1.25rem !important;
 }
 
-.lst-w-full {
-  width: 100%;
+.\!lst-w-6 {
+  width: 1.5rem !important;
 }
 
 .\!lst-w-full {
   width: 100% !important;
 }
 
-.lst-w-6 {
-  width: 1.5rem;
-}
-
-.\!lst-w-6 {
-  width: 1.5rem !important;
+.lst-w-full {
+  width: 100%;
 }
 
 .lst-min-w-0 {
@@ -1521,20 +1513,16 @@ select {
   min-width: 13rem;
 }
 
+.\!lst-max-w-full {
+  max-width: 100% !important;
+}
+
 .lst-max-w-\[36px\] {
   max-width: 36px;
 }
 
 .lst-max-w-none {
   max-width: none;
-}
-
-.lst-max-w-full {
-  max-width: 100%;
-}
-
-.\!lst-max-w-full {
-  max-width: 100% !important;
 }
 
 .lst-shrink-0 {
@@ -1703,14 +1691,14 @@ select {
   border-width: 0px;
 }
 
-.lst-border-y {
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-}
-
 .lst-border-x {
   border-left-width: 1px;
   border-right-width: 1px;
+}
+
+.lst-border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 }
 
 .\!lst-border-r {
@@ -1807,6 +1795,11 @@ select {
   padding-right: 0.75rem !important;
 }
 
+.\!lst-px-5 {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
 .lst-px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1820,6 +1813,11 @@ select {
 .lst-px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.lst-py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .lst-py-1 {
@@ -1840,16 +1838,6 @@ select {
 .lst-py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.\!lst-px-5 {
-  padding-left: 1.25rem !important;
-  padding-right: 1.25rem !important;
-}
-
-.lst-py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
 }
 
 .\!lst-pb-1 {
@@ -1874,10 +1862,6 @@ select {
 
 .lst-pl-6 {
   padding-left: 1.5rem;
-}
-
-.lst-pt-0 {
-  padding-top: 0px;
 }
 
 .lst-text-left {

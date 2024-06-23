@@ -2357,8 +2357,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
   }
 
   .header--middle-left {
-    grid-template-areas: 'heading navigation icons';
-    grid-template-columns: auto auto 1fr;
+    @apply lst-flex;
     column-gap: 10px;
   }
 
