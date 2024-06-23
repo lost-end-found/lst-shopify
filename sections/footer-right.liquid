@@ -23,7 +23,7 @@
 {%- endstyle -%}
 
 <section class="lst-flex lst-flex-col lst-justify-between lst-h-full">
-  <div class="lst-p-5">
+  <div class="lst-p-3 lg:lst-p-5">
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'newsletter_info' %}
@@ -37,9 +37,12 @@
               {%- form 'customer', id: 'ContactFooter', class: 'lst-w-full' -%}
                 <input type="hidden" name="contact[tags]" value="newsletter">
                 <div>
-                  <div class="lst-flex lst-text-base lst-justify-between lst-mb-5">
+                  <div class="lst-flex lst-flex-col lg:lst-flex-row lst-text-base lst-justify-between lst-mb-5">
                     <div>
-                      <label class="lst-text-xl lst-text-black" for="NewsletterForm--{{ block.id }}">
+                      <label
+                        class="lst-text-xl lst-text-black"
+                        for="NewsletterForm--{{ block.id }}"
+                      >
                         {{ block.settings.newsletter_info_label }}
                       </label>
                       <input
@@ -67,7 +70,7 @@
                       type="submit"
                       name="commit"
                       id="Subscribe"
-                      class="lst-text-xl lst-text-black"
+                      class="lst-text-xl lst-text-black lst-text-left lg:lst-text-center"
                       aria-label="{{ block.settings.newsletter_info_button_text }}"
                     >
                       {{ block.settings.newsletter_info_button_text }}
@@ -124,15 +127,15 @@
       {% endcase %}
     {% endfor %}
   </div>
-  <div class="lst-border-l lst-border-black lst-border-b lst-border-t">
+  <div class="">
     <div class="footer-block--links">
-      <ul class="lst-grid lst-grid-cols-2 md:lst-flex lst-divide-y md:lst-divide-y-0 md:lst-divide-x lst-divide-black lst-text-base lst-justify-between lst-items-center">
+      <ul class="lst-grid lst-grid-cols-2 lg:lst-flex lst-text-base lst-justify-between lst-items-center lst-border lst-border-l-0 lst-border-b-0 lst-border-black">
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'links_list' %}
               <a
                 href="{{ block.settings.links_list_link_url }}"
-                class="lst-text-black lst-text-xs lst-transition-colors lst-px-2 h-full w-full hover:lst-bg-primary lst-text-center lst-h-[44px] lst-flex lst-justify-center lst-items-center lst-flex-grow"
+                class="lst-h-[45px] lst-text-black lst-text-xs lst-transition-colors lst-px-2 h-full w-full hover:lst-bg-primary lst-text-center  lst-flex lst-justify-center lst-items-center lst-flex-grow  even:lst-border-l lg:first:!lst-border-l-0 lg:odd:lst-border-l lst-border-b lst-border-black"
               >
                 {{ block.settings.links_list_link_text }}
               </a>

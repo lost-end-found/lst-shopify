@@ -14,7 +14,7 @@
             <details id="Details-HeaderMenu-{{ forloop.index }}">
               <summary
                 id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item lst-text-sm list-menu__item link focus-inset"
+                class="header__menu-item lst-text-sm lg:lst-text-base lst-px-2 list-menu__item link focus-inset"
               >
                 <span
                   {%- if link.child_active %}
@@ -37,7 +37,7 @@
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                         href="{{ childlink.url }}"
-                        class="header__menu-item lst-text-sm list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                        class="header__menu-item lst-text-sm lg:lst-text-base lst-px-2 list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
                         {% if childlink.current %}
                           aria-current="page"
                         {% endif %}
@@ -48,7 +48,7 @@
                       <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
                         <summary
                           id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                          class="header__menu-item lst-text-sm link link--text list-menu__item focus-inset caption-large"
+                          class="header__menu-item lst-text-sm lg:lst-text-base lst-px-2 link link--text list-menu__item focus-inset caption-large"
                         >
                           <span>{{ childlink.title | escape }}</span>
                           {% render 'icon-caret' %}
@@ -62,7 +62,7 @@
                               <a
                                 id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
                                 href="{{ grandchildlink.url }}"
-                                class="header__menu-item lst-text-sm list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
+                                class="header__menu-item lst-text-sm lg:lst-text-base lst-px-2 list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
                                 {% if grandchildlink.current %}
                                   aria-current="page"
                                 {% endif %}
@@ -83,7 +83,7 @@
           <a
             id="HeaderMenu-{{ link.handle }}"
             href="{{ link.url }}"
-            class="header__menu-item lst-text-sm list-menu__item link link--text focus-inset"
+            class="header__menu-item lst-text-sm lg:lst-text-base lst-px-2 list-menu__item link link--text focus-inset"
             {% if link.current %}
               aria-current="page"
             {% endif %}

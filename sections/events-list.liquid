@@ -9,7 +9,7 @@
     <ul class="slideshow__content">
       {% for event in shop.metaobjects.events.values %}
         <div class="lst-grid lg:lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-y lst-border-black">
-          <div class="lst-bg-[#F7F2EB] lst-p-5 lst-border-r lst-border-black">
+          <div class="lst-bg-[#F7F2EB] lst-p-3 lg:lst-p-5 lst-border-r lst-border-black">
             <div class="lst-grid lst-grid-cols-2">
               {%- assign start_date = event.start_date_time | date: '%d %b %Y' -%}
               {%- assign end_date = event.end_date_time | date: '%d %b %Y' -%}

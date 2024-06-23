@@ -120,13 +120,13 @@
               {%- endfor -%}
             </ul>
           </nav>
-          <div class="menu-drawer__utility-links">
+          <div class="menu-drawer__utility-links lst-px-12">
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
                 class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
               >
-                <account-icon>
+                <account-icon class="lst-mr-3">
                   {%- if customer and customer.has_avatar? -%}
                     {{ customer | avatar }}
                   {%- else -%}

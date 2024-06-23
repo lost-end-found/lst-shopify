@@ -1,7 +1,7 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 
-<section class="lst-bg-primary">
-  <div class="footer">
+<section class="lst-bg-primary lst-h-full">
+  <div class="footer lst-h-full lst-flex lst-flex-col lst-justify-between">
     <div class="section-{{ section.id }} lst-px-3 lg:lst-px-5 lst-py-8">
       {% for block in section.blocks %}
         {% case block.type %}
@@ -12,13 +12,13 @@
         {% endcase %}
       {% endfor %}
     </div>
-    <div class="section-{{ section.id }} lst-grid md:lst-grid-cols-3 lst-flex-wrap md:lst-flex-nowrap lst-mt-10 md:lst-divide-x lst-divide-y md:lst-divide-y-0 lst-divide-black lst-border-y lst-border-black">
+    <div class="section-{{ section.id }} lst-grid lg:lst-grid-cols-3 lst-flex-wrap lg:lst-flex-nowrap lst-mt-10 lst-border lst-border-b-0 lst-border-black">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'link_with_icon' %}
             <a
               href="{{ block.settings.link_with_icon_url }}"
-              class="lst-flex lst-space-x-4 lst-items-center lg:lst-justify-center lst-py-1 lst-min-w-52 lst-px-3 lg:lst-px-5"
+              class="lst-flex lst-space-x-4 lst-items-center lst-border-b lst-border-black lg:lst-border-l lg:first:!lst-border-l-0 lg:lst-justify-center lst-py-1 lst-min-w-52 lst-px-3 lg:lst-px-5 lst-h-[45px]"
             >
               <span class="lst-text-base lst-text-black">{{ block.settings.link_with_icon_text }}</span>
               <img

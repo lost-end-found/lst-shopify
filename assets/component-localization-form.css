@@ -414,7 +414,7 @@
 }
 
 /* Menu drawer */
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .menu-drawer__localization {
     display: none;
   }

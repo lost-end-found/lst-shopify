@@ -226,7 +226,7 @@
   white-space: nowrap;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .multicolumn-list__item--empty {
     display: list-item;
   }

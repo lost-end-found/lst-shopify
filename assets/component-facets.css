@@ -39,7 +39,7 @@
   padding-left: 2.5rem;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .facet-filters {
     padding-left: 3rem;
   }
@@ -603,7 +603,7 @@ span.active-facets__button-inner:after {
   font-size: 1rem;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .active-facets__button {
     margin-right: 1rem;
   }
@@ -685,7 +685,7 @@ a.active-facets__button.focused .active-facets__button-inner {
   width: 1.2rem;
 }
 
-@media all and (min-width: 990px) {
+@media all and (min-width: 1024px) {
   .active-facets__button svg {
     margin-right: -0.4rem;
     margin-top: 0.1rem;

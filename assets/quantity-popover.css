@@ -127,7 +127,7 @@ quantity-popover .quantity__rules span:first-of-type {
   align-items: center;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .quantity-popover-container--empty {
     margin-right: 2.7rem;
   }

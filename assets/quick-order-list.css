@@ -40,7 +40,7 @@ quick-order-list .quantity__button {
   content: none;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .quick-order-list__total {
     position: sticky;
     bottom: 0;
@@ -118,7 +118,7 @@ quick-order-list .quantity__button {
   object-fit: cover;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .variant-item__image {
     max-width: 100%;
   }
@@ -295,7 +295,7 @@ quick-order-list-remove-button .icon-remove {
   align-self: flex-start;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .variant-item .loading__spinner {
     padding-top: 3rem;
     bottom: auto;
@@ -457,7 +457,7 @@ quick-order-list-remove-button:hover .icon-remove {
   margin-top: -2rem;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .quick-order-list__table {
     border-spacing: 0;
     border-collapse: separate;
@@ -516,7 +516,7 @@ quick-order-list-remove-button:hover .icon-remove {
   }
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .quick-order-list__table thead th:first-child,
   .quick-order-list-total__column {
     width: 37%;
