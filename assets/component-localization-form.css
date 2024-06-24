@@ -67,8 +67,8 @@
   margin-bottom: 1rem;
   padding-left: 1rem;
   text-align: left;
-  min-height: calc(4rem + var(--inputs-border-width) * 2);
-  min-width: calc(7rem + var(--inputs-border-width) * 2);
+  /* min-height: calc(4rem + var(--inputs-border-width) * 2);
+  min-width: calc(7rem + var(--inputs-border-width) * 2); */
 }
 
 .disclosure__button.localization-form__select {
@@ -382,9 +382,8 @@
 }
 
 .js .header-localization:not(.menu-drawer__localization) .localization-form__select {
-  padding: 0 2.7rem 0 1.2rem;
+  padding: 0 1em;
   width: max-content;
-  height: 3.8rem;
 }
 
 .header-localization:not(.menu-drawer__localization) .localization-form:only-child .localization-form__select {
@@ -407,9 +406,8 @@
 }
 
 .header-localization:not(.menu-drawer__localization) .disclosure__list-wrapper {
-  bottom: initial;
-  top: 100%;
-  right: 0;
+  bottom: 100%;
+  left: 0;
   transform: translateY(0);
 }
 
@@ -417,6 +415,13 @@
 @media screen and (min-width: 1024px) {
   .menu-drawer__localization {
     display: none;
+  }
+  .header-localization:not(.menu-drawer__localization) .disclosure__list-wrapper {
+    bottom: initial;
+    top: 100%;
+    right: 0;
+    transform: translateY(0);
+    left: initial;
   }
 }
 

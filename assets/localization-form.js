@@ -39,6 +39,7 @@ if (!customElements.get('localization-form')) {
       }
 
       hidePanel() {
+        return;
         this.elements.button.setAttribute('aria-expanded', 'false');
         this.elements.panel.setAttribute('hidden', true);
         if (this.elements.search) {
