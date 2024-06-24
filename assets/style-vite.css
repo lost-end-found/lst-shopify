@@ -1307,6 +1307,10 @@ select {
   position: relative;
 }
 
+.lst-sticky {
+  position: sticky;
+}
+
 .-lst-right-1 {
   right: -0.25rem;
 }
@@ -1335,8 +1339,16 @@ select {
   top: 0.5rem;
 }
 
+.lst-bottom-0 {
+  bottom: 0px;
+}
+
 .lst-z-10 {
   z-index: 10;
+}
+
+.lst-z-50 {
+  z-index: 50;
 }
 
 .lst-order-1 {
@@ -1345,6 +1357,10 @@ select {
 
 .lst-col-start-3 {
   grid-column-start: 3;
+}
+
+.lst-row-start-2 {
+  grid-row-start: 2;
 }
 
 .\!lst-my-0 {
@@ -1680,16 +1696,16 @@ select {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.lst-space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .lst-space-x-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.lst-space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .lst-divide-x > :not([hidden]) ~ :not([hidden]) {
@@ -1745,11 +1761,6 @@ select {
   border-bottom-width: 1px;
 }
 
-.\!lst-border-x {
-  border-left-width: 1px !important;
-  border-right-width: 1px !important;
-}
-
 .\!lst-border-t-0 {
   border-top-width: 0px !important;
 }
@@ -1776,6 +1787,10 @@ select {
 
 .lst-border-t {
   border-top-width: 1px;
+}
+
+.lst-border-t-0 {
+  border-top-width: 0px;
 }
 
 .lst-border-solid {
@@ -1832,10 +1847,6 @@ select {
 
 .lst-p-3 {
   padding: 0.75rem;
-}
-
-.\!lst-p-0 {
-  padding: 0px !important;
 }
 
 .\!lst-px-0 {
@@ -2039,8 +2050,28 @@ select {
 }
 
 @media (min-width: 1024px) {
+  .lg\:lst-bottom-auto {
+    bottom: auto;
+  }
+
+  .lg\:lst-top-0 {
+    top: 0px;
+  }
+
+  .lg\:lst-top-14 {
+    top: 3.5rem;
+  }
+
+  .lg\:lst-top-\[77px\] {
+    top: 77px;
+  }
+
   .lg\:lst-col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .lg\:lst-row-start-auto {
+    grid-row-start: auto;
   }
 
   .lg\:lst-mx-1 {
@@ -2122,6 +2153,14 @@ select {
 
   .lg\:lst-border-l {
     border-left-width: 1px;
+  }
+
+  .lg\:lst-border-l-0 {
+    border-left-width: 0px;
+  }
+
+  .lg\:lst-border-t-0 {
+    border-top-width: 0px;
   }
 
   .lg\:lst-p-5 {

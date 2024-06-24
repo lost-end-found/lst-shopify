@@ -12,11 +12,7 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, button_class: button_class, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
-<style>
-  button.button::after {
-    --buttons-border-width--top: {{ top_width }};
-  }
-</style>
+
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -32,7 +28,7 @@
     -%}
 
     <product-form
-      class="product-form !lst-my-0"
+      class="product-form !lst-my-0 lst-border lst-border-black lst-border-t-0"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
     >
