@@ -1,14 +1,9 @@
 <!-- sections/right-blocks-section.liquid -->
-<div class="right-blocks">
+<div class="right-blocks lst-sticky lst-top-0">
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'image' %}
         <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
-      {% when 'product' %}
-        {% assign product = block.settings.product %}
-        <h2>{{ product.title }}</h2>
-        <p>{{ product.description }}</p>
-        <p>{{ product.price | money }}</p>
       {% else %}
         <p>Unknown block type: {{ block.type }}</p>
     {% endcase %}
@@ -27,17 +22,6 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
-        }
-      ]
-    },
-    {
-      "type": "product",
-      "name": "Product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
         }
       ]
     }

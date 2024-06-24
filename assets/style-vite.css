@@ -1590,6 +1590,10 @@ select {
   top: 0.5rem;
 }
 
+.lst-top-0 {
+  top: 0px;
+}
+
 .lst-z-10 {
   z-index: 10;
 }
