@@ -1319,6 +1319,10 @@ select {
   top: -0.25rem;
 }
 
+.lst-bottom-0 {
+  bottom: 0px;
+}
+
 .lst-left-0 {
   left: 0px;
 }
@@ -1337,10 +1341,6 @@ select {
 
 .lst-top-2 {
   top: 0.5rem;
-}
-
-.lst-bottom-0 {
-  bottom: 0px;
 }
 
 .lst-z-10 {
@@ -1696,16 +1696,16 @@ select {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.lst-space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .lst-space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.lst-space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .lst-divide-x > :not([hidden]) ~ :not([hidden]) {
@@ -2052,14 +2052,6 @@ select {
 @media (min-width: 1024px) {
   .lg\:lst-bottom-auto {
     bottom: auto;
-  }
-
-  .lg\:lst-top-0 {
-    top: 0px;
-  }
-
-  .lg\:lst-top-14 {
-    top: 3.5rem;
   }
 
   .lg\:lst-top-\[77px\] {

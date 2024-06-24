@@ -79,58 +79,65 @@
           data-url="{{ product.url }}"
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %} lst-grid lst-border-l lst-border-b lst-border-black"
         >
-          {%- assign product_form_id = 'product-form-' | append: section.id -%}
-          <div class="lst-grid lst-grid-cols-2 lst-sticky lst-bottom-0 lg:lst-top-[77px] lg:lst-bottom-auto lst-row-start-2 lg:lst-row-start-auto lst-z-50">
-            <div class="lst-bg-[#F7F2EB] lst-border-b  lst-border-t lg:lst-border-l-0 lg:lst-border-t-0 lst-border-black lst-flex lst-flex-col lst-items-center lst-justify-center py-2">
-              <div
-                id="price-{{ section.id }}"
-                role="status"
-                {{ block.shopify_attributes }}
-              >
-                {%- render 'price',
-                  product: product,
-                  use_variant: true,
-                  show_badges: true,
-                  price_class: 'price--large'
-                -%}
-              </div>
-              {%- if product.quantity_price_breaks_configured? -%}
-                <div class="volume-pricing-note lst-text-sm" id="Volume-Note-{{ section.id }}">
-                  <span>{{ 'products.product.volume_pricing.note' | t }}</span>
-                </div>
-              {%- endif -%}
-              <div class="rte lst-text-sm">
-                {%- if cart.taxes_included -%}
-                  {{ 'products.product.include_taxes' | t }}
-                {%- endif -%}
-                {%- if shop.shipping_policy.body != blank -%}
-                  {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                {%- endif -%}
-              </div>
-              <div {{ block.shopify_attributes }}>
-                {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                {%- form 'product',
-                  product,
-                  id: product_form_installment_id,
-                  class: 'installment caption lst-text-sm'
-                -%}
-                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                  {{ form | payment_terms }}
-                {%- endform -%}
-              </div>
-            </div>
-            <div style="--buttons-border-width--top: 0px">
-              {%- render 'buy-buttons',
-                block: block,
-                product: product,
-                product_form_id: product_form_id,
-                section_id: section.id,
-                button_class: '!lst-border-t-0',
-                show_pickup_availability: true,
-                top_width: '0px'
-              -%}
-            </div>
+          <div class="lst-grid lg:lst-grid-cols-2 lst-sticky lst-bottom-0 lg:lst-top-[77px] lg:lst-bottom-auto lst-row-start-2 lg:lst-row-start-auto lst-z-50">
+            {%- assign product_form_id = 'product-form-' | append: section.id -%}
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'price' -%}
+                  <div class="lst-bg-[#F7F2EB] lst-border-b  lst-border-t lg:lst-border-l-0 lg:lst-border-t-0 lst-border-black lst-flex lst-flex-col lst-items-center lst-justify-center py-2">
+                    <div
+                      id="price-{{ section.id }}"
+                      role="status"
+                      {{ block.shopify_attributes }}
+                    >
+                      {%- render 'price',
+                        product: product,
+                        use_variant: true,
+                        show_badges: true,
+                        price_class: 'price--large'
+                      -%}
+                    </div>
+                    {%- if product.quantity_price_breaks_configured? -%}
+                      <div class="volume-pricing-note lst-text-sm" id="Volume-Note-{{ section.id }}">
+                        <span>{{ 'products.product.volume_pricing.note' | t }}</span>
+                      </div>
+                    {%- endif -%}
+                    <div class="rte lst-text-sm">
+                      {%- if cart.taxes_included -%}
+                        {{ 'products.product.include_taxes' | t }}
+                      {%- endif -%}
+                      {%- if shop.shipping_policy.body != blank -%}
+                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                      {%- endif -%}
+                    </div>
+                    <div {{ block.shopify_attributes }}>
+                      {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                      {%- form 'product',
+                        product,
+                        id: product_form_installment_id,
+                        class: 'installment caption lst-text-sm'
+                      -%}
+                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                        {{ form | payment_terms }}
+                      {%- endform -%}
+                    </div>
+                  </div>
+                {%- when 'buy_buttons' %}
+                  <div style="--buttons-border-width--top: 0px">
+                    {%- render 'buy-buttons',
+                      block: block,
+                      product: product,
+                      product_form_id: product_form_id,
+                      section_id: section.id,
+                      button_class: '!lst-border-t-0',
+                      show_pickup_availability: true,
+                      top_width: '0px'
+                    -%}
+                  </div>
+              {%- endcase -%}
+            {%- endfor -%}
           </div>
+
           <div class="lst-px-3 lg:lst-px-5">
             {%- for block in section.blocks -%}
               {%- case block.type -%}
