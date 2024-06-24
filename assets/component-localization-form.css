@@ -382,7 +382,7 @@
 }
 
 .js .header-localization:not(.menu-drawer__localization) .localization-form__select {
-  padding: 0 1em;
+  padding: 0 .5em;
   width: max-content;
 }
 
