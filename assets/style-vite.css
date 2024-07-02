@@ -1505,6 +1505,10 @@ select {
   border-color: transparent;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 0 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1592,6 +1596,10 @@ select {
 
 .lst-top-2 {
   top: 0.5rem;
+}
+
+.lst-top-24 {
+  top: 6rem;
 }
 
 .lst-z-10 {

@@ -1,0 +1,14 @@
+{% layout 'theme' %}
+
+<h1 class="lst-sr-only">
+  {{ page.title }}
+</h1>
+
+<div class="lst-grid lg:lst-grid-cols-2">
+  <div class="left-content lst-bg-primary lst-p-3 lg:lst-p-5">
+    <div class="lst-sticky lst-top-24">
+      {% section 'left-content-section' %}
+    </div>
+  </div>
+  {% section 'right-blocks-section' %}
+</div>

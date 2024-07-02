@@ -34,10 +34,7 @@ Usage: codyhouse.co/license
 }
 
 .slideshow__item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--slideshow-height);
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
