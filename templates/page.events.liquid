@@ -1,0 +1,55 @@
+{% assign events = shop.metaobjects.events.values %}
+
+{% assign page_size = 10 %}
+{% assign total_events = events.size %}
+{% assign total_pages = total_events | divided_by: page_size | ceil %}
+{% assign current_page = params.page | default: 1 | to_integer %}
+{% assign offset = current_page | minus: 1 | times: page_size %}
+
+<div class="lst-px-3 md:lst-px-5 lst-sr-only">
+  <h1>{{ page.title }}</h1>
+</div>
+
+<div class="events-container lst-grid lst-grid-cols-2">
+  {% for event in events %}
+    <div class="event-item lst-bg-[#F7F2EB] lst-p-2">
+      {% if event.image.value %}
+        <img src="{{ event.image.value | image_url: width: 300 }}" class="lst-w-full" alt="{{ event.title.value }}">
+      {% endif %}
+      <div class="lst-grid lst-grid-cols-2">
+        <h2 class="lst-col-span-2 lst-text-base lst-text-black lst-p-2 lst-border-b lst-border-black">
+          {{ event.title.value }}
+        </h2>
+        <div class="lst-text-base lst-text-black lst-p-2">
+          {% if event.location.value %}
+            <p>Location: {{ event.location.value }}</p>
+          {% endif %}
+          {% if event.start_date_time.value %}
+            <p>Time: {{ event.start_date_time.value | date: '%B %d, %Y' }}</p>
+          {% endif %}
+        </div>
+        <a class="lst-text-base lst-text-black lst-p-2 hover:lst-bg-primary" href="{{ event.system.url }}">Infos +</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% if total_pages > 1 %}
+  <div class="pagination">
+    {% if current_page > 1 %}
+      <a href="?page={{ current_page | minus: 1 }}">Previous</a>
+    {% endif %}
+
+    {% for i in (1..total_pages) %}
+      {% if i == current_page %}
+        <span class="current">{{ i }}</span>
+      {% else %}
+        <a href="?page={{ i }}">{{ i }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if current_page < total_pages %}
+      <a href="?page={{ current_page | plus: 1 }}">Next</a>
+    {% endif %}
+  </div>
+{% endif %}

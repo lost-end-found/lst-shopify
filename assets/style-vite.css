@@ -1582,16 +1582,16 @@ select {
   right: 0.5rem;
 }
 
+.lst-top-0 {
+  top: 0px;
+}
+
 .lst-top-1\/2 {
   top: 50%;
 }
 
 .lst-top-2 {
   top: 0.5rem;
-}
-
-.lst-top-0 {
-  top: 0px;
 }
 
 .lst-z-10 {
@@ -1604,6 +1604,10 @@ select {
 
 .lst-order-1 {
   order: 1;
+}
+
+.lst-col-span-2 {
+  grid-column: span 2 / span 2;
 }
 
 .lst-col-start-3 {
@@ -2309,6 +2313,11 @@ select {
 
   .md\:lst-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:lst-px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
 
