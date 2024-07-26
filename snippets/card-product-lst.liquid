@@ -39,7 +39,7 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover lst-bg-[#D9D9D9]">
+  <div class="card-wrapper product-card-wrapper underline-links-hover lst-bg-[#D9D9D9] hover:lst-bg-opacity-70 lst-transition-all">
     <div
       class="card lst-aspect-[298/371] lst-justify-between lst-w-full lst-h-auto lst-relative"
     >
@@ -47,7 +47,7 @@
         class="card__inner lst-flex lst-flex-col lst-justify-between lst-h-full lst-bg-transparent"
       >
         {%- if card_product.featured_media -%}
-          <div class="card__media lst-aspect-square">
+          <div class="lst-aspect-square lst-w-full">
             <div class="">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
@@ -63,7 +63,7 @@
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 1024px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt="{{ card_product.featured_media.alt | escape }}"
-                class="motion-reduce"
+                class="motion-reduce lst-aspect-square lst-w-full lst-object-contain lst-object-center"
                 {% unless lazy_load == false %}
                   loading="lazy"
                 {% endunless %}
@@ -95,18 +95,20 @@
             </div>
           </div>
         {%- else -%}
-          <div class="card__media lst-aspect-square">
-            <div class="media media--transparent">
-              {%- if placeholder_image -%}
-                {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
-              {%- else -%}
-                {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
-              {% endif %}
+          <div class="lst-aspect-square">
+            <div class="media media--transparent lst-aspect-square lst-bg-primary">
+              <img
+                class="lst-opacity-5"
+                width="400"
+                height="400"
+                src="{{ 'default.jpg' | asset_url }}"
+                alt="Placeholder Image"
+              >
             </div>
           </div>
         {%- endif -%}
-        <div class="card__content lst-flex lst-flex-col lst-justify-end">
-          <div class="card__information lst-flex lst-gap-4 lst-justify-between lst-items-end !lst-px-3 !lst-pb-1 !lst-pt-3">
+        <div class="lst-flex lst-flex-col lst-justify-end">
+          <div class="!lst-px-3 !lst-pb-1 !lst-pt-3">
             <div class="lst-text-sm lst-min-w-0">
               <h3
                 class="card__heading lst-truncate lst-inline"
@@ -124,7 +126,7 @@
                 </a>
               </h3>
             </div>
-            <div class="card-information lst-shrink-0 lst-block">
+            <div class="card-information lst-grow">
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
                 <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>

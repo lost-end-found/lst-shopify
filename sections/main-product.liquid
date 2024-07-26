@@ -1,6 +1,6 @@
 <section
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient lst-py-0 color-{{ section.settings.color_scheme }}"
+  class="section-{{ section.id }}-padding gradient !lst-py-0 color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
@@ -595,7 +595,7 @@
                                         {%- else -%}
                                           {% assign quick_add = 'none' %}
                                         {%- endif -%}
-                                        {% render 'card-product',
+                                        {% render 'ccard-product-lstct',
                                           card_product: product,
                                           media_aspect_ratio: block.settings.image_ratio,
                                           show_secondary_image: false,

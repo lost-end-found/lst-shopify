@@ -17,7 +17,9 @@
   }
   .h3 {
     @apply lst-text-xl lst-leading-tight;
-  
+  }
+  .shopify-payment-button__button {
+    @apply lst-py-6;
   }
 }
 

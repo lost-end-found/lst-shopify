@@ -35,64 +35,36 @@
     "collection_list_brCEnF": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_8d4tf4": {
+        "featured_collection_FbEpHt": {
           "type": "featured_collection",
           "settings": {
-            "collection": "architecture"
+            "collection": "architecture-1"
           }
         },
-        "featured_collection_rwkXaF": {
+        "featured_collection_ahyz9d": {
           "type": "featured_collection",
           "settings": {
-            "collection": "frontpage"
+            "collection": "dessin-et-illustration"
           }
         },
-        "featured_collection_L8pb4H": {
+        "featured_collection_Xtwqtx": {
           "type": "featured_collection",
           "settings": {
-            "collection": "tout-le-catalogue"
+            "collection": "photographie"
           }
         },
-        "featured_collection_JarcpG": {
+        "featured_collection_Em3iWz": {
           "type": "featured_collection",
           "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "featured_collection_nVBxXe": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_7HyJMb": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "featured_collection_KazAiD": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "architecture"
-          }
-        },
-        "featured_collection_zDyXXh": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "frontpage"
+            "collection": "romans-graphiques"
           }
         }
       },
       "block_order": [
-        "featured_collection_8d4tf4",
-        "featured_collection_rwkXaF",
-        "featured_collection_L8pb4H",
-        "featured_collection_JarcpG",
-        "featured_collection_nVBxXe",
-        "featured_collection_7HyJMb",
-        "featured_collection_KazAiD",
-        "featured_collection_zDyXXh"
+        "featured_collection_FbEpHt",
+        "featured_collection_ahyz9d",
+        "featured_collection_Xtwqtx",
+        "featured_collection_Em3iWz"
       ],
       "settings": {
         "title": "Collections",
@@ -110,36 +82,36 @@
     "featured_products_qAGAaa": {
       "type": "featured-products",
       "blocks": {
-        "product_LaTEH7": {
+        "product_ngGajL": {
           "type": "product",
           "settings": {
-            "product": "bejewelled-black-diamond-skull-belt-buckle"
+            "product": "14092005-copenhagen"
           }
         },
-        "product_xNnFxP": {
+        "product_t6dwAC": {
           "type": "product",
           "settings": {
-            "product": "black-and-green-skull-fingerless-gloves"
+            "product": "autre-chose"
           }
         },
-        "product_q7VPAP": {
+        "product_GqQJh6": {
           "type": "product",
           "settings": {
-            "product": "black-fingerless-gloves-with-skull-and-cobweb-pattern"
+            "product": "an-unknown-power"
           }
         },
-        "product_iVLgjR": {
+        "product_FE63tT": {
           "type": "product",
           "settings": {
-            "product": "black-and-white-striped-polo-shirt"
+            "product": "art-story"
           }
         }
       },
       "block_order": [
-        "product_LaTEH7",
-        "product_xNnFxP",
-        "product_q7VPAP",
-        "product_iVLgjR"
+        "product_ngGajL",
+        "product_t6dwAC",
+        "product_GqQJh6",
+        "product_FE63tT"
       ],
       "settings": {
         "title": "Our Favorites"
