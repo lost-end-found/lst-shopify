@@ -215,7 +215,9 @@
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
         </small>
         <small class="copyright__content lst-text-xs">
-          <a href="http://rakun.ie" target="_blank" rel="noopener noreferrer"> | Developed by Rakun.ie</a>
+          <a href="http://rakun.ie" target="_blank" rel="noopener noreferrer">
+            | {{ 'sections.footer.developed_by' | t }} Rakun.ie</a
+          >
         </small>
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">

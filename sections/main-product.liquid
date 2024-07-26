@@ -224,7 +224,7 @@
                     </div>
                     <ul class="lst-text-sm">
                       <li>
-                        <strong>authors:</strong>
+                        <strong>{{ 'products.product.authors' | t }}:</strong>
                         {% assign authors_string = product.metafields.alexandrie.authors
                           | replace: '[', ''
                           | replace: ']', ''
@@ -238,22 +238,40 @@
                         {% endfor %}
                       </li>
                       {% if product.metafields.alexandrie.publisher_name %}
-                        <li><strong>publishers</strong>: {{ product.metafields.alexandrie.publisher_name }}</li>
+                        <li>
+                          <strong>{{ 'products.product.publishers' | t }}</strong>:
+                          {{ product.metafields.alexandrie.publisher_name }}
+                        </li>
                       {% endif %}
                       {% if product.metafields.alexandrie.supplier_name %}
-                        <li><strong>suppliers</strong>: {{ product.metafields.alexandrie.supplier_name }}</li>
+                        <li>
+                          <strong>{{ 'products.product.suppliers' | t }}</strong>:
+                          {{ product.metafields.alexandrie.supplier_name }}
+                        </li>
                       {% endif %}
                       {% if product.metafields.alexandrie.published_at %}
-                        <li><strong>date of publication</strong>: {{ product.metafields.alexandrie.published_at }}</li>
+                        <li>
+                          <strong>{{ 'products.product.date_of_publication' | t }}</strong>:
+                          {{ product.metafields.alexandrie.published_at }}
+                        </li>
                       {% endif %}
                       {% if product.metafields.alexandrie.language %}
-                        <li><strong>language</strong>: {{ product.metafields.alexandrie.language }}</li>
+                        <li>
+                          <strong>{{ 'products.product.language' | t }}</strong>:
+                          {{ product.metafields.alexandrie.language }}
+                        </li>
                       {% endif %}
                       {% if product.metafields.alexandrie.format %}
-                        <li><strong>format</strong>: {{ product.metafields.alexandrie.format }}</li>
+                        <li>
+                          <strong>{{ 'products.product.format' | t }}</strong>:
+                          {{ product.metafields.alexandrie.format }}
+                        </li>
                       {% endif %}
                       {% if product.metafields.alexandrie.design %}
-                        <li><strong>design</strong>: {{ product.metafields.alexandrie.design }}</li>
+                        <li>
+                          <strong>{{ 'products.product.design' | t }}</strong>:
+                          {{ product.metafields.alexandrie.design }}
+                        </li>
                       {% endif %}
                       {% if product.metafields.alexandrie.print %}
                         <li>{{ product.metafields.alexandrie.print }}</li>
@@ -265,7 +283,10 @@
                         <li>{{ product.metafields.alexandrie.paper }}</li>
                       {% endif %}
                       {% if product.metafields.alexandrie.pages_count %}
-                        <li><strong>pages</strong>: {{ product.metafields.alexandrie.pages_count }}</li>
+                        <li>
+                          <strong>{{ 'products.product.pages' | t }}</strong>:
+                          {{ product.metafields.alexandrie.pages_count }}
+                        </li>
                       {% endif %}
                       {% if product.metafields.alexandrie.availability %}
                         <li>{{ product.metafields.alexandrie.availability }}</li>

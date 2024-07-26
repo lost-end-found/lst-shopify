@@ -175,7 +175,15 @@
       "xr_button": "View in your space",
       "xr_button_label": "View in your space, loads item in augmented reality window",
       "include_taxes": "Tax included.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout."
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "authors": "authors",
+      "publishers": "publishers",
+      "suppliers": "suppliers",
+      "language": "language",
+      "format": "format",
+      "design": "design",
+      "pages": "pages",
+      "date_of_publication": "date of publication",
     },
     "modal": {
       "label": "Media gallery"
@@ -318,7 +326,8 @@
       }
     },
     "footer": {
-      "payment": "Payment methods"
+      "payment": "Payment methods",
+      "developed_by": "Developed by",
     },
     "featured_blog": {
       "view_all": "View all",
