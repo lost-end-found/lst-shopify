@@ -12,11 +12,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
 
 .pagination__list > li {
-  flex: 1 0 4.4rem;
-  max-width: 4.4rem;
+  flex: 1 0 2.5rem;
+  max-width: 2.5rem;
 }
 
 .pagination__list > li:not(:last-child) {
@@ -29,7 +30,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 4.4rem;
+  height: 2.5rem;
   width: 100%;
   padding: 0;
   text-decoration: none;

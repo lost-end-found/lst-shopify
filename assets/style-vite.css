@@ -1499,6 +1499,7 @@ select {
 }
 
 .button {
+  min-height: 4rem;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1698,10 +1699,6 @@ select {
 
 .\!lst-block {
   display: block !important;
-}
-
-.lst-block {
-  display: block;
 }
 
 .lst-inline-block {
@@ -1904,10 +1901,6 @@ select {
 
 .lst-items-start {
   align-items: flex-start;
-}
-
-.lst-items-end {
-  align-items: flex-end;
 }
 
 .lst-items-center {
@@ -2127,6 +2120,11 @@ select {
   padding-right: 0.75rem !important;
 }
 
+.\!lst-py-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
 .lst-px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -2152,11 +2150,6 @@ select {
   padding-right: 1.5rem;
 }
 
-.lst-py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
 .lst-py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -2172,19 +2165,9 @@ select {
   padding-bottom: 0.75rem;
 }
 
-.lst-py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .lst-py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.\!lst-py-0 {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
 }
 
 .\!lst-pb-1 {
@@ -2282,10 +2265,6 @@ select {
   text-decoration-line: none;
 }
 
-.lst-opacity-10 {
-  opacity: 0.1;
-}
-
 .lst-opacity-5 {
   opacity: 0.05;
 }
@@ -2302,12 +2281,6 @@ select {
 
 .lst-transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.lst-transition-opacity {
-  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
