@@ -6,19 +6,29 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'rich_text' %}
-            <div class="footer__rich-text lst-prose prose lst-text-black">
+            <div
+              class="footer__rich-text lst-prose prose lst-text-black {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+              {% endif %}
+            >
               {{ block.settings.rich_text_content }}
             </div>
         {% endcase %}
       {% endfor %}
     </div>
-    <div class="section-{{ section.id }} lst-grid lg:lst-grid-cols-3 lst-flex-wrap lg:lst-flex-nowrap lst-mt-10 lst-border lst-border-b-0 lst-border-black">
+    <div
+      class="section-{{ section.id }} lst-grid lg:lst-grid-cols-3 lst-flex-wrap lg:lst-flex-nowrap lst-mt-10 lst-border lst-border-b-0 lst-border-black"
+    >
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'link_with_icon' %}
             <a
               href="{{ block.settings.link_with_icon_url }}"
-              class="lst-flex lst-space-x-4 lst-items-center lst-border-b lst-border-black lg:lst-border-l lg:first:!lst-border-l-0 lg:lst-justify-center lst-py-1 lst-min-w-52 lst-px-3 lg:lst-px-5 lst-h-[45px]"
+              class="lst-flex lst-space-x-4 lst-items-center lst-border-b lst-border-black lg:lst-border-l lg:first:!lst-border-l-0 lg:lst-justify-center lst-py-1 lst-min-w-52 lst-px-3 lg:lst-px-5 lst-h-[45px] {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+              {% endif %}
             >
               <span class="lst-text-base lst-text-black">{{ block.settings.link_with_icon_text }}</span>
               <img

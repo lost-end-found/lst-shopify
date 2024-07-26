@@ -135,7 +135,10 @@
             {% when 'links_list' %}
               <a
                 href="{{ block.settings.links_list_link_url }}"
-                class="lst-h-[45px] lst-text-black lst-text-xs lst-transition-colors lst-px-2 h-full w-full hover:lst-bg-primary lst-text-center  lst-flex lst-justify-center lst-items-center lst-flex-grow  even:lst-border-l lg:first:!lst-border-l-0 lg:odd:lst-border-l lst-border-b lst-border-black"
+                class="lst-h-[45px] lst-text-black lst-text-xs lst-transition-colors lst-px-2 h-full w-full hover:lst-bg-primary lst-text-center  lst-flex lst-justify-center lst-items-center lst-flex-grow  even:lst-border-l lg:first:!lst-border-l-0 lg:odd:lst-border-l lst-border-b lst-border-black {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                {% endif %}
               >
                 {{ block.settings.links_list_link_text }}
               </a>
