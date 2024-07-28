@@ -68,9 +68,17 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div>
-    <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+    <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}{% endif %}">
       <div class="grid__item product__media-wrapper">
-        {% render 'product-media-lst', variant_images: variant_images %}
+        {% if product.media.size == 0 %}
+          <div class="product__media">
+            <div class="lst-aspect-video lst-bg-primary w-full block lst-max-w-none">
+              <span></span>
+            </div>
+          </div>
+        {% else %}
+          {% render 'product-media-lst', variant_images: variant_images %}
+        {% endif %}
       </div>
       <div class="product__info-wrapper !lst-px-0 grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <product-info
@@ -217,7 +225,7 @@
                 {%- when 'description' -%}
                   {%- if product.description != blank -%}
                     <div
-                      class="product__description lst-text-base lst-text-black lst-prose prose rte quick-add-hidden"
+                      class="product__description lst-text-base lst-text-black lst-prose prose lst-max-w-none rte quick-add-hidden"
                       {{ block.shopify_attributes }}
                     >
                       {{ product.description }}

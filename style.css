@@ -4,7 +4,7 @@
 
 @layer components {
   .button {
-    @apply lst-bg-primary lst-text-black lst-border lst-border-black lst-uppercase lst-border-transparent lst-py-2 lst-px-4 lst-min-h-16 hover:lst-bg-primary/90;
+    @apply lst-bg-primary lst-text-black lst-border lst-border-black lst-uppercase lst-border-transparent lst-py-2 lst-px-4  hover:lst-bg-primary/90;
   }
   .h1 {
     @apply lst-text-[48px] lst-leading-tight;
@@ -18,9 +18,7 @@
   .h3 {
     @apply lst-text-xl lst-leading-tight;
   }
-  .shopify-payment-button__button {
-    @apply lst-py-6 lst-min-h-16;
-  }
+
 }
 
 [id*="footer_socials"], [id$="_footer"] {

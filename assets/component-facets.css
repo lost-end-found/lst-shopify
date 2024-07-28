@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  padding: 0 1.25rem;
+  /* padding: 0 1.25rem; */
 }
 
 .active-facets-mobile {
@@ -110,7 +110,7 @@
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   margin: 0;
   padding-left: 0;
-  padding-right: 1.09375rem;
+  /* padding-right: 1.09375rem; */
 }
 
 .facet-filters__sort + .icon-caret {
@@ -178,6 +178,7 @@
   display: block;
   color: rgba(var(--color-foreground), 0.85);
   font-size: 20px;
+  padding-left: 1.25rem;
 }
 
 .facets__reset {
@@ -215,7 +216,7 @@
 }
 
 .facets__summary:hover .facets__summary-label {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-underline-offset: 0.1875rem;
 }
 
@@ -509,7 +510,7 @@
   position: absolute;
   left: 0.1875rem;
   z-index: 5;
-  top: 23px;
+  top: 18px;
 }
 
 .facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark {
@@ -563,16 +564,19 @@ button.facets__button {
   width: 100%;
   grid-column: 1 / -1;
   grid-row: 2;
-  margin-top: -0.3125rem;
+  gap: 0.625rem;
+  /* margin-top: -0.3125rem; */
+  align-items: center;  
+  padding: 0 1.25rem;
+  border-top: 0.0625rem solid rgba(var(--color-foreground), 0.9);
 }
 
 .active-facets__button {
   display: block;
-  margin-right: 0.625rem;
-  margin-top: 0.625rem;
   padding-left: 0.125rem;
   padding-right: 0.125rem;
   text-decoration: none;
+  padding: 0.625rem 0;
 }
 
 span.active-facets__button-inner {
@@ -596,7 +600,7 @@ span.active-facets__button-inner:after {
   align-items: center;
   display: flex;
   justify-content: center;
-  padding-top: 0.625rem;
+  /* padding-top: 0.625rem; */
 }
 
 .active-facets__button-wrapper * {
@@ -605,7 +609,7 @@ span.active-facets__button-inner:after {
 
 @media screen and (min-width: 1024px) {
   .active-facets__button {
-    margin-right: 0.625rem;
+    /* margin-right: 0.625rem; */
   }
 
   .active-facets__button-wrapper *,
@@ -1087,6 +1091,7 @@ input.mobile-facets__checkbox {
   text-align: right;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  padding-right: 1.25rem;
 }
 
 .product-count__text {

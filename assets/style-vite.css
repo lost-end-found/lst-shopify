@@ -1499,7 +1499,6 @@ select {
 }
 
 .button {
-  min-height: 4rem;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1737,8 +1736,8 @@ select {
   display: none;
 }
 
-.lst-aspect-\[298\/371\] {
-  aspect-ratio: 298/371;
+.lst-aspect-\[298\/400\] {
+  aspect-ratio: 298/400;
 }
 
 .lst-aspect-square {
@@ -1747,10 +1746,6 @@ select {
 
 .lst-aspect-video {
   aspect-ratio: 16 / 9;
-}
-
-.lst-aspect-\[298\/400\] {
-  aspect-ratio: 298/400;
 }
 
 .\!lst-h-5 {
@@ -1964,12 +1959,6 @@ select {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.lst-space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .lst-divide-x > :not([hidden]) ~ :not([hidden]) {
@@ -2299,10 +2288,6 @@ select {
   }
 }
 
-.last\:lst-border-r:last-child {
-  border-right-width: 1px;
-}
-
 .last\:\!lst-border-r:last-child {
   border-right-width: 1px !important;
 }
@@ -2332,6 +2317,16 @@ select {
 @media (min-width: 640px) {
   .sm\:lst-aspect-\[298\/371\] {
     aspect-ratio: 298/371;
+  }
+
+  .sm\:lst-text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .sm\:lst-text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
