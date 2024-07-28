@@ -4,7 +4,7 @@
 
 @layer components {
   .button {
-    @apply lst-bg-primary lst-text-black lst-border lst-border-black lst-uppercase lst-border-transparent lst-py-2 lst-px-4 lst-min-h-16;
+    @apply lst-bg-primary lst-text-black lst-border lst-border-black lst-uppercase lst-border-transparent lst-py-2 lst-px-4 lst-min-h-16 hover:lst-bg-primary/90;
   }
   .h1 {
     @apply lst-text-[48px] lst-leading-tight;

@@ -23,7 +23,7 @@
   data-id="{{ section.id }}"
 >
   <div class="page-width">
-    <div class="cart__footer isolate section-{{ section.id }}-padding">
+    <div class="cart__footer lst-px-5 isolate section-{{ section.id }}-padding">
       {%- if settings.show_cart_note -%}
         <cart-note class="cart__note field">
           <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
@@ -63,7 +63,7 @@
                   <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
                 </div>
 
-                <small class="tax-note caption-large rte">
+                <small class="tax-note caption lst-text-sm rte">
                   {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
                     {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
                   {%- elsif cart.taxes_included -%}

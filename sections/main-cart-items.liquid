@@ -27,14 +27,14 @@
 
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
-    <div class="title-wrapper-with-link">
+    <div class="title-wrapper-with-link lst-px-5">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}
       </a>
     </div>
 
-    <div class="cart__warnings">
+    <div class="cart__warnings lst-px-5">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="button">
         {{ 'general.continue_shopping' | t }}
@@ -48,7 +48,7 @@
       {%- endif -%}
     </div>
 
-    <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
+    <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden lst-px-5" method="post" id="cart">
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
         <div class="js-contents">
           {%- if cart != empty -%}

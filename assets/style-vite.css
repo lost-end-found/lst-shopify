@@ -1515,6 +1515,10 @@ select {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.button:hover {
+  background-color: rgb(255 255 0 / 0.9);
+}
+
 .h1 {
   font-size: 48px;
   line-height: 1.25;
@@ -2233,11 +2237,6 @@ select {
 .lst-text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.\!lst-text-xs {
-  font-size: 0.75rem !important;
-  line-height: 1rem !important;
 }
 
 .lst-font-thin {
