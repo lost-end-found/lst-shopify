@@ -176,7 +176,7 @@
           endif
         endif
       %}
-      <div class="lst-flex lst-space-x-6 lst-px-3 lg:lst-px-5 lst-justify-end lst-items-center lst-text-sm lst-grow lg:lst-grow-0 {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+      <div class="lst-flex lst-gap-x-6 lst-px-3 lg:lst-px-5 lst-justify-end lst-items-center lst-text-sm lst-grow lg:lst-grow-0 {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
         {% render 'header-search', input_id: 'Search-In-Modal' %}
         {%- if shop.customer_accounts_enabled -%}
           <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} !lst-hidden lg:!lst-block {% endif %}">
