@@ -2319,11 +2319,6 @@ select {
     aspect-ratio: 298/371;
   }
 
-  .sm\:lst-text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
   .sm\:lst-text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
