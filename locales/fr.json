@@ -156,6 +156,12 @@
         "load_video": "Lire la vidéo {{ index }} dans la galerie",
         "image_available": "L'image {{ index }} est maintenant disponible dans la galerie"
       },
+      "authors": "Auteurs",
+      "publishers": "Éditeurs",
+      "suppliers": "Fournisseurs",
+      "date_of_publication": "Date de publication",
+      "format": "Format",
+      "pages": "Pages",
       "view_full_details": "Afficher tous les détails",
       "include_taxes": "Taxes incluses.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition<\/a> calculés à l'étape de paiement.",
@@ -310,7 +316,8 @@
       "new_estimated_total": "Nouveau total estimé"
     },
     "footer": {
-      "payment": "Moyens de paiement"
+      "payment": "Moyens de paiement",
+      "developed_by": "Développé par",
     },
     "featured_blog": {
       "view_all": "Tout afficher",
