@@ -91,38 +91,31 @@
         "newsletter_info_8UjjWM": {
           "type": "newsletter_info",
           "settings": {
-            "newsletter_info_label": "Subscribe to our newsletter:",
-            "newsletter_info_placeholder": "Your e-mail address",
-            "newsletter_info_button_text": "Subscribe",
-            "newsletter_info_privacy_text": "<p>I understand that by subscribing, I am explicitly choosing to receive the newsletter from the untitled bookshop and that I can easily unsubscribe at any time. unsubscribe at any time.<\/p>"
+            "newsletter_info_label": "Abonnez-vous à notre newsletter:",
+            "newsletter_info_placeholder": "Votre adresse e-mail",
+            "newsletter_info_button_text": "S'abonner",
+            "newsletter_info_privacy_text": "<p>Je comprends qu'en m'abonnant, je choisis explicitement de recevoir la newsletter de la librairie sans titre et que je peux facilement me désinscrire à tout moment. me désinscrire à tout moment.<\/p>"
           }
         },
         "links_list_RnteVh": {
           "type": "links_list",
           "settings": {
             "links_list_link_text": "c.v.g",
-            "links_list_link_url": "shopify:\/\/pages\/contact"
+            "links_list_link_url": "shopify:\/\/pages\/conditions-generales-de-ventes"
           }
         },
         "links_list_BEWzqT": {
           "type": "links_list",
           "settings": {
-            "links_list_link_text": "Legal informations",
-            "links_list_link_url": "shopify:\/\/pages\/contact"
+            "links_list_link_text": "Mentions légales",
+            "links_list_link_url": "shopify:\/\/pages\/mentions-legales"
           }
         },
         "links_list_Uci87C": {
           "type": "links_list",
           "settings": {
-            "links_list_link_text": "Deliveries",
-            "links_list_link_url": "shopify:\/\/pages\/contact"
-          }
-        },
-        "links_list_MjJn7K": {
-          "type": "links_list",
-          "settings": {
-            "links_list_link_text": "Deliveries",
-            "links_list_link_url": "shopify:\/\/pages\/contact"
+            "links_list_link_text": "Livraisons",
+            "links_list_link_url": "shopify:\/\/pages\/livraisons"
           }
         },
         "links_list_LwWkk9": {
@@ -135,7 +128,7 @@
         "links_list_GHaBYQ": {
           "type": "links_list",
           "settings": {
-            "links_list_link_text": "Location and hours",
+            "links_list_link_text": "Localisation et horaires",
             "links_list_link_url": "shopify:\/\/pages\/contact"
           }
         }
@@ -145,7 +138,6 @@
         "links_list_RnteVh",
         "links_list_BEWzqT",
         "links_list_Uci87C",
-        "links_list_MjJn7K",
         "links_list_LwWkk9",
         "links_list_GHaBYQ"
       ],
@@ -157,7 +149,7 @@
       "settings": {
         "color_scheme": "",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Abonnez-vous à nos emails",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
