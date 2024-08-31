@@ -74,6 +74,7 @@
 }
 
 .article-card__excerpt {
+  font-size: 0.875rem;
   width: 100%;
   margin-top: 0.75rem;
 }
