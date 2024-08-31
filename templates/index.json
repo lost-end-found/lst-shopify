@@ -35,36 +35,36 @@
     "collection_list_brCEnF": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_FbEpHt": {
+        "featured_collection_Em3iWz": {
           "type": "featured_collection",
           "settings": {
-            "collection": "architecture-1"
+            "collection": "tous-les-livres-photo"
           }
         },
         "featured_collection_ahyz9d": {
           "type": "featured_collection",
           "settings": {
-            "collection": "dessin-et-illustration"
+            "collection": "magazines"
+          }
+        },
+        "featured_collection_FbEpHt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fanzines-micro-editions"
           }
         },
         "featured_collection_Xtwqtx": {
           "type": "featured_collection",
           "settings": {
-            "collection": "photographie"
-          }
-        },
-        "featured_collection_Em3iWz": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "romans-graphiques"
+            "collection": "objets"
           }
         }
       },
       "block_order": [
-        "featured_collection_FbEpHt",
+        "featured_collection_Em3iWz",
         "featured_collection_ahyz9d",
-        "featured_collection_Xtwqtx",
-        "featured_collection_Em3iWz"
+        "featured_collection_FbEpHt",
+        "featured_collection_Xtwqtx"
       ],
       "settings": {
         "title": "Collections",
@@ -84,7 +84,7 @@
       "settings": {
         "heading": "News",
         "heading_size": "h2",
-        "blog": "",
+        "blog": "news",
         "post_limit": 2,
         "columns_desktop": 2,
         "color_scheme": "",
