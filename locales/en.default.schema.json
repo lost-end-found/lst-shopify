@@ -2046,6 +2046,9 @@
     "main-page": {
       "name": "Page"
     },
+    "main-page-no-title": {
+      "name": "Page No Title"
+    },
     "main-password-footer": {
       "name": "Password footer"
     },
