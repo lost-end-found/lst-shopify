@@ -2044,10 +2044,8 @@
       "name": "Order"
     },
     "main-page": {
-      "name": "Page"
-    },
-    "main-page-no-title": {
-      "name": "Page No Title"
+      "name": "Page",
+      "show_title": "Show page title"
     },
     "main-password-footer": {
       "name": "Password footer"
