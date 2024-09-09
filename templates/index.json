@@ -6,28 +6,17 @@
         "slide_HfTFf3": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2294x1200_SansTitre_Chacarita-860x455.jpg",
-            "heading": "Slide",
+            "image": "shopify:\/\/shop_images\/240826-template-booklaunch26-860x455.jpg",
+            "heading": "Lancement <span style=\"text-decoration:underline\">After Party<\/span>",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "shopify:\/\/collections\/all"
-          }
-        },
-        "slide_dXhV8W": {
-          "type": "slide",
-          "settings": {
-            "heading": "Slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story Hahaha images",
-            "button_label": "Button label",
-            "link": ""
+            "subheading": "<strong>de François Prost<\/strong>",
+            "button_label": "plus d'infos",
+            "link": "shopify:\/\/metaobjects\/events\/lancement-after-party"
           }
         }
       },
       "block_order": [
-        "slide_HfTFf3",
-        "slide_dXhV8W"
+        "slide_HfTFf3"
       ],
       "settings": {
       }

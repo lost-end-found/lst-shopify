@@ -1,13 +1,22 @@
 {{ 'component-carousel-vite.css' | asset_url | stylesheet_tag }}
 {%- style -%}
 {%- endstyle -%}
+{% assign current_time = 'now' | date: '%s' %}
+{% assign upcoming_events = null | sort %}
+
+{% for event in shop.metaobjects.events.values %}
+  {% assign event_time = event.start_date_time | date: '%s' %}
+  {% if event_time > current_time %}
+    {% assign event_object = event | sort %}
+    {% assign upcoming_events = upcoming_events | concat: event_object %}
+  {% endif %}
+{% endfor %}
 
 <div class="color-{{ section.settings.color_scheme }} gradient lst-border-x lst-border-b  lst-border-black">
   <div class="slideshow js-slideshow " data-swipe="on">
-    <p class="h2 lst-text-black lst-px-3 lg:lst-px-5 lst-py-2">Events</p>
-
+    <p class="h2 lst-text-black lst-px-3 lg:lst-px-5 lst-py-2">{{ 'sections.events.events' | t }}</p>
     <ul class="slideshow__content">
-      {% for event in shop.metaobjects.events.values %}
+      {% for event in upcoming_events %}
         <div class="lst-grid lg:lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-y lst-border-black">
           <div class="lst-bg-[#F7F2EB] lst-p-3 lg:lst-p-5 lst-border-r lst-border-black">
             <div class="lst-grid lst-grid-cols-2">
@@ -21,6 +30,8 @@
                 <div class="lst-text-right">
                   {{ event.start_date_time | date: '%-Hh %-Mm' }} — {{ event.end_date_time | date: '%-Hh %-Mm' }}
                 </div>
+              {% else %}
+                <div class="lst-col-span-2">{{ start_date }} — {{ end_date }}</div>
               {%- endif -%}
             </div>
             <h2 class="h1">{{ event.title }}</h2>
@@ -30,9 +41,11 @@
           </div>
           <div>
             <img
-              src="{{ event.image | img_url: 'master' }}"
+              src="{{ event.image | image_url: width: 500, height: 300, crop: 'center' }}"
               class="lst-h-full lst-w-full lst-object-cover"
               alt="{{ event.image.alt }}"
+              width="500px"
+              height="300px"
             >
           </div>
           <div class="lg:lst-col-span-2 lst-grid lg:lst-grid-cols-4 lst-h-[45px] lst-items-center lst-border-t lst-border-black">
@@ -41,7 +54,7 @@
               href="{{ event.system.url }}"
             >
               {% render 'icon-arrow' %}
-              <span>More Information</span>
+              <span>{{ 'sections.events.more_info' | t }}</span>
             </a>
           </div>
         </div>

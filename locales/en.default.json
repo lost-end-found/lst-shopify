@@ -271,6 +271,10 @@
     }
   },
   "sections": {
+    "events": {
+      "events": "Events",
+      "more_info": "More Information"
+    },
     "announcements": {
       "previous_announcement": "Previous announcement",
       "next_announcement": "Next announcement",

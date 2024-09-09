@@ -278,6 +278,10 @@
     }
   },
   "sections": {
+    "events": {
+      "events": "Événements",
+      "more_info": "Plus d'informations"
+    },
     "header": {
       "announcement": "Annonce",
       "menu": "Menu",
