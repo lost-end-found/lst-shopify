@@ -271,6 +271,17 @@
     }
   },
   "sections": {
+    "latest_products" : {
+      "name" : "Latest products",
+      "settings" : {
+        "heading" : {
+          "label" : "Heading",
+        },
+        "product_limit" : {
+          "label" : "Product limit",
+        },
+      }
+    },
     "events": {
       "events": "Events",
       "more_info": "More Information"

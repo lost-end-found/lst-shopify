@@ -2,33 +2,17 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 
 {% comment %}theme-check-enable UndefinedObject{% endcomment %}
-{%- style -%}
-  .latest-products {
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  .latest-products__item {
-    margin-bottom: 20px;
-  }
-  .latest-products__image {
-    max-width: 100%;
-    height: auto;
-  }
-  .latest-products__title {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  .latest-products__price {
-    color: #333;
-  }
-{%- endstyle -%}
 
-<section class="latest-products">
-  <h2 class="latest-products__heading">Latest Products</h2>
-  <div class="latest-products__list">
-    {% assign latest_products = collections.all.products | sort: 'created_at' | reverse | limit: 5 %}
-    {% for product in latest_products %}
-      {% render 'card-product-lst', card_product: product %}
+<section class="lst-border-b lst-border-black">
+  <div class="lst-px-3 lg:lst-px-5 lst-py-2 lst-border-b lst-border-black lst-text-center">
+    <h2 class="h2">{{ section.settings.heading }}</h2>
+  </div>
+  <div class="lst-grid lst-grid-cols-2 lg:lst-grid-cols-4 lst-divide-x lst-divide-black">
+    {% assign latest_products = collections.all.products | sort: 'published_at' | reverse %}
+    {% for product in latest_products limit: section.settings.product_limit %}
+      <div class="lst-border-b lst-border-black">
+        {% render 'card-product-lst', card_product: product %}
+      </div>
     {% endfor %}
   </div>
 </section>
@@ -46,9 +30,14 @@
       "type": "range",
       "id": "product_limit",
       "label": "t:sections.latest_products.settings.product_limit.label",
-      "default": 5,
+      "default": 4,
       "min": 1,
       "max": 20
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.latest_products.settings.collection.label"
     }
   ],
   "presets": [
