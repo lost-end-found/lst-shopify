@@ -1,0 +1,61 @@
+<!-- sections/latest-products.liquid -->
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+
+{% comment %}theme-check-enable UndefinedObject{% endcomment %}
+{%- style -%}
+  .latest-products {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  .latest-products__item {
+    margin-bottom: 20px;
+  }
+  .latest-products__image {
+    max-width: 100%;
+    height: auto;
+  }
+  .latest-products__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .latest-products__price {
+    color: #333;
+  }
+{%- endstyle -%}
+
+<section class="latest-products">
+  <h2 class="latest-products__heading">Latest Products</h2>
+  <div class="latest-products__list">
+    {% assign latest_products = collections.all.products | sort: 'created_at' | reverse | limit: 5 %}
+    {% for product in latest_products %}
+      {% render 'card-product-lst', card_product: product %}
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "t:sections.latest_products.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.latest_products.settings.heading.label",
+      "default": "Latest Products"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "label": "t:sections.latest_products.settings.product_limit.label",
+      "default": 5,
+      "min": 1,
+      "max": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.latest_products.presets.name",
+      "category": "t:sections.latest_products.presets.category"
+    }
+  ]
+}
+{% endschema %}
