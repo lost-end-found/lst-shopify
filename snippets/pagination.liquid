@@ -16,7 +16,7 @@
 {%- if paginate.parts.size > 0 -%}
   <div class="pagination-wrapper">
     <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-      <ul class="pagination__list list-unstyled" role="list">
+      <ul class="pagination__list lst-gap-x-4 list-unstyled" role="list">
         {%- if paginate.previous -%}
           <li>
             <a
@@ -24,7 +24,9 @@
               class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
               aria-label="{{ 'general.pagination.previous' | t }}"
             >
-              {% render 'icon-caret' %}
+              <span class="icon-wrap lst-ml-2 group-hover:lst-ml-4 lst-transition-all lst-transform lst-rotate-90">
+                {%- render 'icon-arrow' -%}
+              </span>
             </a>
           </li>
         {%- endif -%}
@@ -64,7 +66,9 @@
               class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
               aria-label="{{ 'general.pagination.next' | t }}"
             >
-              {%- render 'icon-caret' -%}
+              <span class="icon-wrap lst-ml-2 group-hover:lst-ml-4 lst-transition-all lst-transform lst-rotate-90">
+                {%- render 'icon-arrow' -%}
+              </span>
             </a>
           </li>
         {%- endif -%}

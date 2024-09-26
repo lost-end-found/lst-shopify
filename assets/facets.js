@@ -1,15 +1,278 @@
+// Combined facets.js and component-custom-select-vite.js
+const CustomSelect = (function () {
+  function CustomSelect(element) {
+    this.element = element;
+    this.select = this.element.getElementsByTagName('select')[0];
+    if (!this.select) {
+      console.error('No select element found within', element);
+      return;
+    }
+    this.optGroups = this.select.getElementsByTagName('optgroup');
+    this.options = this.select.getElementsByTagName('option');
+    this.selectId = this.select.getAttribute('id');
+    this.trigger = null;
+    this.dropdown = null;
+    this.customOptions = null;
+    this.arrowIcon = this.element.getElementsByTagName('svg');
+    this.label = document.querySelector('[for="' + this.selectId + '"]');
+    this.labelContent = this.label ? ', ' + this.label.textContent : '';
+    this.optionIndex = 0;
+
+    this.initCustomSelect();
+    this.initCustomSelectEvents();
+  }
+
+  CustomSelect.prototype.initCustomSelect = function () {
+    this.element.insertAdjacentHTML('beforeend', this.initButtonSelect() + this.initListSelect());
+    this.dropdown = this.element.querySelector('.js-select__dropdown');
+    this.trigger = this.element.querySelector('.js-select__button');
+    this.customOptions = this.dropdown ? this.dropdown.querySelectorAll('.js-select__item') : [];
+    this.selectedOption = this.getSelectedOption();
+    this.select.classList.add('lst-hidden');
+    if (this.arrowIcon.length > 0) this.arrowIcon[0].style.display = 'none';
+    if (this.dropdown) {
+      this.placeDropdown();
+    }
+  };
+
+  CustomSelect.prototype.initCustomSelectEvents = function () {
+    if (this.trigger) {
+      this.trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        this.toggleCustomSelect();
+      });
+    }
+    if (this.label) {
+      this.label.addEventListener('click', () => this.moveFocus(this.trigger));
+    }
+    if (this.dropdown) {
+      this.dropdown.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowUp') {
+          this.keyboardCustomSelect('prev', event);
+        } else if (event.key === 'ArrowDown') {
+          this.keyboardCustomSelect('next', event);
+        }
+      });
+    }
+    this.initSelection();
+    document.addEventListener('click', (event) => {
+      if (!this.element.contains(event.target)) {
+        this.toggleCustomSelect(false);
+      }
+    });
+  };
+
+  CustomSelect.prototype.toggleCustomSelect = function (bool) {
+    var ariaExpanded =
+      bool !== undefined ? bool : this.trigger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+    this.trigger.setAttribute('aria-expanded', ariaExpanded);
+    if (this.dropdown) {
+      this.dropdown.style.display = ariaExpanded === 'true' ? 'block' : 'none';
+      if (ariaExpanded === 'true') {
+        this.placeDropdown();
+      }
+    }
+    if (ariaExpanded === 'true') {
+      var selectedOption = this.getSelectedOption();
+      this.moveFocus(selectedOption);
+    }
+  };
+
+  CustomSelect.prototype.placeDropdown = function () {
+    if (!this.dropdown) return;
+
+    // Remove placement classes to reset position
+    this.dropdown.classList.remove('select__dropdown--right', 'select__dropdown--up');
+
+    var triggerBoundingRect = this.trigger.getBoundingClientRect();
+
+    // Check if there's enough space to the right
+    var dropdownWidth = this.dropdown.offsetWidth;
+    var shouldMoveRight = document.documentElement.clientWidth - 5 < triggerBoundingRect.left + dropdownWidth;
+    this.dropdown.classList.toggle('select__dropdown--right', shouldMoveRight);
+
+    // Check if there's enough space up or down
+    var dropdownHeight = this.dropdown.offsetHeight;
+    var moveUp = window.innerHeight - triggerBoundingRect.bottom - 5 < triggerBoundingRect.top;
+    this.dropdown.classList.toggle('select__dropdown--up', moveUp);
+
+    // Set max-height based on available space
+    var maxHeight = moveUp ? triggerBoundingRect.top - 20 : window.innerHeight - triggerBoundingRect.bottom - 20;
+
+    // Check if we need to set a min-width
+    if (this.minWidth < triggerBoundingRect.width) {
+      this.dropdown.setAttribute(
+        'style',
+        'max-height: ' + maxHeight + 'px; min-width: ' + triggerBoundingRect.width + 'px;'
+      );
+    } else {
+      this.dropdown.setAttribute('style', 'max-height: ' + maxHeight + 'px;');
+    }
+  };
+
+  CustomSelect.prototype.keyboardCustomSelect = function (direction, event) {
+    event.preventDefault();
+    const options = Array.from(this.customOptions);
+    const focusedOption = this.dropdown.querySelector('.js-select__item:focus');
+    let index = focusedOption ? options.indexOf(focusedOption) : -1;
+
+    if (direction === 'next') {
+      index = (index + 1) % options.length;
+    } else {
+      index = (index - 1 + options.length) % options.length;
+    }
+
+    options[index].focus();
+  };
+
+  CustomSelect.prototype.initSelection = function () {
+    if (this.dropdown) {
+      this.dropdown.addEventListener('click', (event) => {
+        var option = event.target.closest('.js-select__item');
+        if (option) this.selectOption(option);
+      });
+    }
+  };
+
+  CustomSelect.prototype.selectOption = function (option) {
+    if (option.hasAttribute('aria-selected') && option.getAttribute('aria-selected') === 'true') {
+      this.toggleCustomSelect(false);
+    } else {
+      var selectedOption = this.dropdown.querySelector('[aria-selected="true"]');
+      if (selectedOption) selectedOption.setAttribute('aria-selected', 'false');
+      option.setAttribute('aria-selected', 'true');
+      this.trigger.getElementsByClassName('js-select__label')[0].textContent = option.textContent;
+      this.toggleCustomSelect(false);
+      this.updateNativeSelect(option.getAttribute('data-index'));
+      this.updateTriggerAria();
+    }
+    this.trigger.focus();
+  };
+
+  CustomSelect.prototype.updateNativeSelect = function (index) {
+    this.select.selectedIndex = index;
+    this.select.dispatchEvent(new CustomEvent('change', { bubbles: true }));
+    this.select.dispatchEvent(new CustomEvent('input', { bubbles: true }));
+  };
+
+  CustomSelect.prototype.updateTriggerAria = function () {
+    this.trigger.setAttribute('aria-label', this.options[this.select.selectedIndex].innerHTML + this.labelContent);
+  };
+
+  CustomSelect.prototype.getSelectedOption = function () {
+    if (!this.dropdown) return null;
+    var option = this.dropdown.querySelector('[aria-selected="true"]');
+    return option ? option : this.dropdown.querySelector('.js-select__item');
+  };
+
+  CustomSelect.prototype.moveFocus = function (element) {
+    if (!element) return;
+    element.focus();
+    if (document.activeElement !== element) {
+      element.setAttribute('tabindex', '-1');
+      element.focus();
+    }
+  };
+
+  CustomSelect.prototype.initButtonSelect = function () {
+    var customClasses = this.element.getAttribute('data-trigger-class')
+      ? ' ' + this.element.getAttribute('data-trigger-class')
+      : '';
+    var selectedOption = this.options[this.select.selectedIndex];
+    var label = selectedOption ? selectedOption.innerHTML + this.labelContent : '';
+    var button =
+      '<button type="button" class="js-select__button select__button' +
+      customClasses +
+      '" aria-label="' +
+      label +
+      '" aria-expanded="false" aria-controls="' +
+      this.selectId +
+      '-dropdown"><span aria-lst-="true" class="js-select__label select__label">' +
+      (selectedOption ? selectedOption.innerHTML : '') +
+      '</span>';
+    if (this.arrowIcon.length > 0 && this.arrowIcon[0].outerHTML) {
+      var clone = this.arrowIcon[0].cloneNode(true);
+      clone.classList.remove('select__icon');
+      button += clone.outerHTML;
+    }
+    return button + '</button>';
+  };
+
+  CustomSelect.prototype.initListSelect = function () {
+    var list =
+      '<div class="js-select__dropdown select__dropdown" aria-describedby="' +
+      this.selectId +
+      '-description" id="' +
+      this.selectId +
+      '-dropdown">';
+    list += this.getSelectLabelSR();
+    if (this.optGroups.length > 0) {
+      for (var i = 0; i < this.optGroups.length; i++) {
+        var optGroupList = this.optGroups[i].getElementsByTagName('option'),
+          optGroupLabel =
+            '<li><span class="select__item select__item--optgroup">' +
+            this.optGroups[i].getAttribute('label') +
+            '</span></li>';
+        list +=
+          '<ul class="select__list" role="listbox">' + optGroupLabel + this.getOptionsList(optGroupList) + '</ul>';
+      }
+    } else {
+      list += '<ul class="select__list" role="listbox">' + this.getOptionsList(this.options) + '</ul>';
+    }
+    return list + '</div>';
+  };
+
+  CustomSelect.prototype.getSelectLabelSR = function () {
+    return this.label
+      ? '<p class="sr-only lst-px-3 lg:lst-px-4 lst-text-xs" id="' +
+          this.selectId +
+          '-description">' +
+          this.label.textContent +
+          '</p>'
+      : '';
+  };
+
+  CustomSelect.prototype.resetCustomSelect = function () {
+    var selectedOption = this.dropdown.querySelector('[aria-selected="true"]');
+    if (selectedOption) selectedOption.setAttribute('aria-selected', 'false');
+    var option = this.dropdown.querySelector('.js-select__item[data-index="' + this.select.selectedIndex + '"]');
+    option.setAttribute('aria-selected', 'true');
+    this.trigger.getElementsByClassName('js-select__label')[0].textContent = option.textContent;
+    this.trigger.setAttribute('aria-expanded', 'false');
+    this.updateTriggerAria();
+  };
+
+  CustomSelect.prototype.getOptionsList = function (options) {
+    var list = '';
+    for (var i = 0; i < options.length; i++) {
+      var selected = options[i].hasAttribute('selected') ? ' aria-selected="true"' : ' aria-selected="false"';
+      list +=
+        '<li><button type="button" class="reset js-select__item select__item select__item--option" role="option" data-value="' +
+        options[i].value +
+        '" ' +
+        selected +
+        ' data-index="' +
+        this.optionIndex +
+        '">' +
+        options[i].text +
+        '</button></li>';
+      this.optionIndex++;
+    }
+    return list;
+  };
+
+  return CustomSelect;
+})();
+
+// FacetFiltersForm functionality
 class FacetFiltersForm extends HTMLElement {
   constructor() {
     super();
     this.onActiveFilterClick = this.onActiveFilterClick.bind(this);
-
     this.debouncedOnSubmit = debounce((event) => {
       this.onSubmitHandler(event);
-    }, 800);
-
-    const facetForm = this.querySelector('form');
-    facetForm.addEventListener('input', this.debouncedOnSubmit.bind(this));
-
+    }, 500);
+    this.querySelector('form').addEventListener('input', this.debouncedOnSubmit.bind(this));
     const facetWrapper = this.querySelector('#FacetsWrapperDesktop');
     if (facetWrapper) facetWrapper.addEventListener('keyup', onKeyUpEscape);
   }
@@ -34,10 +297,6 @@ class FacetFiltersForm extends HTMLElement {
     const sections = FacetFiltersForm.getSections();
     const countContainer = document.getElementById('ProductCount');
     const countContainerDesktop = document.getElementById('ProductCountDesktop');
-    const loadingSpinners = document.querySelectorAll(
-      '.facets-container .loading__spinner, facet-filters-form .loading__spinner'
-    );
-    loadingSpinners.forEach((spinner) => spinner.classList.remove('hidden'));
     document.getElementById('ProductGridContainer').querySelector('.collection').classList.add('loading');
     if (countContainer) {
       countContainer.classList.add('loading');
@@ -45,16 +304,13 @@ class FacetFiltersForm extends HTMLElement {
     if (countContainerDesktop) {
       countContainerDesktop.classList.add('loading');
     }
-
     sections.forEach((section) => {
       const url = `${window.location.pathname}?section_id=${section.section}&${searchParams}`;
       const filterDataUrl = (element) => element.url === url;
-
       FacetFiltersForm.filterData.some(filterDataUrl)
         ? FacetFiltersForm.renderSectionFromCache(filterDataUrl, event)
         : FacetFiltersForm.renderSectionFromFetch(url, event);
     });
-
     if (updateURLHash) FacetFiltersForm.updateURLHash(searchParams);
   }
 
@@ -67,7 +323,8 @@ class FacetFiltersForm extends HTMLElement {
         FacetFiltersForm.renderFilters(html, event);
         FacetFiltersForm.renderProductGridContainer(html);
         FacetFiltersForm.renderProductCount(html);
-        if (typeof initializeScrollAnimationTrigger === 'function') initializeScrollAnimationTrigger(html.innerHTML);
+        FacetFiltersForm.renderAdditionalElements(html);
+        FacetFiltersForm.initializeCustomSelects();
       });
   }
 
@@ -76,165 +333,102 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderFilters(html, event);
     FacetFiltersForm.renderProductGridContainer(html);
     FacetFiltersForm.renderProductCount(html);
-    if (typeof initializeScrollAnimationTrigger === 'function') initializeScrollAnimationTrigger(html.innerHTML);
+    FacetFiltersForm.renderAdditionalElements(html);
+    FacetFiltersForm.initializeCustomSelects();
   }
 
   static renderProductGridContainer(html) {
     document.getElementById('ProductGridContainer').innerHTML = new DOMParser()
       .parseFromString(html, 'text/html')
       .getElementById('ProductGridContainer').innerHTML;
-
-    document
-      .getElementById('ProductGridContainer')
-      .querySelectorAll('.scroll-trigger')
-      .forEach((element) => {
-        element.classList.add('scroll-trigger--cancel');
-      });
   }
 
   static renderProductCount(html) {
     const count = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductCount').innerHTML;
     const container = document.getElementById('ProductCount');
     const containerDesktop = document.getElementById('ProductCountDesktop');
-    container.innerHTML = count;
+    container.innerHTML = '(' + count + ')';
     container.classList.remove('loading');
     if (containerDesktop) {
-      containerDesktop.innerHTML = count;
+      containerDesktop.innerHTML = '(' + count + ')';
       containerDesktop.classList.remove('loading');
     }
-    const loadingSpinners = document.querySelectorAll(
-      '.facets-container .loading__spinner, facet-filters-form .loading__spinner'
-    );
-    loadingSpinners.forEach((spinner) => spinner.classList.add('hidden'));
   }
 
   static renderFilters(html, event) {
     const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
-    const facetDetailsElementsFromFetch = parsedHTML.querySelectorAll(
+    const facetDetailsElements = parsedHTML.querySelectorAll(
       '#FacetFiltersForm .js-filter, #FacetFiltersFormMobile .js-filter, #FacetFiltersPillsForm .js-filter'
     );
-    const facetDetailsElementsFromDom = document.querySelectorAll(
-      '#FacetFiltersForm .js-filter, #FacetFiltersFormMobile .js-filter, #FacetFiltersPillsForm .js-filter'
-    );
-
-    // Remove facets that are no longer returned from the server
-    Array.from(facetDetailsElementsFromDom).forEach((currentElement) => {
-      if (!Array.from(facetDetailsElementsFromFetch).some(({ id }) => currentElement.id === id)) {
-        currentElement.remove();
-      }
-    });
-
-    const matchesId = (element) => {
+    const matchesIndex = (element) => {
       const jsFilter = event ? event.target.closest('.js-filter') : undefined;
-      return jsFilter ? element.id === jsFilter.id : false;
+      return jsFilter ? element.dataset.index === jsFilter.dataset.index : false;
     };
+    const facetsToRender = Array.from(facetDetailsElements).filter((element) => !matchesIndex(element));
+    const countsToRender = Array.from(facetDetailsElements).find(matchesIndex);
 
-    const facetsToRender = Array.from(facetDetailsElementsFromFetch).filter((element) => !matchesId(element));
-    const countsToRender = Array.from(facetDetailsElementsFromFetch).find(matchesId);
-
-    facetsToRender.forEach((elementToRender, index) => {
-      const currentElement = document.getElementById(elementToRender.id);
-      // Element already rendered in the DOM so just update the innerHTML
-      if (currentElement) {
-        document.getElementById(elementToRender.id).innerHTML = elementToRender.innerHTML;
-      } else {
-        if (index > 0) {
-          const { className: previousElementClassName, id: previousElementId } = facetsToRender[index - 1];
-          // Same facet type (eg horizontal/vertical or drawer/mobile)
-          if (elementToRender.className === previousElementClassName) {
-            document.getElementById(previousElementId).after(elementToRender);
-            return;
-          }
-        }
-
-        if (elementToRender.parentElement) {
-          document.querySelector(`#${elementToRender.parentElement.id} .js-filter`).before(elementToRender);
-        }
-      }
+    facetsToRender.forEach((element) => {
+      document.querySelector(`.js-filter[data-index="${element.dataset.index}"]`).innerHTML = element.innerHTML;
     });
 
     FacetFiltersForm.renderActiveFacets(parsedHTML);
     FacetFiltersForm.renderAdditionalElements(parsedHTML);
 
-    if (countsToRender) {
-      const closestJSFilterID = event.target.closest('.js-filter').id;
-
-      if (closestJSFilterID) {
-        FacetFiltersForm.renderCounts(countsToRender, event.target.closest('.js-filter'));
-        FacetFiltersForm.renderMobileCounts(countsToRender, document.getElementById(closestJSFilterID));
-
-        const newFacetDetailsElement = document.getElementById(closestJSFilterID);
-        const newElementSelector = newFacetDetailsElement.classList.contains('mobile-facets__details')
-          ? `.mobile-facets__close-button`
-          : `.facets__summary`;
-        const newElementToActivate = newFacetDetailsElement.querySelector(newElementSelector);
-
-        const isTextInput = event.target.getAttribute('type') === 'text';
-
-        if (newElementToActivate && !isTextInput) newElementToActivate.focus();
-      }
-    }
+    if (countsToRender) FacetFiltersForm.renderCounts(countsToRender, event.target.closest('.js-filter'));
   }
 
   static renderActiveFacets(html) {
+    const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
     const activeFacetElementSelectors = ['.active-facets-mobile', '.active-facets-desktop'];
 
     activeFacetElementSelectors.forEach((selector) => {
-      const activeFacetsElement = html.querySelector(selector);
-      if (!activeFacetsElement) return;
-      document.querySelector(selector).innerHTML = activeFacetsElement.innerHTML;
+      const activeFacetsElement = parsedHTML.querySelector(selector);
+      const targetElement = document.querySelector(selector);
+
+      if (activeFacetsElement && targetElement) {
+        targetElement.innerHTML = activeFacetsElement.innerHTML;
+      } else if (!targetElement) {
+        console.warn(`Element with selector "${selector}" not found in the document.`);
+      }
     });
 
     FacetFiltersForm.toggleActiveFacets(false);
   }
 
   static renderAdditionalElements(html) {
+    const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
     const mobileElementSelectors = ['.mobile-facets__open', '.mobile-facets__count', '.sorting'];
 
     mobileElementSelectors.forEach((selector) => {
-      if (!html.querySelector(selector)) return;
-      document.querySelector(selector).innerHTML = html.querySelector(selector).innerHTML;
+      const sourceElement = parsedHTML.querySelector(selector);
+      const targetElement = document.querySelector(selector);
+      if (sourceElement && targetElement) {
+        targetElement.innerHTML = sourceElement.innerHTML;
+      }
     });
 
-    document.getElementById('FacetFiltersFormMobile').closest('menu-drawer').bindEvents();
+    const mobileForm = document.getElementById('FacetFiltersFormMobile');
+    if (mobileForm) {
+      const menuDrawer = mobileForm.closest('menu-drawer');
+      if (menuDrawer && typeof menuDrawer.bindEvents === 'function') {
+        menuDrawer.bindEvents();
+      }
+    }
   }
 
   static renderCounts(source, target) {
-    const targetSummary = target.querySelector('.facets__summary');
-    const sourceSummary = source.querySelector('.facets__summary');
+    const targetElement = target.querySelector('.facets__selected');
+    const sourceElement = source.querySelector('.facets__selected');
 
-    if (sourceSummary && targetSummary) {
-      targetSummary.outerHTML = sourceSummary.outerHTML;
+    const targetElementAccessibility = target.querySelector('.facets__summary');
+    const sourceElementAccessibility = source.querySelector('.facets__summary');
+
+    if (sourceElement && targetElement) {
+      target.querySelector('.facets__selected').outerHTML = source.querySelector('.facets__selected').outerHTML;
     }
 
-    const targetHeaderElement = target.querySelector('.facets__header');
-    const sourceHeaderElement = source.querySelector('.facets__header');
-
-    if (sourceHeaderElement && targetHeaderElement) {
-      targetHeaderElement.outerHTML = sourceHeaderElement.outerHTML;
-    }
-
-    const targetWrapElement = target.querySelector('.facets-wrap');
-    const sourceWrapElement = source.querySelector('.facets-wrap');
-
-    if (sourceWrapElement && targetWrapElement) {
-      const isShowingMore = Boolean(target.querySelector('show-more-button .label-show-more.hidden'));
-      if (isShowingMore) {
-        sourceWrapElement
-          .querySelectorAll('.facets__item.hidden')
-          .forEach((hiddenItem) => hiddenItem.classList.replace('hidden', 'show-more-item'));
-      }
-
-      targetWrapElement.outerHTML = sourceWrapElement.outerHTML;
-    }
-  }
-
-  static renderMobileCounts(source, target) {
-    const targetFacetsList = target.querySelector('.mobile-facets__list');
-    const sourceFacetsList = source.querySelector('.mobile-facets__list');
-
-    if (sourceFacetsList && targetFacetsList) {
-      targetFacetsList.outerHTML = sourceFacetsList.outerHTML;
+    if (targetElementAccessibility && sourceElementAccessibility) {
+      target.querySelector('.facets__summary').outerHTML = source.querySelector('.facets__summary').outerHTML;
     }
   }
 
@@ -250,36 +444,20 @@ class FacetFiltersForm extends HTMLElement {
     ];
   }
 
-  createSearchParams(form) {
-    const formData = new FormData(form);
-    return new URLSearchParams(formData).toString();
-  }
-
-  onSubmitForm(searchParams, event) {
-    FacetFiltersForm.renderPage(searchParams, event);
+  static initializeCustomSelects() {
+    const selectElements = document.getElementsByClassName('js-select');
+    if (selectElements.length > 0) {
+      Array.from(selectElements).forEach((element) => {
+        new CustomSelect(element);
+      });
+    }
   }
 
   onSubmitHandler(event) {
     event.preventDefault();
-    const sortFilterForms = document.querySelectorAll('facet-filters-form form');
-    if (event.srcElement.className == 'mobile-facets__checkbox') {
-      const searchParams = this.createSearchParams(event.target.closest('form'));
-      this.onSubmitForm(searchParams, event);
-    } else {
-      const forms = [];
-      const isMobile = event.target.closest('form').id === 'FacetFiltersFormMobile';
-
-      sortFilterForms.forEach((form) => {
-        if (!isMobile) {
-          if (form.id === 'FacetSortForm' || form.id === 'FacetFiltersForm' || form.id === 'FacetSortDrawerForm') {
-            forms.push(this.createSearchParams(form));
-          }
-        } else if (form.id === 'FacetFiltersFormMobile') {
-          forms.push(this.createSearchParams(form));
-        }
-      });
-      this.onSubmitForm(forms.join('&'), event);
-    }
+    const formData = new FormData(event.target.closest('form'));
+    const searchParams = new URLSearchParams(formData).toString();
+    FacetFiltersForm.renderPage(searchParams, event);
   }
 
   onActiveFilterClick(event) {
@@ -299,67 +477,16 @@ FacetFiltersForm.searchParamsPrev = window.location.search.slice(1);
 customElements.define('facet-filters-form', FacetFiltersForm);
 FacetFiltersForm.setListeners();
 
-class PriceRange extends HTMLElement {
-  constructor() {
-    super();
-    this.querySelectorAll('input').forEach((element) => {
-      element.addEventListener('change', this.onRangeChange.bind(this));
-      element.addEventListener('keydown', this.onKeyDown.bind(this));
-    });
-    this.setMinAndMaxValues();
-  }
-
-  onRangeChange(event) {
-    this.adjustToValidValues(event.currentTarget);
-    this.setMinAndMaxValues();
-  }
-
-  onKeyDown(event) {
-    if (event.metaKey) return;
-
-    const pattern = /[0-9]|\.|,|'| |Tab|Backspace|Enter|ArrowUp|ArrowDown|ArrowLeft|ArrowRight|Delete|Escape/;
-    if (!event.key.match(pattern)) event.preventDefault();
-  }
-
-  setMinAndMaxValues() {
-    const inputs = this.querySelectorAll('input');
-    const minInput = inputs[0];
-    const maxInput = inputs[1];
-    if (maxInput.value) minInput.setAttribute('data-max', maxInput.value);
-    if (minInput.value) maxInput.setAttribute('data-min', minInput.value);
-    if (minInput.value === '') maxInput.setAttribute('data-min', 0);
-    if (maxInput.value === '') minInput.setAttribute('data-max', maxInput.getAttribute('data-max'));
-  }
-
-  adjustToValidValues(input) {
-    const value = Number(input.value);
-    const min = Number(input.getAttribute('data-min'));
-    const max = Number(input.getAttribute('data-max'));
-
-    if (value < min) input.value = min;
-    if (value > max) input.value = max;
-  }
+// Helper function
+function debounce(fn, wait) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
 }
 
-customElements.define('price-range', PriceRange);
-
-class FacetRemove extends HTMLElement {
-  constructor() {
-    super();
-    const facetLink = this.querySelector('a');
-    facetLink.setAttribute('role', 'button');
-    facetLink.addEventListener('click', this.closeFilter.bind(this));
-    facetLink.addEventListener('keyup', (event) => {
-      event.preventDefault();
-      if (event.code.toUpperCase() === 'SPACE') this.closeFilter(event);
-    });
-  }
-
-  closeFilter(event) {
-    event.preventDefault();
-    const form = this.closest('facet-filters-form') || document.querySelector('facet-filters-form');
-    form.onActiveFilterClick(event);
-  }
-}
-
-customElements.define('facet-remove', FacetRemove);
+// Initialize custom selects on page load
+document.addEventListener('DOMContentLoaded', function () {
+  FacetFiltersForm.initializeCustomSelects();
+});

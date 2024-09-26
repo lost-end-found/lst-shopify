@@ -9,12 +9,17 @@
 <div class="lst-px-3 md:lst-px-5 lst-sr-only">
   <h1>{{ page.title }}</h1>
 </div>
-
-<div class="events-container lst-grid lst-grid-cols-2">
+<div class="events-container lst-grid lg:lst-grid-cols-2 lst-divide-x lst-divide-black">
   {% for event in events %}
-    <div class="event-item lst-bg-[#F7F2EB] lst-p-2">
+    <div class="event-item lst-bg-[#F7F2EB] lst-p-4 lst-border-b lst-border-black">
       {% if event.image.value %}
-        <img src="{{ event.image.value | image_url: width: 300 }}" class="lst-w-full" alt="{{ event.title.value }}">
+        <img
+          width="300"
+          height="auto"
+          src="{{ event.image.value | image_url: width: 300 }}"
+          class="lst-w-full lst-aspect-video lst-object-cover"
+          alt="{{ event.title.value }}"
+        >
       {% endif %}
       <div class="lst-grid lst-grid-cols-2">
         <h2 class="lst-col-span-2 lst-text-base lst-text-black lst-p-2 lst-border-b lst-border-black">

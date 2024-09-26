@@ -14,6 +14,7 @@ export default defineConfig(({ command, mode }) => {
         // overwrite default .html entry
         input: [
           './src/js/component-product-slideshow.js',
+          './src/js/component-custom-select.js',
           './src/js/component-carousel-swipe-content.js',
           './src/js/component-carousel.js',
           './src/js/component-ticker.js',
@@ -21,6 +22,7 @@ export default defineConfig(({ command, mode }) => {
           './src/css/component-carousel.css',
           './src/css/component-ticker.css',
           './src/css/component-product-slideshow.css',
+          './src/css/component-custom-select.css',
         ],
         output: {
           entryFileNames: '[name]-vite.js',

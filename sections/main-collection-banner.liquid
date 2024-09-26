@@ -12,9 +12,34 @@
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper lst-text-center">
-      <h1 class="collection-hero__title lst-px-5 !lst-my-0 lst-py-3 lst-border-b lst-border-black">
+      <h1 class="collection-hero__title lst-px-5 !lst-my-0 lst-py-3 lst-border-b lst-border-black lst-flex lst-justify-center lst-gap-3 lst-items-center">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
+        <div class="light" role="status">
+          <h2 class="product-count__text text-body">
+            <span id="ProductCountDesktop">
+              {%- if collection.results_count -%}
+                (
+                {{
+                  'templates.search.results_with_count'
+                  | t: terms: collection.terms, count: collection.results_count
+                -}}
+                )
+              {%- elsif collection.products_count == collection.all_products_count -%}
+                ({{ 'products.facets.product_count_simple' | t: count: collection.products_count }})
+              {%- else -%}
+                (
+                {{-
+                  'products.facets.product_count'
+                  | t: product_count: collection.products_count, count: collection.all_products_count
+                -}}
+                )
+              {%- endif -%}
+            </span>
+          </h2>
+
+          {%- render 'loading-spinner' -%}
+        </div>
       </h1>
 
       {%- if section.settings.show_collection_description -%}

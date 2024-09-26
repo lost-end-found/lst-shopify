@@ -26,7 +26,7 @@
     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      <div class="lst-px-3 lg:lst-px-5 lst-py-2 lst-border-b lst-border-black">
+      <div class="lst-px-3 lg:lst-px-5 lst-py-2 lst-border-b lst-border-black lst-text-center">
         <h2 class="h2">{{ section.settings.heading }}</h2>
       </div>
       <ul

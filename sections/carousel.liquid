@@ -12,11 +12,13 @@
           {% if block.settings.image != blank %}
             <img
               src="{{ block.settings.image | img_url: 'master'  }}"
-              class="lst-w-full lg:lst-h-[calc(100vh-153px)]"
-              alt=""
+              class="lst-w-full lg:lst-max-h-[calc(100vh-153px)]"
+              width="100%"
+              height="100%"
+              alt="Placeholder image"
             >
           {% else %}
-            <div class="lst-w-full lg:lst-h-[calc(100vh-153px)] lst-bg-primary lst-aspect-video">
+            <div class="lst-w-full lg:lst-max-h-[calc(100vh-153px)] lst-aspect-video lst-bg-primary">
               <div class="lst-flex lst-items-center lst-justify-center lst-h-full">
                 <p class="lst-text-white lst-text-2xl lst-sr-only">No image selected</p>
               </div>

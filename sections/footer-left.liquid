@@ -1,5 +1,17 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 
+{% comment %}theme-check-enable UndefinedObject{% endcomment %}
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    order: 2;
+  }
+  @media screen and (min-width: 1024px) {
+  #shopify-section-{{ section.id }} {
+      order: none;
+    }
+  }
+{%- endstyle -%}
+
 <section class="lst-bg-primary lst-h-full">
   <div class="footer lst-h-full lst-flex lst-flex-col lst-justify-between">
     <div class="section-{{ section.id }} lst-px-3 lg:lst-px-5 lst-py-8">

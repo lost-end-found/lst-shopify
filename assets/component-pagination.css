@@ -13,12 +13,13 @@
   flex-wrap: wrap;
   justify-content: center;
   
+  
 }
 
-.pagination__list > li {
+/* .pagination__list > li {
   flex: 1 0 1.5625rem;
   max-width: 1.5625rem;
-}
+} */
 
 .pagination__list > li:not(:last-child) {
   margin-right: 0.625rem;

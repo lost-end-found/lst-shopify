@@ -39,9 +39,9 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover lst-bg-[#D9D9D9] hover:lst-bg-opacity-70 lst-transition-all">
+  <div class="card-wrapper product-card-wrapper underline-links-hover lst-bg-[#D9D9D9] lst-bg-opacity-0 hover:lst-bg-opacity-20 lst-transition-all">
     <div
-      class="card lst-aspect-[298/400] sm:lst-aspect-[298/371] lst-justify-between lst-w-full lst-h-auto lst-relative"
+      class="card lst-justify-between lst-w-full lst-h-auto lst-relative"
     >
       <div
         class="card__inner lst-flex lst-flex-col lst-justify-between lst-h-full lst-bg-transparent"
@@ -107,11 +107,11 @@
             </div>
           </div>
         {%- endif -%}
-        <div class="lst-flex lst-flex-col lst-justify-end">
-          <div class="!lst-px-3 !lst-pb-1 !lst-pt-3">
-            <div class="lst-text-sm sm:lst-text-xl lst-min-w-0">
+        <div class="lst-flex lst-flex-col lst-justify-end lst-grow">
+          <div class="!lst-px-3 !lst-pb-1 !lst-pt-3 lst-flex lst-flex-col lst-justify-between lst-grow">
+            <div class="lst-text-sm sm:lst-text-xl lst-min-w-0 lst-grow">
               <h3
-                class="card__heading lst-truncate lst-inline"
+                class="card__heading lst-inline"
                 {% if card_product.featured_media or settings.card_style == 'card' %}
                   id="title-{{ section_id }}-{{ card_product.id }}"
                 {% endif %}
@@ -119,14 +119,14 @@
                 <a
                   href="{{ card_product.url }}"
                   id="CardLink-{{ section_id }}-{{ card_product.id }}"
-                  class="full-unstyled-link lst-truncate"
+                  class="full-unstyled-link"
                   aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
                 >
                   {{ card_product.title | escape }}
                 </a>
               </h3>
             </div>
-            <div class="card-information lst-grow">
+            <div class="card-information ">
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
                 <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>

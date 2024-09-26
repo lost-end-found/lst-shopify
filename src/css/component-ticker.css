@@ -34,7 +34,7 @@ Usage: codyhouse.co/license
   will-change: transform;
   transform: translateZ(0px);
           backface-visibility: hidden;
-          @apply lst-bg-primary lst-py-3 lst-text-2xl;
+          @apply lst-bg-primary lst-py-2 lst-text-base;
 }
 
 /* class added in JS to trigger the scrolling animation */

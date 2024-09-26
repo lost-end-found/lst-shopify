@@ -12,76 +12,82 @@
   {% endif %}
 {% endfor %}
 
-<div class="color-{{ section.settings.color_scheme }} gradient lst-border-x lst-border-b  lst-border-black">
-  <div class="slideshow js-slideshow " data-swipe="on">
-    <p class="h2 lst-text-black lst-px-3 lg:lst-px-5 lst-py-2">{{ 'sections.events.events' | t }}</p>
-    <ul class="slideshow__content">
-      {% for event in upcoming_events %}
-        <div class="lst-grid lg:lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-y lst-border-black">
-          <div class="lst-bg-[#F7F2EB] lst-p-3 lg:lst-p-5 lst-border-r lst-border-black">
-            <div class="lst-grid lst-grid-cols-2">
-              {%- assign start_date = event.start_date_time | date: '%d %b %Y' -%}
-              {%- assign end_date = event.end_date_time | date: '%d %b %Y' -%}
-
-              {%- if start_date == end_date -%}
-                <div>
-                  {{ start_date }}
-                </div>
-                <div class="lst-text-right">
-                  {{ event.start_date_time | date: '%-Hh %-Mm' }} — {{ event.end_date_time | date: '%-Hh %-Mm' }}
-                </div>
-              {% else %}
-                <div class="lst-col-span-2">{{ start_date }} — {{ end_date }}</div>
-              {%- endif -%}
-            </div>
-            <h2 class="h1">{{ event.title }}</h2>
-            <div class="lst-prose">
-              {{ event.description }}
-            </div>
-          </div>
-          <div>
-            <img
-              src="{{ event.image | image_url: width: 500, height: 300, crop: 'center' }}"
-              class="lst-h-full lst-w-full lst-object-cover"
-              alt="{{ event.image.alt }}"
-              width="500px"
-              height="300px"
-            >
-          </div>
-          <div class="lg:lst-col-span-2 lst-grid lg:lst-grid-cols-4 lst-h-[45px] lst-items-center lst-border-t lst-border-black">
-            <a
-              class="h4 lst-text-black hover:lst-bg-primary lst-px-3 lg:lst-px-5 lst-h-full lst-flex lst-items-center lst-space-x-2 lg:lst-col-span-2"
-              href="{{ event.system.url }}"
-            >
-              {% render 'icon-arrow' %}
-              <span>{{ 'sections.events.more_info' | t }}</span>
-            </a>
-          </div>
-        </div>
-      {% endfor %}
-    </ul>
-    <div class="lst-h-[45px] lst-grid lst-grid-cols-4 lg:-lst-mt-[45px] lst-py-2">
-      <ul class="lst-col-start-3 lst-flex lst-px-3 lg:lst-px-5 lst-divide-x lst-divide-black">
-        <li class="js-slideshow__control  lst-h-full lst-transform lst-rotate-180 lst-flex lst-items-center lst-relative lst-z-10 lst-pl-3">
-          <button class="js-tab-focus lst-flex lst-items-center lst-h-full">
-            {% render 'icon-arrow' %}
-          </button>
-        </li>
-        <li class="js-slideshow__control  lst-h-full lst-flex lst-items-center lst-relative lst-z-10 lst-pl-3">
-          <button class="js-tab-focus lst-flex lst-items-center lst-h-full ">
-            {% render 'icon-arrow' %}
-          </button>
-        </li>
-      </ul>
-      <div class="js-slideshow__numbers lst-px-3 lg:lst-px-5 lst-flex lst-items-center lst-justify-end">
-        <p class="h4 lst-text-right">
-          <i class="lst-not-italic js-carousel__counter"></i>/<i class="lst-not-italic js-carousel__counter-tot"></i>
+{% if upcoming_events.size != 0 %}
+  <div class="color-{{ section.settings.color_scheme }} gradient lst-border-x lst-border-b  lst-border-black">
+    <div class="slideshow js-slideshow " data-swipe="on">
+      <a href="{{ pages.events.url }}" class="lst-text-center">
+        <p class="h2 lst-text-black lst-px-3 lg:lst-px-5 lst-py-2 lst-underline">
+          {{ 'sections.events.events' | t }}
         </p>
+      </a>
+      <ul class="slideshow__content">
+        {% for event in upcoming_events %}
+          <div class="lst-grid lg:lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-y lst-border-black">
+            <div class="lst-bg-[#F7F2EB] lst-p-3 lg:lst-p-5 lst-border-r lst-border-black">
+              <div class="lst-grid lst-grid-cols-2">
+                {%- assign start_date = event.start_date_time | date: '%d %b %Y' -%}
+                {%- assign end_date = event.end_date_time | date: '%d %b %Y' -%}
+
+                {%- if start_date == end_date -%}
+                  <div>
+                    {{ start_date }}
+                  </div>
+                  <div class="lst-text-right">
+                    {{ event.start_date_time | date: '%-Hh %-Mm' }} — {{ event.end_date_time | date: '%-Hh %-Mm' }}
+                  </div>
+                {% else %}
+                  <div class="lst-col-span-2">{{ start_date }} — {{ end_date }}</div>
+                {%- endif -%}
+              </div>
+              <h2 class="h1">{{ event.title }}</h2>
+              <div class="lst-prose">
+                {{ event.description }}
+              </div>
+            </div>
+            <div>
+              <img
+                src="{{ event.image | image_url: width: 500, height: 300, crop: 'center' }}"
+                class="lst-h-full lst-w-full lst-object-cover"
+                alt="{{ event.image.alt }}"
+                width="500px"
+                height="300px"
+              >
+            </div>
+            <div class="lg:lst-col-span-2 lst-grid lg:lst-grid-cols-4 lst-h-[45px] lst-items-center lst-border-t lst-border-black">
+              <a
+                class="h4 lst-text-black hover:lst-bg-primary lst-px-3 lg:lst-px-5 lst-h-full lst-flex lst-items-center lst-space-x-2 lg:lst-col-span-2"
+                href="{{ event.system.url }}"
+              >
+                {% render 'icon-arrow' %}
+                <span>{{ 'sections.events.more_info' | t }}</span>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </ul>
+      <div class="lst-h-[45px] lst-grid lst-grid-cols-4 lg:-lst-mt-[45px] lst-py-2">
+        <ul class="lst-col-start-3 lst-flex lst-px-3 lg:lst-px-5 lst-divide-x lst-divide-black">
+          <li class="js-slideshow__control  lst-h-full lst-transform lst-rotate-180 lst-flex lst-items-center lst-relative lst-z-10 lst-pl-3">
+            <button class="js-tab-focus lst-flex lst-items-center lst-h-full">
+              {% render 'icon-arrow' %}
+            </button>
+          </li>
+          <li class="js-slideshow__control  lst-h-full lst-flex lst-items-center lst-relative lst-z-10 lst-pl-3">
+            <button class="js-tab-focus lst-flex lst-items-center lst-h-full ">
+              {% render 'icon-arrow' %}
+            </button>
+          </li>
+        </ul>
+        <div class="js-slideshow__numbers lst-px-3 lg:lst-px-5 lst-flex lst-items-center lst-justify-end">
+          <p class="h4 lst-text-right">
+            <i class="lst-not-italic js-carousel__counter"></i>/<i class="lst-not-italic js-carousel__counter-tot"></i>
+          </p>
+        </div>
       </div>
+      <div class="js-slideshow-bullets lst-hidden"></div>
     </div>
-    <div class="js-slideshow-bullets lst-hidden"></div>
   </div>
-</div>
+{% endif %}
 
 {% schema %}
 {
