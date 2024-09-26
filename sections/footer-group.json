@@ -52,6 +52,7 @@
         },
         "link_with_icon_dFHFcp": {
           "type": "link_with_icon",
+          "disabled": true,
           "settings": {
             "link_with_icon_text": "Question",
             "link_with_icon_url": "shopify:\/\/collections\/frontpage",
@@ -60,6 +61,7 @@
         },
         "link_with_icon_YFCEiW": {
           "type": "link_with_icon",
+          "disabled": true,
           "settings": {
             "link_with_icon_text": "Question",
             "link_with_icon_url": "shopify:\/\/collections\/frontpage",
@@ -68,6 +70,7 @@
         },
         "link_with_icon_kYNnHd": {
           "type": "link_with_icon",
+          "disabled": true,
           "settings": {
             "link_with_icon_text": "Secure payment",
             "link_with_icon_url": "shopify:\/\/products\/animal-print-hair-band-various-colours",

@@ -70,6 +70,7 @@
     },
     "featured_blog_9TTkkj": {
       "type": "featured-blog",
+      "disabled": true,
       "settings": {
         "heading": "News",
         "heading_size": "h2",
@@ -141,8 +142,8 @@
     "carousel_BJXnET",
     "collection_list_brCEnF",
     "featured_blog_9TTkkj",
+    "latest_products_rX6xdJ",
     "featured_products_qAGAaa",
-    "events_list_DEtdVK",
-    "latest_products_rX6xdJ"
+    "events_list_DEtdVK"
   ]
 }
