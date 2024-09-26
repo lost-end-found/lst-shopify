@@ -8,8 +8,7 @@
     <h2 class="h2">{{ section.settings.heading }}</h2>
   </div>
   <div class="lst-grid lst-grid-cols-2 lg:lst-grid-cols-4 lst-divide-x lst-divide-black">
-    {% assign latest_products = collections.all.products | sort: 'published_at' | reverse %}
-    {% for product in latest_products limit: section.settings.product_limit %}
+    {% for product in section.settings.collection.products limit: section.settings.product_limit %}
       <div class="lst-border-b lst-border-black">
         {% render 'card-product-lst', card_product: product %}
       </div>
