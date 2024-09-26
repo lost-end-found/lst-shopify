@@ -156,7 +156,7 @@
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-                class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
+                class="menu-drawer__account link focus-inset h5 lst-block lg:lst-hidden"
               >
                 <account-icon class="lst-mr-3">
                   {%- if customer and customer.has_avatar? -%}
