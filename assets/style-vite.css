@@ -1610,10 +1610,6 @@ select {
   top: 54px;
 }
 
-.lst-top-\[54pxs\] {
-  top: 54pxs;
-}
-
 .lst-z-10 {
   z-index: 10;
 }
@@ -1662,6 +1658,11 @@ select {
   margin-bottom: 0px;
 }
 
+.lst-my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .lst-my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -1670,11 +1671,6 @@ select {
 .lst-my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-.lst-my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .\!lst-mb-0 {
