@@ -2313,7 +2313,11 @@ product-info .loading__spinner:not(.hidden) ~ *,
   z-index: 4;
 }
 
-.section-header ~ .shopify-section-group-header-group {
+.section-header {
+  z-index: 4;
+}
+
+.section-header ~ .shopify-section-group-header-group-home, .section-header ~ .shopify-section-group-header-group {
   z-index: initial;
 }
 

@@ -42,7 +42,7 @@
 
 .footer__content-bottom {
   border-top: solid 0.0625rem rgba(var(--color-foreground), 0.08);
-  padding-top: 1.875rem;
+  padding-top: 0.1875rem;
 }
 
 .footer__content-bottom:only-child {
