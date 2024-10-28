@@ -2608,12 +2608,33 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.lst-text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 .lst-underline {
   text-decoration-line: underline;
 }
 
+.lst-line-through {
+  text-decoration-line: line-through;
+}
+
+.\!lst-line-through {
+  text-decoration-line: line-through !important;
+}
+
 .lst-no-underline {
   text-decoration-line: none;
+}
+
+.lst-decoration-1 {
+  text-decoration-thickness: 1px;
+}
+
+.\!lst-decoration-1 {
+  text-decoration-thickness: 1px !important;
 }
 
 .lst-opacity-5 {

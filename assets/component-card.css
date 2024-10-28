@@ -403,7 +403,7 @@
 
   .underline-links-hover:hover a {
     text-decoration: underline;
-    text-underline-offset: 0.1875rem;
+    text-underline-offset: 0.1275rem;
   }
 }
 

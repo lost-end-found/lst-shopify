@@ -110,6 +110,19 @@
         <div class="lst-flex lst-flex-col lst-justify-end lst-grow">
           <div class="!lst-px-3 !lst-pb-1 !lst-pt-3 lst-flex lst-flex-col lst-justify-between lst-grow">
             <div class="lst-text-sm sm:lst-text-xl lst-min-w-0 lst-grow">
+              <p class="lst-text-xs">
+                {% assign authors_string = card_product.metafields.alexandrie.authors
+                  | replace: '[', ''
+                  | replace: ']', ''
+                  | replace: '"', ''
+                %}
+                {% assign authors_array = authors_string | split: ',' %}
+
+                {% for author in authors_array %}
+                  {{ author -}}
+                  {%- unless forloop.last %},{% endunless %}
+                {% endfor %}
+              </p>
               <h3
                 class="card__heading lst-inline"
                 {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -119,7 +132,7 @@
                 <a
                   href="{{ card_product.url }}"
                   id="CardLink-{{ section_id }}-{{ card_product.id }}"
-                  class="full-unstyled-link"
+                  class="full-unstyled-link !lst-decoration-1 lst {%- if card_product.available == false -%} lst !lst-line-through {%- endif -%}"
                   aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
                 >
                   {{ card_product.title | escape }}
@@ -169,8 +182,14 @@
                   </span>
                 </p>
               {%- endif -%}
+              {%- if card_product.available == false -%}
+                <span class="lst-text-xs lst-text-red-500">
+                  {{ 'products.product.sold_out' | t }}
+                </span>
+              {% else %}
+                {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+              {%- endif -%}
 
-              {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
               {%- if card_product.quantity_price_breaks_configured? -%}
                 {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
                   {% liquid
@@ -539,7 +558,7 @@
       <div class="card__content">
         <div class="card__information lst-flex">
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
-            <a role="link" aria-disabled="true" class="full-unstyled-link">
+            <a role="link" aria-disabled="true" class="full-unstyled-link lst-no-underline">
               {{ 'onboarding.product_title' | t }}
             </a>
           </h3>
