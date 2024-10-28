@@ -311,7 +311,11 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
+    {% if template == 'index' %}
+      {% sections 'header-group-home' %}
+    {% else %}
+      {% sections 'header-group' %}
+    {% endif %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

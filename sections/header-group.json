@@ -2,24 +2,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "ticker": {
-      "type": "ticker",
-      "blocks": {
-        "ticker-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "tout notre stock n’est pas encore en ligne - si vous recherchez une référence, n’hésitez pas à nous écrire !",
-            "link": "mailto:contact@librairiesanstitre.com"
-          }
-        }
-      },
-      "block_order": [
-        "ticker-0"
-      ],
-      "settings": {
-        "pause_on_hover": true
-      }
-    },
     "header": {
       "type": "header",
       "settings": {
@@ -40,7 +22,6 @@
     }
   },
   "order": [
-    "ticker",
     "header"
   ]
 }
