@@ -9,7 +9,7 @@
             "image": "shopify:\/\/shop_images\/240826-template-booklaunch26-860x455.jpg",
             "heading": "Lancement <span style=\"text-decoration:underline\">After Party<\/span>",
             "heading_size": "h1",
-            "subheading": "<strong>de François Prost<\/strong>",
+            "subheading": "de François Prost",
             "button_label": "plus d'infos",
             "link": "shopify:\/\/metaobjects\/events\/lancement-after-party"
           }
@@ -86,6 +86,14 @@
         "padding_bottom": 0
       }
     },
+    "latest_products_rX6xdJ": {
+      "type": "latest-products",
+      "settings": {
+        "heading": "Latest Products",
+        "product_limit": 4,
+        "collection": "derniers-produits"
+      }
+    },
     "featured_products_qAGAaa": {
       "type": "featured-products",
       "blocks": {
@@ -127,14 +135,6 @@
     "events_list_DEtdVK": {
       "type": "events-list",
       "settings": {
-      }
-    },
-    "latest_products_rX6xdJ": {
-      "type": "latest-products",
-      "settings": {
-        "heading": "Latest Products",
-        "product_limit": 4,
-        "collection": "derniers-produits"
       }
     }
   },
