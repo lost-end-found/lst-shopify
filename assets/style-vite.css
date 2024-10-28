@@ -2782,6 +2782,10 @@ select {
     max-height: calc(100vh - 153px);
   }
 
+  .lg\:lst-min-h-\[45px\] {
+    min-height: 45px;
+  }
+
   .lg\:lst-grow-0 {
     flex-grow: 0;
   }

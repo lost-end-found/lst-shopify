@@ -247,6 +247,12 @@
         height: 100%;
       }
 
+      @media (min-width: 1024px) {
+        html {
+          font-size: clamp(1rem, 1.25vw, 2rem);
+        }
+      }
+
       body {
         display: grid;
         grid-template-rows: auto auto 1fr auto;
