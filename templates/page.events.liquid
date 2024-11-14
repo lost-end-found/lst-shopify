@@ -11,21 +11,23 @@
 </div>
 <div class="events-container lst-grid lg:lst-grid-cols-2 lst-divide-x lst-divide-black">
   {% for event in events %}
-    <div class="event-item lst-bg-[#F7F2EB] lst-p-4 lst-border-b lst-border-black">
-      {% if event.image.value %}
-        <img
-          width="300"
-          height="auto"
-          src="{{ event.image.value | image_url: width: 300 }}"
-          class="lst-w-full lst-aspect-video lst-object-cover"
-          alt="{{ event.title.value }}"
-        >
-      {% endif %}
+    <div class="event-item lst-bg-[#F7F2EB] lst-border-b lst-border-black">
+      <div class="lst-px-4 lst-pt-4">
+        {% if event.image.value %}
+          <img
+            width="300"
+            height="auto"
+            src="{{ event.image.value | image_url: width: 300 }}"
+            class="lst-w-full lst-aspect-video lst-object-cover"
+            alt="{{ event.title.value }}"
+          >
+        {% endif %}
+      </div>
       <div class="lst-grid lst-grid-cols-2">
-        <h2 class="lst-col-span-2 lst-text-base lst-text-black lst-p-2 lst-border-b lst-border-black">
+        <h2 class="lst-col-span-2 lst-text-base lst-text-black lst-p-2 lst-border-b lst-border-black lst-px-4">
           {{ event.title.value }}
         </h2>
-        <div class="lst-text-base lst-text-black lst-p-2">
+        <div class="lst-text-base lst-text-black lst-py-2 lst-px-4">
           {% if event.location.value %}
             <p>Location: {{ event.location.value }}</p>
           {% endif %}
