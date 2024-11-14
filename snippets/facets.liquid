@@ -201,7 +201,7 @@
                             {%- endcapture -%}
 
                             {%- capture text_value -%}
-                              <span class="facet-checkbox__text" aria-hidden="true">
+                              <span class="facet-checkbox__text lst-text-xs lst-leading-[1.6rem] " aria-hidden="true">
                                 <span class="facet-checkbox__text-label">{{- value.label | escape }}</span> ({{- value.count -}})
                               </span>
                               <span class="visually-hidden">
@@ -266,7 +266,7 @@
                                       aria-hidden="true"
                                       focusable="false"
                                     >
-                                      <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                                      <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"></rect>
                                     </svg>
 
                                     <svg
@@ -589,8 +589,8 @@
                               {%- endcapture -%}
 
                               {%- capture text_value -%}
-                                <span class="facet-checkbox__text" aria-hidden="true">
-                                  <span class="facet-checkbox__text-label">{{- value.label | escape }}</span> ({{- value.count -}})
+                                <span class="facet-checkbox__text lst-text-xs lst-leading-[1.6rem]" aria-hidden="true">
+                                  <span class="facet-checkbox__text-label ">{{- value.label | escape }}</span> ({{- value.count -}})
                                 </span>
                                 <span class="visually-hidden">
                                   {{- value.label | escape }} (
@@ -657,7 +657,7 @@
                                         aria-hidden="true"
                                         focusable="false"
                                       >
-                                        <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                                        <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"></rect>
                                       </svg>
 
                                       <svg

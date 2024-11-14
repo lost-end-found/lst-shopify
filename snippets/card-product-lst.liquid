@@ -132,7 +132,7 @@
                 <a
                   href="{{ card_product.url }}"
                   id="CardLink-{{ section_id }}-{{ card_product.id }}"
-                  class="full-unstyled-link !lst-decoration-1 lst {%- if card_product.available == false -%} lst !lst-line-through {%- endif -%}"
+                  class="lst-text-xs lg:lst-text-sm xl:lst-text-base link link--text focus-inset full-unstyled-link !lst-decoration-1 lst {%- if card_product.available == false -%} lst !lst-line-through {%- endif -%}"
                   aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
                 >
                   {{ card_product.title | escape }}

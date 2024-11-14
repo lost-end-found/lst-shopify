@@ -432,10 +432,9 @@
 }
 
 .facet-checkbox {
-  padding: 0.625rem 1.25rem 0.625rem 0;
+  padding: 0.25rem 1.25rem 0.25rem 0;
   flex-grow: 1;
   position: relative;
-  font-size: 20px;
   display: flex;
   word-break: break-word;
 }
@@ -507,9 +506,9 @@
 .facet-checkbox .icon-checkmark {
   visibility: hidden;
   position: absolute;
-  left: 0.1875rem;
+  left: 0.25rem;
   z-index: 5;
-  top: 18px;
+  top: 0.75rem;
 }
 
 .facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark {
@@ -619,13 +618,12 @@ span.active-facets__button-inner:after {
 
 @media screen and (max-width: 989px) {
   .active-facets {
-    margin: 0 -0.75rem -0.75rem;
+    margin: 0 -0.75rem 0;
   }
 
   .active-facets__button,
   .active-facets__button-remove {
     margin: 0;
-    padding: 0.75rem;
   }
 
   span.active-facets__button-inner {
