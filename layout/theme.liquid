@@ -384,5 +384,8 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'facet-filter-search.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

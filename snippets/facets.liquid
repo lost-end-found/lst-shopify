@@ -175,6 +175,16 @@
                       {%- endif -%}
                       <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
                         <legend class="visually-hidden">{{ filter.label | escape }}</legend>
+                        {%- if filter.param_name contains 'author' or filter.param_name contains 'publisher' -%}
+                          <div class="facet-filter__search lst-mx-3 lst-mb-4">
+                            <input
+                              type="text"
+                              class="facet-filter__search-input lst-w-full lst-px-3 lst-py-2 lst-border lst-border-gray-300 lst-rounded lst-text-sm"
+                              placeholder="{% if filter.param_name contains 'author' %}{{ 'products.facets.filter_search_placeholder' | t }}{% else %}{{ 'products.facets.filter_search_publishers_placeholder' | t }}{% endif %}"
+                              data-facet-filter-search
+                            >
+                          </div>
+                        {%- endif -%}
                         {%- liquid
                           assign sorted_values = filter.values
                           # Keep the selected values grouped together when operator is AND

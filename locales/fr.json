@@ -190,10 +190,10 @@
     "facets": {
       "apply": "Appliquer",
       "clear": "Effacer",
-      "clear_all": "Tout supprimer",
+      "clear_all": "Tout effacer",
       "from": "De",
       "filter_and_sort": "Filtrer et trier",
-      "filter_by_label": "Filtre :",
+      "filter_by_label": "Filtrer par",
       "filter_button": "Filtrer",
       "filters_selected": {
         "one": "{{ count }} sélectionné",
@@ -215,11 +215,13 @@
       "sort_button": "Trier",
       "sort_by_label": "Trier par :",
       "to": "Destination",
-      "clear_filter": "Supprimer le filtre",
+      "clear_filter": "Effacer le filtre",
       "filter_selected_accessibility": "{{ type }} ({{ count }} filtres sélectionnés)",
       "show_more": "Afficher plus",
       "show_less": "Afficher moins",
-      "filter_and_operator_subtitle": "Tout associer"
+      "filter_and_operator_subtitle": "Toutes les valeurs sélectionnées doivent correspondre",
+      "filter_search_placeholder": "Rechercher des auteurs...",
+      "filter_search_publishers_placeholder": "Rechercher des éditeurs..."
     }
   },
   "templates": {
@@ -298,12 +300,12 @@
       "note": "Instructions spéciales concernant la commande",
       "checkout": "Procéder au paiement",
       "empty": "Votre panier est vide",
-      "cart_error": "Une erreur est survenue lors de l’actualisation de votre panier. Veuillez réessayer.",
+      "cart_error": "Une erreur est survenue lors de l'actualisation de votre panier. Veuillez réessayer.",
       "cart_quantity_error_html": "Vous ne pouvez pas ajouter plus de {{ quantity }} de ce produit à votre panier.",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxes, réductions et <a href=\"{{ link }}\">frais d’expédition<\/a> calculés à l’étape du paiement",
-      "taxes_included_but_shipping_at_checkout": "Taxe incluse, frais d’expédition et réductions calculés à l’étape du paiement",
-      "taxes_included_and_shipping_policy_html": "Taxe incluse. <a href=\"{{ link }}\">Frais d’expédition<\/a> et réductions calculés à l’étape du paiement.",
-      "taxes_and_shipping_at_checkout": "Taxes, réductions et frais d’expédition calculés à l’étape du paiement",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes, réductions et <a href=\"{{ link }}\">frais d'expédition<\/a> calculés à l'étape du paiement",
+      "taxes_included_but_shipping_at_checkout": "Taxe incluse, frais d'expédition et réductions calculés à l'étape du paiement",
+      "taxes_included_and_shipping_policy_html": "Taxe incluse. <a href=\"{{ link }}\">Frais d'expédition<\/a> et réductions calculés à l'étape du paiement.",
+      "taxes_and_shipping_at_checkout": "Taxes, réductions et frais d'expédition calculés à l'étape du paiement",
       "headings": {
         "product": "Produit",
         "price": "Prix",
@@ -360,7 +362,7 @@
       "next_announcement": "Annonce suivante",
       "carousel": "Carrousel",
       "announcement": "Annonce",
-      "announcement_bar": "Barre d’annonces"
+      "announcement_bar": "Barre d'annonces"
     },
     "quick_order_list": {
       "product_total": "Sous-total des produits",

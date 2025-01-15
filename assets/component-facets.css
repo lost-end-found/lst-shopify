@@ -46,6 +46,10 @@
   }
 }
 
+.facet-filter__search {
+  margin: 0.3125rem 1.25rem;
+}
+
 .facet-filters__label {
   display: block;
   color: rgba(var(--color-foreground), 0.85);

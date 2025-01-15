@@ -189,14 +189,17 @@
       "label": "Media gallery"
     },
     "facets": {
-      "filter_and_operator_subtitle": "Match all",
+      "filter_by_label": "Filter by",
+      "filter_button": "Filter",
+      "filter_and_operator_subtitle": "All selected values must match",
+      "clear_filter": "Clear filter",
+      "clear_all": "Clear all",
+      "from": "From",
+      "filter_search_placeholder": "Search authors...",
+      "filter_search_publishers_placeholder": "Search publishers...",
+      "filter_and_sort": "Filter and sort",
       "apply": "Apply",
       "clear": "Clear",
-      "clear_all": "Remove all",
-      "from": "From",
-      "filter_and_sort": "Filter and sort",
-      "filter_by_label": "Filter:",
-      "filter_button": "Filter",
       "filters_selected": {
         "one": "{{ count }} selected",
         "other": "{{ count }} selected"
@@ -216,8 +219,7 @@
       "reset": "Reset",
       "sort_button": "Sort",
       "sort_by_label": "Sort by:",
-      "to": "To",
-      "clear_filter": "Remove filter"
+      "to": "To"
     }
   },
   "templates": {
