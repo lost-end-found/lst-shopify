@@ -399,6 +399,17 @@
     },
     "products-slideshow": {
       "view_all": "Voir tout"
+    },
+    "latest_products": {
+      "name": "Derniers produits",
+      "settings": {
+        "heading": {
+          "label": "En-tête"
+        },
+        "product_limit": {
+          "label": "Limite de produits"
+        }
+      }
     }
   },
   "localization": {
