@@ -121,6 +121,7 @@
         },
         "links_list_LwWkk9": {
           "type": "links_list",
+          "disabled": true,
           "settings": {
             "links_list_link_text": "Press inquiries",
             "links_list_link_url": "shopify:\/\/pages\/contact"
@@ -128,6 +129,7 @@
         },
         "links_list_GHaBYQ": {
           "type": "links_list",
+          "disabled": true,
           "settings": {
             "links_list_link_text": "Localisation et horaires",
             "links_list_link_url": "shopify:\/\/pages\/contact"

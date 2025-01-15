@@ -88,7 +88,7 @@
     "latest_products_rX6xdJ": {
       "type": "latest-products",
       "settings": {
-        "heading": "Latest Products",
+        "heading": "DERNIERES ACQUISITIONS",
         "product_limit": 4,
         "collection": "derniers-produits"
       }
