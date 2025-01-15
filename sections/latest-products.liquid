@@ -7,7 +7,7 @@
   <div class="lst-px-3 lg:lst-px-5 lst-py-5 lst-border-b lst-border-black lst-text-left lst-uppercase">
     <h2 class="h2">{{ section.settings.heading }}</h2>
   </div>
-  <div class="lst-grid lst-grid-cols-2 lst-divide-x lst-divide-black">
+  <div class="lst-grid lst-grid-cols-2 md:lst-grid-cols-4 lst-divide-x lst-divide-black">
     {% for product in section.settings.collection.products limit: section.settings.product_limit %}
       <div class="lst-border-b lst-border-black">
         {% render 'card-product-lst', card_product: product %}

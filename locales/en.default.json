@@ -273,15 +273,18 @@
     }
   },
   "sections": {
-    "latest_products" : {
-      "name" : "Latest products",
-      "settings" : {
-        "heading" : {
-          "label" : "Heading",
+    "latest_products": {
+      "name": "Latest products",
+      "settings": {
+        "heading": {
+          "label": "Heading"
         },
-        "product_limit" : {
-          "label" : "Product limit",
+        "product_limit": {
+          "label": "Product limit"
         },
+        "collection": {
+          "label": "Collection"
+        }
       }
     },
     "events": {

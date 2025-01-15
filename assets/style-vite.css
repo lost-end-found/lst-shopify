@@ -1687,6 +1687,11 @@ select {
   margin-right: 0.25rem;
 }
 
+.lst-mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
 .lst-my-0 {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -1717,6 +1722,10 @@ select {
 
 .lst-mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.lst-mb-4 {
+  margin-bottom: 1rem;
 }
 
 .lst-mb-5 {
@@ -2116,6 +2125,11 @@ select {
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
 }
 
+.lst-border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+}
+
 .lst-border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
@@ -2480,6 +2494,14 @@ select {
 
   .md\:lst-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:lst-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:lst-grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:lst-px-5 {

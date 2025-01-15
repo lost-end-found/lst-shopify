@@ -162,6 +162,8 @@
       "date_of_publication": "Date de publication",
       "format": "Format",
       "pages": "Pages",
+      "language": "Langue",
+      "design": "Design",
       "view_full_details": "Afficher tous les détails",
       "include_taxes": "Taxes incluses.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition<\/a> calculés à l'étape de paiement.",
@@ -410,6 +412,9 @@
         },
         "product_limit": {
           "label": "Limite de produits"
+        },
+        "collection": {
+          "label": "Collection"
         }
       }
     }
