@@ -2464,6 +2464,10 @@ select {
     border-bottom-width: calc(0px * var(--tw-divide-y-reverse));
   }
 
+  .sm\:lst-border-r {
+    border-right-width: 1px;
+  }
+
   .sm\:lst-text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
