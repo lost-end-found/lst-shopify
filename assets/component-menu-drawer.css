@@ -177,7 +177,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   padding: 1.25rem 1.875rem;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 1023px) {
   .header--has-account:where(:not(.header--has-social):not(.header--has-localizations)) .menu-drawer__utility-links {
     padding: 1.25rem 1.875rem;
   }

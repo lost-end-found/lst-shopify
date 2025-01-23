@@ -41,7 +41,7 @@
 }
 
 .footer__content-bottom {
-  border-top: solid 0.0625rem rgba(var(--color-foreground), 0.08);
+  /* border-top: solid 0.0625rem rgba(var(--color-foreground), 0.08); */
   padding-top: 0.1875rem;
 }
 
