@@ -14,6 +14,10 @@
   position: absolute;
   right: 0;
   top: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-0.625rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .shopify-section-header-sticky .mega-menu__content {
@@ -29,20 +33,32 @@
   transform: translateY(-0.625rem);
 }
 
-.mega-menu[open] .mega-menu__content {
+.mega-menu:hover .mega-menu__content,
+.mega-menu:focus-within .mega-menu__content {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
+}
+
+.mega-menu .mega-menu__content {
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mega-menu[open] > .header__menu-item {
+  text-decoration: none;
 }
 
 .mega-menu__list {
   display: grid;
   padding: 0 1.5rem;
-  gap: 1.125rem 2.5rem;
+  gap: 0.5625rem 1.25rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   list-style: none;
 }
 
 .mega-menu__link {
+  font-size: 1rem;
   color: rgba(var(--color-foreground), 0.75);
   display: block;
   line-height: calc(1 + 0.3 / var(--font-body-scale));

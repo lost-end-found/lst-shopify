@@ -36,6 +36,65 @@ class HeaderMenu extends DetailsDisclosure {
   constructor() {
     super();
     this.header = document.querySelector('.header-wrapper');
+    this.bindHoverEvents();
+  }
+
+  bindHoverEvents() {
+    const megaMenus = document.querySelectorAll('.mega-menu');
+    
+    megaMenus.forEach(menu => {
+      let timeout;
+      const summary = menu.querySelector('summary');
+      const content = menu.querySelector('.mega-menu__content');
+      
+      const show = () => {
+        clearTimeout(timeout);
+        // Close all other mega menus first
+        megaMenus.forEach(otherMenu => {
+          if (otherMenu !== menu) {
+            const otherContent = otherMenu.querySelector('.mega-menu__content');
+            otherContent.style.visibility = 'hidden';
+            otherContent.style.opacity = '0';
+            otherContent.style.transform = 'translateY(-0.625rem)';
+            otherMenu.removeAttribute('open');
+          }
+        });
+        
+        menu.setAttribute('open', '');
+        content.style.visibility = 'visible';
+        content.style.opacity = '1';
+        content.style.transform = 'translateY(0)';
+        this.onToggle();
+      };
+
+      const hide = () => {
+        timeout = setTimeout(() => {
+          content.style.visibility = 'hidden';
+          content.style.opacity = '0';
+          content.style.transform = 'translateY(-0.625rem)';
+          menu.removeAttribute('open');
+          this.header.preventHide = false;
+        }, 400); // Increased delay to 400ms
+      };
+
+      const handleMouseLeave = (event) => {
+        const relatedTarget = event.relatedTarget;
+        // Check if moving between menu and content
+        if (menu.contains(relatedTarget)) {
+          clearTimeout(timeout);
+          return;
+        }
+        hide();
+      };
+
+      summary.addEventListener('mouseenter', show);
+      content.addEventListener('mouseenter', () => {
+        clearTimeout(timeout);
+        show();
+      });
+      summary.addEventListener('mouseleave', handleMouseLeave);
+      content.addEventListener('mouseleave', handleMouseLeave);
+    });
   }
 
   onToggle() {

@@ -2049,12 +2049,6 @@ select {
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
-.lst-divide-x-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-x-reverse: 0;
-  border-right-width: calc(0px * var(--tw-divide-x-reverse));
-  border-left-width: calc(0px * calc(1 - var(--tw-divide-x-reverse)));
-}
-
 .lst-divide-black > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-divide-opacity, 1));
@@ -2304,14 +2298,6 @@ select {
 
 .lst-pt-4 {
   padding-top: 1rem;
-}
-
-.\!lst-pt-12 {
-  padding-top: 3rem !important;
-}
-
-.\!lst-pt-4 {
-  padding-top: 1rem !important;
 }
 
 .lst-text-left {
