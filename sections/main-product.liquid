@@ -87,7 +87,7 @@
           data-url="{{ product.url }}"
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %} lst-grid lst-border-l lst-border-b lst-border-black"
         >
-          <div class="lst-grid xl:lst-grid-cols-2 lst-sticky lst-bottom-0 lst-top-[54px] md:lst-bottom-auto lst-row-start-2 md:lst-row-start-auto lst-z-50">
+          <div class="lst-grid xl:lst-grid-cols-2 lst-sticky sm:lst-static lst-bottom-0 lst-top-[54px] md:lst-bottom-auto lst-row-start-2 md:lst-row-start-auto lst-z-50">
             {%- assign product_form_id = 'product-form-' | append: section.id -%}
             {%- for block in section.blocks -%}
               {%- case block.type -%}

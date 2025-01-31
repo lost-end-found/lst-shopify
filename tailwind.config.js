@@ -22,6 +22,18 @@ export default {
         },
       },
       typography: ({ theme }) => ({
+        xl: {
+          css: {
+            p: {
+              marginTop: '0.5rem',
+              marginBottom: '0.5rem',
+              '+ p': {
+                marginTop: '0.5rem',
+                marginBottom: '0.5rem',
+              },
+            },
+          },
+        },
         black: {
           css: {
             '--tw-prose-body': theme('colors.black'),

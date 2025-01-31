@@ -625,6 +625,11 @@ h3 .icon-arrow,
 .animate-arrow:hover .icon-arrow path {
   transform: translateX(-0.03125rem);
 }
+.animate-arrow:hover .icon-arrow {
+  transition: all var(--duration-short) ease;
+  width: 0;
+  overflow: hidden;
+}
 
 /* base-details-summary */
 summary {
@@ -1875,7 +1880,7 @@ input[type='checkbox'] {
   left: var(--inputs-border-width);
   border: 0.0625rem solid transparent;
   border-radius: var(--inputs-radius);
-  box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity));
+  /* box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity)); */
   transition: box-shadow var(--duration-short) ease;
   z-index: 1;
 }
