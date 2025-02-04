@@ -385,7 +385,7 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+    {% comment %} <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script> {% endcomment %}
     <script src="{{ 'facet-filter-search.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
