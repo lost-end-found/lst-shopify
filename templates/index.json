@@ -122,46 +122,8 @@
       "type": "latest-products",
       "settings": {
         "heading": "DERNIERES ACQUISITIONS",
-        "product_limit": 4,
+        "product_limit": 12,
         "collection": "derniers-produits"
-      }
-    },
-    "featured_products_qAGAaa": {
-      "type": "featured-products",
-      "blocks": {
-        "product_dQ4pXg": {
-          "type": "product",
-          "settings": {
-            "product": "twice"
-          }
-        },
-        "product_t6dwAC": {
-          "type": "product",
-          "settings": {
-            "product": "et-tu-connaitras-lunivers-et-les-dieux"
-          }
-        },
-        "product_GqQJh6": {
-          "type": "product",
-          "settings": {
-            "product": "1-viceversa"
-          }
-        },
-        "product_FE63tT": {
-          "type": "product",
-          "settings": {
-            "product": "100-photos-de-david-bailey-pour-la-liberte-de-la-presse"
-          }
-        }
-      },
-      "block_order": [
-        "product_dQ4pXg",
-        "product_t6dwAC",
-        "product_GqQJh6",
-        "product_FE63tT"
-      ],
-      "settings": {
-        "title": "Our Favorites"
       }
     },
     "events_list_DEtdVK": {
@@ -202,7 +164,6 @@
     "collection_list_brCEnF",
     "featured_blog_9TTkkj",
     "latest_products_rX6xdJ",
-    "featured_products_qAGAaa",
     "events_list_DEtdVK",
     "featured_collection_UXHiaU"
   ]
