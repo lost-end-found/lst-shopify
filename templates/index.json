@@ -1,22 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "carousel_BJXnET": {
       "type": "carousel",
       "blocks": {
-        "slide_HfTFf3": {
+        "slide_X4tamD": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/240826-template-booklaunch26-860x455.jpg",
-            "heading": "Lancement <span style=\"text-decoration:underline\">After Party<\/span>",
+            "image": "shopify://shop_images/banniere1.jpg",
+            "heading": "T-SHIRT",
             "heading_size": "h1",
-            "subheading": "de François Prost",
-            "button_label": "plus d'infos",
-            "link": "shopify:\/\/metaobjects\/events\/lancement-after-party"
+            "subheading": "COLLECTION BOOKS IS HOT",
+            "button_label": "PLUS INFO",
+            "link": "shopify://products/t-shirt-collecting-books-is-hot"
+          }
+        },
+        "slide_6dN7X3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banniere3.jpg",
+            "heading": "T-SHIRT",
+            "heading_size": "h1",
+            "subheading": "COLLECTION BOOKS IS HOT",
+            "button_label": "PLUS INFO",
+            "link": "shopify://products/t-shirt-collecting-books-is-hot"
+          }
+        },
+        "slide_yraig6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banniere2.jpg",
+            "heading": "T-SHIRT",
+            "heading_size": "h1",
+            "subheading": "COLLECTION BOOKS IS HOT",
+            "button_label": "PLUS INFO",
+            "link": "shopify://products/t-shirt-collecting-books-is-hot"
           }
         }
       },
       "block_order": [
-        "slide_HfTFf3"
+        "slide_X4tamD",
+        "slide_6dN7X3",
+        "slide_yraig6"
       ],
       "settings": {}
     },
@@ -32,7 +65,7 @@
         "featured_collection_ahyz9d": {
           "type": "featured_collection",
           "settings": {
-            "collection": "magazines"
+            "collection": "romance"
           }
         },
         "featured_collection_FbEpHt": {
@@ -55,7 +88,7 @@
         "featured_collection_Xtwqtx"
       ],
       "settings": {
-        "title": "Collections",
+        "title": "Catégories",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -96,16 +129,16 @@
     "featured_products_qAGAaa": {
       "type": "featured-products",
       "blocks": {
-        "product_ngGajL": {
+        "product_dQ4pXg": {
           "type": "product",
           "settings": {
-            "product": "14092005-copenhagen"
+            "product": "twice"
           }
         },
         "product_t6dwAC": {
           "type": "product",
           "settings": {
-            "product": "autre-chose"
+            "product": "et-tu-connaitras-lunivers-et-les-dieux"
           }
         },
         "product_GqQJh6": {
@@ -122,7 +155,7 @@
         }
       },
       "block_order": [
-        "product_ngGajL",
+        "product_dQ4pXg",
         "product_t6dwAC",
         "product_GqQJh6",
         "product_FE63tT"
