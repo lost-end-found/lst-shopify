@@ -244,18 +244,7 @@
             <span class="lst-sr-only">{{ 'templates.cart.cart' | t }}</span>
           </span>
         </a>
-        <div class="desktop-localization-wrapper !lst-hidden lg:!lst-block">
-          {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-            <language-switch-form class="small-hide medium-hide" data-prevent-hide>
-              {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-                <div>
-                  <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                  {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-                </div>
-              {%- endform -%}
-            </language-switch-form>
-          {% endif %}
-  
+        <div class="desktop-localization-wrapper !lst-hidden lg:!lst-block">  
           {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
             <language-switch-form class="small-hide medium-hide" data-prevent-hide>
               {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}

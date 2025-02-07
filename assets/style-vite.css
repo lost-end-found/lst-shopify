@@ -2305,6 +2305,14 @@ select {
   padding-top: 1rem;
 }
 
+.lst-pr-2 {
+  padding-right: 0.5rem;
+}
+
+.lst-pr-6 {
+  padding-right: 1.5rem;
+}
+
 .lst-text-left {
   text-align: left;
 }

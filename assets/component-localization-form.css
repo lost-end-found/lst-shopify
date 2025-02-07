@@ -72,7 +72,7 @@
 }
 
 .disclosure__button.localization-form__select {
-  padding: calc(1.25rem + var(--inputs-border-width));
+  padding: calc(.25rem + var(--inputs-border-width));
   background: rgb(var(--color-background));
 }
 
@@ -96,7 +96,7 @@
 }
 
 .disclosure .localization-form__select {
-  padding-top: 0.625rem;
+  /* padding-top: 0.625rem; */
 }
 
 .localization-selector option {
