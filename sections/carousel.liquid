@@ -1,4 +1,4 @@
-{{ 'component-carousel-vite.css' | asset_url | stylesheet_tag }}
+{{ 'component-slideshow-vite.css' | asset_url | stylesheet_tag }}
 
 <div class="slideshow js-slideshow slideshow--transition-fade" data-swipe="on">
   <p class="lst-sr-only">Slideshow Items</p>
@@ -58,7 +58,7 @@
   </ul>
   <div
     class="lst-grid lg:lst-grid-cols-[minmax(200px,0.3fr)_minmax(200px,0.3fr)_minmax(100px,0.2fr)_minmax(100px,0.2fr)] lst-gap-x-6 js-slideshow-bullets lst-h-[45px] lg:-lst-mt-[45px]"
-  ></div>
+  />
   <ul>
     <li class="slideshow__control js-slideshow__control">
       <button class="slideshow__btn js-tab-focus">
@@ -168,4 +168,4 @@
 {% endschema %}
 
 <script src="{{ 'component-carousel-swipe-content-vite.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'component-carousel-vite.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'component-slideshow-vite.js' | asset_url }}" defer="defer"></script>

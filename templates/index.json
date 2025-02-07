@@ -122,7 +122,7 @@
       "type": "events-list",
       "settings": {}
     },
-    "featured_collection_UXHiaU": {
+    "featured_collection_D9Qa6r": {
       "type": "featured-collection",
       "settings": {
         "title": "{{ section.settings.collection.title }}",
@@ -130,10 +130,10 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "choix-de-lequipe",
+        "collection": "derniers-produits",
         "products_to_show": 12,
         "columns_desktop": 4,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
@@ -150,7 +150,7 @@
         "padding_bottom": 0
       }
     },
-    "featured_collection_D9Qa6r": {
+    "featured_collection_UXHiaU": {
       "type": "featured-collection",
       "settings": {
         "title": "{{ section.settings.collection.title }}",
@@ -158,8 +158,8 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "derniers-produits",
-        "products_to_show": 4,
+        "collection": "choix-de-lequipe",
+        "products_to_show": 12,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,

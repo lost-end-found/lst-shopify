@@ -1,67 +1,67 @@
 /* --------------------------------
 
-File#: _2_carousel
-Title: Carousel
+File#: _2_slideshow
+Title: slideshow
 Descr: Display and cycle through a collection of items
 Usage: codyhouse.co/license
 
 -------------------------------- */
 :root {
-  --carousel-grid-gap: 0.5rem;
-  --carousel-item-auto-size: 260px;
-  --carousel-transition-duration: 0.5s;
+  --slideshow-grid-gap: 0.5rem;
+  --slideshow-item-auto-size: 260px;
+  --slideshow-transition-duration: 0.5s;
 }
 @media (min-width: 64rem) {
   :root {
-    --carousel-grid-gap: 0.75rem;
+    --slideshow-grid-gap: 0.75rem;
   }
 }
 
-.carousel {
+.slideshow {
   position: relative;
 }
 
-.carousel__list {
+.slideshow__list {
   display: flex;
   flex-wrap: nowrap;
   will-change: transform;
 }
 
-.carousel__item {
+.slideshow__item {
   flex-shrink: 0;
-  width: var(--carousel-item-auto-size);
-  margin-right: var(--carousel-grid-gap);
-  margin-bottom: var(--carousel-grid-gap);
+  width: var(--slideshow-item-auto-size);
+  margin-right: var(--slideshow-grid-gap);
+  margin-bottom: var(--slideshow-grid-gap);
 }
 
-.carousel__list--animating {
+.slideshow__list--animating {
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
-  transition-duration: var(--carousel-transition-duration);
+  transition-duration: var(--slideshow-transition-duration);
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.carousel__item {
+.slideshow__item {
   opacity: 0;
   margin-bottom: 0;
 }
-.carousel--loaded .carousel__item {
+.slideshow--loaded .slideshow__item {
   opacity: 1;
 }
-.carousel:not(.carousel--is-dragging)
-  .carousel__list:not(.carousel__list--animating)
-  .carousel__item[tabindex='-1']
+.slideshow:not(.slideshow--is-dragging)
+  .slideshow__list:not(.slideshow__list--animating)
+  .slideshow__item[tabindex='-1']
   > * {
   visibility: hidden;
 }
-.carousel[data-drag='on'] .carousel__item {
+.slideshow[data-drag='on'] .slideshow__item {
   user-select: none;
 }
-.carousel[data-drag='on'] .carousel__item img {
+.slideshow[data-drag='on'] .slideshow__item img {
   pointer-events: none;
 }
 
-.carousel__control {
+.slideshow__control {
   --size: 40px;
   width: 40px;
   height: 40px;
@@ -72,26 +72,26 @@ Usage: codyhouse.co/license
   z-index: 1;
   transition: 0.2s;
 }
-.carousel__control:active {
+.slideshow__control:active {
   -webkit-transform: translateY(1px);
   transform: translateY(1px);
 }
-.carousel__control:hover {
+.slideshow__control:hover {
   @apply lst-bg-white;
   @apply lst-shadow-lg;
 }
-.carousel__control[disabled] {
+.slideshow__control[disabled] {
   pointer-events: none;
   opacity: 0.5;
   box-shadow: none;
 }
-.carousel__control .icon {
+.slideshow__control .icon {
   --size: 20px;
   display: block;
   margin: auto;
 }
 
-.carousel__navigation {
+.slideshow__navigation {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, 10px);
@@ -101,16 +101,16 @@ Usage: codyhouse.co/license
   @apply lst-mt-3 lg:lst-mt-5;
 }
 
-.carousel__nav-item {
+.slideshow__nav-item {
   display: inline-block;
   @apply lst-my-0 lst-mx-1 lg:lst-mx-1.5;
 }
 @supports (grid-area: auto) {
-  .carousel__nav-item {
+  .slideshow__nav-item {
     margin: 0;
   }
 }
-.carousel__nav-item button {
+.slideshow__nav-item button {
   display: block;
   position: relative;
   font-size: 10px;
@@ -122,7 +122,7 @@ Usage: codyhouse.co/license
   cursor: pointer;
   transition: background 0.3s;
 }
-.carousel__nav-item button::before {
+.slideshow__nav-item button::before {
   content: '';
   position: absolute;
   top: calc(50% - 0.5em);
@@ -136,22 +136,22 @@ Usage: codyhouse.co/license
   transform: scale(0);
   transition: 3s;
 }
-.carousel__nav-item button:focus {
+.slideshow__nav-item button:focus {
   outline: none;
 }
-.carousel__nav-item button:focus::before {
+.slideshow__nav-item button:focus::before {
   opacity: 1;
   transform: scale(1);
 }
 
-.carousel__nav-item--selected button {
+.slideshow__nav-item--selected button {
   opacity: 1;
 }
 
-.carousel__navigation--pagination {
+.slideshow__navigation--pagination {
   grid-template-columns: repeat(auto-fit, 24px);
 }
-.carousel__navigation--pagination .carousel__nav-item button {
+.slideshow__navigation--pagination .slideshow__nav-item button {
   width: 24px;
   height: 24px;
   @apply lst-text-white;
@@ -160,12 +160,12 @@ Usage: codyhouse.co/license
   @apply lst-rounded;
   text-align: center;
 }
-.carousel__navigation--pagination .carousel__nav-item button:focus {
+.slideshow__navigation--pagination .slideshow__nav-item button:focus {
   @apply lst-outline lst-outline-indigo-700;
   outline-offset: 2px;
 }
 
-.carousel--hide-controls .carousel__navigation,
-.carousel--hide-controls .carousel__control {
+.slideshow--hide-controls .slideshow__navigation,
+.slideshow--hide-controls .slideshow__control {
   display: none;
 }

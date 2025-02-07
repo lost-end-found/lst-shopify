@@ -24,7 +24,7 @@ slider-component.slider-component-full-width {
 }
 
 .slider__slide {
-  --focus-outline-padding: 0.3125rem;
+  --focus-outline-padding: 0;
   --shadow-padding-top: calc((var(--shadow-vertical-offset) * -1 + var(--shadow-blur-radius)) * var(--shadow-visible));
   --shadow-padding-bottom: calc((var(--shadow-vertical-offset) + var(--shadow-blur-radius)) * var(--shadow-visible));
   scroll-snap-align: start;
@@ -144,8 +144,9 @@ slider-component.slider-component-full-width {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    margin-bottom: 0.625rem;
+    margin-bottom: 0;
     scroll-padding-left: var(--desktop-margin-left-first-item);
+    border-bottom: 1px solid black;
   }
 
   /* Fix to show some space at the end of our sliders in all browsers */

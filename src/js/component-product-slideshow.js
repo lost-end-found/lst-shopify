@@ -162,7 +162,7 @@
     this.containerWidth = 0; // this will be used to store the total width of the carousel (including the overflowing part)
     this.ariaLive = false;
     // navigation
-    this.controls = this.element.getElementsByClassName('js-carousel__control');
+    this.controls = this.element.getElementsByClassName('js-slideshow__control');
     this.animating = false;
     // autoplay
     this.autoplayId = false;
@@ -180,8 +180,8 @@
     // modify loop option if navigation is on
     if (this.options.nav) this.options.loop = false;
     // store counter elements (if present)
-    this.counter = this.element.getElementsByClassName('js-carousel__counter');
-    this.counterTor = this.element.getElementsByClassName('js-carousel__counter-tot');
+    this.counter = this.element.getElementsByClassName('js-slideshow__counter');
+    this.counterTor = this.element.getElementsByClassName('js-slideshow__counter-tot');
     initCarouselLayout(this); // get number visible items + width items
     setItemsWidth(this, true);
     insertBefore(this, this.visibItemsNb); // insert clones before visible elements
@@ -341,8 +341,8 @@
       //init dragging
       new SwipeContent(carousel.element);
       carousel.element.addEventListener('dragStart', function (event) {
-        if (event.detail.origin && event.detail.origin.closest('.js-carousel__control')) return;
-        if (event.detail.origin && event.detail.origin.closest('.js-carousel__navigation')) return;
+        if (event.detail.origin && event.detail.origin.closest('.js-slideshow__control')) return;
+        if (event.detail.origin && event.detail.origin.closest('.js-slideshow__navigation')) return;
         if (event.detail.origin && !event.detail.origin.closest('.carousel__wrapper')) return;
         carousel.element.classList.add('carousel--is-dragging');
         pauseAutoplay(carousel);
@@ -618,7 +618,7 @@
     if (!carousel.options.ariaLive) return;
     // create an element that will be used to announce the new visible slide to SR
     var srLiveArea = document.createElement('div');
-    srLiveArea.setAttribute('class', 'lst-sr-only js-carousel__aria-live');
+    srLiveArea.setAttribute('class', 'lst-sr-only js-slideshow__aria-live');
     srLiveArea.setAttribute('aria-live', 'polite');
     srLiveArea.setAttribute('aria-atomic', 'true');
     carousel.element.appendChild(srLiveArea);
@@ -726,12 +726,12 @@
   }
 
   function carouselCreateNavigation(carousel) {
-    if (carousel.element.getElementsByClassName('js-carousel__navigation').length > 0) return;
+    if (carousel.element.getElementsByClassName('js-slideshow__navigation').length > 0) return;
 
     var navigation = document.createElement('ol'),
       navChildren = '';
 
-    var navClasses = carousel.options.navigationClass + ' js-carousel__navigation';
+    var navClasses = carousel.options.navigationClass + ' js-slideshow__navigation';
     if (carousel.items.length <= carousel.visibItemsNb) {
       navClasses = navClasses + ' hidden';
     }
@@ -747,8 +747,8 @@
             carousel.options.navigationItemClass +
             ' ' +
             carousel.options.navigationItemClass +
-            '--selected js-carousel__nav-item"'
-          : 'class="' + carousel.options.navigationItemClass + ' js-carousel__nav-item"';
+            '--selected js-slideshow__nav-item"'
+          : 'class="' + carousel.options.navigationItemClass + ' js-slideshow__nav-item"';
       navChildren =
         navChildren +
         '<li ' +
@@ -764,8 +764,8 @@
   }
 
   function carouselInitNavigationEvents(carousel) {
-    carousel.navigation = carousel.element.getElementsByClassName('js-carousel__navigation')[0];
-    carousel.navDots = carousel.element.getElementsByClassName('js-carousel__nav-item');
+    carousel.navigation = carousel.element.getElementsByClassName('js-slideshow__navigation')[0];
+    carousel.navDots = carousel.element.getElementsByClassName('js-slideshow__nav-item');
     carousel.navIdEvent = carouselNavigationClick.bind(carousel);
     carousel.navigation.addEventListener('click', carousel.navIdEvent);
   }
@@ -783,7 +783,7 @@
   }
 
   function carouselNavigationClick(event) {
-    var dot = event.target.closest('.js-carousel__nav-item');
+    var dot = event.target.closest('.js-slideshow__nav-item');
     if (!dot) return;
     if (this.animating) return;
     this.animating = true;
@@ -904,7 +904,7 @@
   window.Carousel = Carousel;
 
   //initialize the Carousel objects
-  var carousels = document.getElementsByClassName('js-carousel'),
+  var carousels = document.getElementsByClassName('js-slideshow'),
     flexSupported = CSS.supports('align-items', 'stretch'),
     transitionSupported = CSS.supports('transition', 'transform'),
     cssPropertiesSupported = 'CSS' in window && CSS.supports('color', 'var(--color-var)');
