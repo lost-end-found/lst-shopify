@@ -118,14 +118,6 @@
         "padding_bottom": 0
       }
     },
-    "latest_products_rX6xdJ": {
-      "type": "latest-products",
-      "settings": {
-        "heading": "DERNIERES ACQUISITIONS",
-        "product_limit": 12,
-        "collection": "derniers-produits"
-      }
-    },
     "events_list_DEtdVK": {
       "type": "events-list",
       "settings": {}
@@ -139,12 +131,40 @@
         "show_description": false,
         "description_style": "body",
         "collection": "choix-de-lequipe",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_D9Qa6r": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "{{ section.settings.collection.title }}",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "derniers-produits",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -163,8 +183,8 @@
     "carousel_BJXnET",
     "collection_list_brCEnF",
     "featured_blog_9TTkkj",
-    "latest_products_rX6xdJ",
     "events_list_DEtdVK",
+    "featured_collection_D9Qa6r",
     "featured_collection_UXHiaU"
   ]
 }

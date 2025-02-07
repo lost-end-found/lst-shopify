@@ -1605,6 +1605,10 @@ select {
   position: sticky;
 }
 
+.lst-inset-0 {
+  inset: 0px;
+}
+
 .-lst-right-1 {
   right: -0.25rem;
 }
@@ -1765,6 +1769,10 @@ select {
   margin-top: 0.75rem;
 }
 
+.lst-mt-4 {
+  margin-top: 1rem;
+}
+
 .\!lst-block {
   display: block !important;
 }
@@ -1845,6 +1853,10 @@ select {
   height: 100%;
 }
 
+.lst-h-6 {
+  height: 1.5rem;
+}
+
 .lst-max-h-\[36px\] {
   max-height: 36px;
 }
@@ -1887,6 +1899,10 @@ select {
 
 .lst-w-px {
   width: 1px;
+}
+
+.lst-w-6 {
+  width: 1.5rem;
 }
 
 .lst-min-w-0 {
