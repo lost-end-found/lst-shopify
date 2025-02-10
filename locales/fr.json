@@ -190,7 +190,12 @@
         "minimum": "{{ quantity }} ou plus",
         "price_at_each": "à {{ price }}\/pièce",
         "price_range": "{{ minimum }} - {{ maximum }}"
-      }
+      },
+      "print": "Impression",
+      "limited_edition": "Édition limitée",
+      "paper": "Papier",
+      "availability": "Disponibilité",
+      "return_conditions": "Conditions de retour"
     },
     "modal": {
       "label": "Galerie de supports multimédias"
