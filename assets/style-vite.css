@@ -1785,6 +1785,14 @@ select {
   margin-top: 1.5rem;
 }
 
+.lst-mt-64 {
+  margin-top: 16rem;
+}
+
+.\!lst-mt-64 {
+  margin-top: 16rem !important;
+}
+
 .\!lst-block {
   display: block !important;
 }
@@ -2337,6 +2345,14 @@ select {
   padding-top: 1rem;
 }
 
+.lst-pt-32 {
+  padding-top: 8rem;
+}
+
+.lst-pt-64 {
+  padding-top: 16rem;
+}
+
 .lst-text-left {
   text-align: left;
 }
@@ -2566,6 +2582,10 @@ select {
   .md\:lst-px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .md\:lst-pt-52 {
+    padding-top: 13rem;
   }
 }
 

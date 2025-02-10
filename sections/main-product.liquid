@@ -81,14 +81,13 @@
         {% endif %}
       </div>
       <div class="product__info-wrapper !lst-px-0 grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <div class="js-fold"></div>
         <product-info
           id="ProductInfo-{{ section.id }}"
           data-section="{{ section.id }}"
           data-url="{{ product.url }}"
-          class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %} lst-grid lst-border-l lst-border-b lst-border-black"
+          class="product__info-container lst-border-l lst-border-b lst-border-black lst-flex lst-flex-col lst-h-full {% if section.settings.enable_sticky_info %} product__column-sticky{% endif %} "
         >
-          <div class="lst-grid xl:lst-grid-cols-2 lst-sticky sm:lst-static lst-bottom-0 lst-top-[54px] md:lst-bottom-auto lst-row-start-2 md:lst-row-start-auto lst-z-50">
+          <div class="">
             {%- assign product_form_id = 'product-form-' | append: section.id -%}
             {%- for block in section.blocks -%}
               {%- case block.type -%}
@@ -132,16 +131,8 @@
                     </div>
                   </div>
                 {%- when 'buy_buttons' %}
-                  <div style="--buttons-border-width--top: 0px">
-                    {%- render 'buy-buttons',
-                      block: block,
-                      product: product,
-                      product_form_id: product_form_id,
-                      section_id: section.id,
-                      button_class: '!lst-border-t-0',
-                      show_pickup_availability: true,
-                      top_width: '0px'
-                    -%}
+                  <div style="--buttons-border-width--top: 0px" class="lst-sticky lst-top-[54px]">
+                    {% render 'add-to-cart-button', product: product, section_id: section.id %}
                   </div>
                   {%- if true -%}
                     {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
@@ -178,7 +169,7 @@
               {%- endcase -%}
             {%- endfor -%}
           </div>
-          <div class="lst-px-3 lg:lst-px-5">
+          <div class="lst-px-3 lg:lst-px-5 lst-sticky lst-top-0 js-product-info-content md:lst-pt-52">
             {%- for block in section.blocks -%}
               {%- case block.type -%}
                 {%- when '@app' -%}
@@ -257,6 +248,7 @@
                   </p>
                 {%- when 'description' -%}
                   {%- if product.description != blank -%}
+                    <div class="js-fold"></div>
                     <div
                       class="product__description lst-text-base lst-text-black lst-prose prose lst-max-w-none rte quick-add-hidden"
                       {{ block.shopify_attributes }}
@@ -2421,6 +2413,7 @@
       this.fold = document.querySelector('.js-fold');
       this.media = document.querySelector('.product__media-wrapper');
       this.header = document.querySelector('sticky-header');
+      this.productInfoContent = document.querySelector('.js-product-info-content');
       document.addEventListener('DOMContentLoaded', () => {
         console.log('DOMContentLoaded');
         console.log('this.fold', this.fold);
@@ -2428,7 +2421,10 @@
         console.log('this.clientHeight', this.clientHeight);
         console.log('this.media.clientHeight', this.media.clientHeight);
         console.log('this.header', this.header);
-        this.fold.style.height = `${this.media.clientHeight - this.clientHeight - 50}px`;
+        console.log('this.productInfoContent', this.productInfoContent);
+        console.log('this.productInfoContent.clientHeight', this.productInfoContent.clientHeight);
+        this.fold.style.paddingBottom = `${this.productInfoContent.clientHeight + 64}px`;
+        // this.productInfoContent.style.paddingTop = `${this.fold.clientHeight}px`;
       });
     }
   }

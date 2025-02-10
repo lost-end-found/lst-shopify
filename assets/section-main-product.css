@@ -210,6 +210,10 @@
 
 /* Product info */
 
+.product__info-container {
+  margin-bottom: -1px;
+}
+
 .product__info-container > * + * {
   margin: 0.625rem 0;
 }
