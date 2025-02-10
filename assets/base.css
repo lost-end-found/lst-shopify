@@ -2752,7 +2752,7 @@ details[open] > .header__submenu {
 .header__menu-item {
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
-  padding: 8px 5px;
+  padding: 4px 8px;
 }
 
 .header__menu-item span {
