@@ -1,6 +1,7 @@
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-carousel-vite.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -15,6 +16,12 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  @media (min-width: 64rem) {
+    :root {
+      --carousel-item-auto-size: calc(100% / {{section.settings.columns_desktop}}) !important;
+    }
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -23,110 +30,178 @@
   if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
     assign show_mobile_slider = true
   endif
+
+  # Get all collections that have at least one product
+  echo '<!-- DEBUG INFO:'
+  echo 'Total collections: ' | append: collections.size
+  echo '-->'
+
+  # Get selected collections from blocks first
+  assign selected_collections = section.blocks | map: 'settings' | map: 'collection'
+  assign selected_count = selected_collections | size
+  assign remaining_count = 12 | minus: selected_count
+  assign selected_handles = selected_collections | map: 'handle'
+
+  echo '<!-- Selected Collections:'
+  for collection in selected_collections
+    echo collection.title | append: ' (Products: ' | append: collection.all_products_count | append: '), '
+  endfor
+  echo '-->'
+
+  # Create final collections array starting with selected collections
+  assign final_collections = ''
+  assign added_count = 0
+  # Add additional collections if needed, with random selection
+  if remaining_count > 0
+    assign random_seed = 'now' | date: '%N' | times: 1
+    for collection in collections
+      # Generate a random number between 0 and 9
+      assign random_num = random_seed | plus: forloop.index | modulo: 10
+
+      # Skip this collection ~30% of the time by checking if random_num is < 3
+      if collection.all_products_count > 0 and added_count < remaining_count and random_num >= 5
+        unless selected_handles contains collection.handle
+          echo '<!-- Processing collection: ' | append: collection.title | append: ' (Products: ' | append: collection.all_products_count | append: '), Random: ' | append: random_num | append: ' -->'
+          assign final_collections = final_collections | append: collection.handle | append: ','
+          assign added_count = added_count | plus: 1
+        endunless
+      endif
+    endfor
+  endif
+
+  echo '<!-- Final collections test: ' | append: final_collections | append: '-->'
+
+  # Debug final state
+  echo '<!-- Final state:'
+  echo 'Total collections selected: ' | append: selected_collections.size
+  echo 'Collections added: ' | append: added_count
+  echo 'Final collection list: '
+  for collection in selected_collections
+    if collection.title
+      echo collection.title | append: ' (object), '
+    else
+      echo collection | append: ' (handle), '
+    endif
+  endfor
+  echo '-->'
 -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient lst-border-b lst-border-black">
   <div class="collection-list-wrapper page-width isolate{% if show_mobile_slider %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
     {%- unless section.settings.title == blank -%}
-      <div class="lst-px-3 lg:lst-px-5 lst-py-5 lst-border-b lst-border-black lst-text-left lst-uppercase {% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
+      <div class="lst-px-3 lg:lst-px-5 lst-py-5 lst-border-b lst-border-black lst-text-left lst-uppercase lst-flex lst-items-center lst-justify-between {% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}">
         <h2
           id="SectionHeading-{{ section.id }}"
-          class="collection-list-title inline-richtext  {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="collection-list-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         >
           {{ section.settings.title }}
         </h2>
 
-        {%- if section.settings.show_view_all and show_mobile_slider -%}
-          <a
-            href="{{ routes.collections_url }}"
-            id="ViewAll-{{ section.id }}"
-            class="link underlined-link large-up-hide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
-          >
-            {{- 'sections.collection_list.view_all' | t -}}
-          </a>
+        {%- if section.settings.show_view_all -%}
+          <div class="{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            <a
+              href="{{ routes.collections_url }}"
+              id="ViewAll-{{ section.id }}"
+              class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
+              aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
+            >
+              {{- 'sections.collection_list.view_all' | t -}}
+            </a>
+          </div>
         {%- endif -%}
       </div>
     {%- endunless -%}
 
-    <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <ul
-        class="lst-divide-x lst-divide-black collection-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
-        id="Slider-{{ section.id }}"
-        role="list"
-      >
-        {%- liquid
-          assign columns = section.blocks.size
-          if columns > 3
-            assign columns = 3
-          endif
-        -%}
-        {%- for block in section.blocks -%}
-          <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
-            {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
-            {% render 'card-collection',
-              card_collection: block.settings.collection,
-              media_aspect_ratio: section.settings.image_ratio,
-              columns: columns,
-              placeholder_image: placeholder_image
-            %}
-          </li>
-        {%- endfor -%}
-      </ul>
-      {%- if show_mobile_slider -%}
-        <div class="slider-buttons">
-          <button
-            type="button"
-            class="slider-button slider-button--prev"
-            name="previous"
-            aria-label="{{ 'general.slider.previous_slide' | t }}"
-          >
-            {% render 'icon-caret' %}
-          </button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
+    <div
+      class="carousel lst-flex lst-flex-col js-carousel"
+      data-drag="{% if section.settings.swipe_on_mobile %}on{% else %}off{% endif %}"
+      data-autoplay="{% if section.settings.enable_desktop_slider %}on{% else %}off{% endif %}"
+      data-autoplay-interval="5000"
+      data-loop="{% if section.settings.enable_desktop_slider %}on{% else %}off{% endif %}"
+      data-navigation="on"
+    >
+      <p class="lst-sr-only">{{ 'general.slider.name' | t }}</p>
+      {% if section.settings.enable_desktop_slider %}
+        <nav class="lst-order-1 no-js:lst-hidden">
+          <ul>
+            <li class="slideshow__control js-carousel__control">
+              <button class="slideshow__btn js-tab-focus lst-transform lst-rotate-180">
+                <span class="lst-sr-only">Show previous slide</span>
+                →
+              </button>
+            </li>
+
+            <li class="slideshow__control js-carousel__control">
+              <button class="slideshow__btn js-tab-focus">
+                <span class="lst-sr-only">Show next slide</span>
+                →
+              </button>
+            </li>
+          </ul>
+        </nav>
+      {% endif %}
+
+      <div class="carousel__wrapper lst-overflow-hidden">
+        <ul
+          id="Slider-{{ section.id }}"
+          class="carousel__list"
+          role="list"
+        >
+          {%- for collection in selected_collections -%}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="carousel__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if collection.featured_image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+              {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+              {% render 'card-collection',
+                card_collection: collection,
+                media_aspect_ratio: section.settings.image_ratio,
+                columns: section.settings.columns_desktop,
+                placeholder_image: placeholder_image
+              %}
+            </li>
+          {%- endfor -%}
+          {% assign final_collections_array = final_collections | split: ',' %}
+          {% for handle in final_collections_array %}
+            {% assign current_collection = collections[handle] %}
+
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="carousel__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if current_collection.featured_image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+              {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+              {% render 'card-collection',
+                card_collection: current_collection,
+                media_aspect_ratio: section.settings.image_ratio,
+                columns: section.settings.columns_desktop,
+                placeholder_image: placeholder_image
+              %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {%- if show_mobile_slider or section.settings.enable_desktop_slider -%}
+        <div class="lst-mt-4 lst-text-center lst-sr-only">
+          <div class="carousel__counter lst-inline-flex lst-items-center lst-gap-2">
+            <span class="js-carousel__counter">1</span>
+            <span aria-hidden="true">/</span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+            <span class="js-carousel__counter-tot">{{ selected_collections.size }}</span>
           </div>
-          <button
-            type="button"
-            class="slider-button slider-button--next"
-            name="next"
-            aria-label="{{ 'general.slider.next_slide' | t }}"
-          >
-            {% render 'icon-caret' %}
-          </button>
         </div>
       {%- endif -%}
-    </slider-component>
-
-    {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
-      <div
-        class="center collection-list-view-all{% if show_mobile_slider %} small-hide medium-hide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-        {% if settings.animations_reveal_on_scroll %}
-          data-cascade
-        {% endif %}
-      >
-        <a
-          href="{{ routes.collections_url }}"
-          class="button"
-          id="ViewAllButton-{{ section.id }}"
-          aria-labelledby="ViewAllButton-{{ section.id }} SectionHeading-{{ section.id }}"
-        >
-          {{- 'sections.collection_list.view_all' | t -}}
-        </a>
-      </div>
-    {%- endif -%}
+    </div>
   </div>
 </div>
 
@@ -197,6 +272,32 @@
       "label": "t:sections.collection-list.settings.columns_desktop.label"
     },
     {
+      "type": "select",
+      "id": "view_all_style",
+      "label": "t:sections.featured-collection.settings.view_all_style.label",
+      "options": [
+        {
+          "value": "link",
+          "label": "t:sections.featured-collection.settings.view_all_style.options__1.label"
+        },
+        {
+          "value": "outline",
+          "label": "t:sections.featured-collection.settings.view_all_style.options__2.label"
+        },
+        {
+          "value": "solid",
+          "label": "t:sections.featured-collection.settings.view_all_style.options__3.label"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
+      "default": true
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
@@ -206,7 +307,7 @@
     {
       "type": "checkbox",
       "id": "show_view_all",
-      "default": false,
+      "default": true,
       "label": "t:sections.collection-list.settings.show_view_all.label"
     },
     {
@@ -232,7 +333,7 @@
     {
       "type": "checkbox",
       "id": "swipe_on_mobile",
-      "default": false,
+      "default": true,
       "label": "t:sections.collection-list.settings.swipe_on_mobile.label"
     },
     {
@@ -291,3 +392,8 @@
   ]
 }
 {% endschema %}
+
+{% if section.settings.enable_desktop_slider %}
+  <script src="{{ 'component-carousel-swipe-content-vite.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'component-carousel-vite.js' | asset_url }}" defer="defer"></script>
+{% endif %}
