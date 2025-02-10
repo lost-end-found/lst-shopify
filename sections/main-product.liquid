@@ -81,6 +81,7 @@
         {% endif %}
       </div>
       <div class="product__info-wrapper !lst-px-0 grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="js-fold"></div>
         <product-info
           id="ProductInfo-{{ section.id }}"
           data-section="{{ section.id }}"
@@ -2413,3 +2414,24 @@
   ]
 }
 {% endschema %}
+<script>
+  class ProductInfo extends HTMLElement {
+    constructor() {
+      super();
+      this.fold = document.querySelector('.js-fold');
+      this.media = document.querySelector('.product__media-wrapper');
+      this.header = document.querySelector('sticky-header');
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOMContentLoaded');
+        console.log('this.fold', this.fold);
+        console.log('this.media', this.media);
+        console.log('this.clientHeight', this.clientHeight);
+        console.log('this.media.clientHeight', this.media.clientHeight);
+        console.log('this.header', this.header);
+        this.fold.style.height = `${this.media.clientHeight - this.clientHeight - 50}px`;
+      });
+    }
+  }
+
+  customElements.define('product-info', ProductInfo);
+</script>
