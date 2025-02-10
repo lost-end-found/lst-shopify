@@ -1,29 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
+        "price": {
+          "type": "price",
+          "settings": {}
         },
         "title": {
           "type": "title",
           "settings": {}
         },
-        "caption": {
-          "type": "text",
+        "metafield_info_hn3CzR": {
+          "type": "metafield_info",
           "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
+            "metafield_type": "authors",
+            "show_label": true,
+            "hide_if_empty": true
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {}
+        "metafield_info_enxm3f": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "publisher_name",
+            "show_label": true,
+            "hide_if_empty": true
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -34,18 +45,123 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
         "description": {
           "type": "description",
           "settings": {}
+        },
+        "metafield_info_UMwXKa": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "supplier_name",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_RVKyVz": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "print",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_7xaBUn": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "language",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_p3teMp": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "format",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_Kq4zRH": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "design",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_G6ChPb": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "published_at",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_9cbJiM": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "availability",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_yRHdHE": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "return_conditions_limit_date",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_V6Rh6y": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "pages_count",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_MmnJDA": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "pages_count",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_E78cKY": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "paper",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_YW6EWW": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "pages_count",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_EeBgnA": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "limited_edition",
+            "show_label": true,
+            "hide_if_empty": true
+          }
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
@@ -91,14 +207,27 @@
         }
       },
       "block_order": [
-        "vendor",
-        "title",
-        "caption",
         "price",
+        "title",
+        "metafield_info_hn3CzR",
+        "metafield_info_enxm3f",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
+        "metafield_info_UMwXKa",
+        "metafield_info_RVKyVz",
+        "metafield_info_7xaBUn",
+        "metafield_info_p3teMp",
+        "metafield_info_Kq4zRH",
+        "metafield_info_G6ChPb",
+        "metafield_info_9cbJiM",
+        "metafield_info_yRHdHE",
+        "metafield_info_V6Rh6y",
+        "metafield_info_MmnJDA",
+        "metafield_info_E78cKY",
+        "metafield_info_YW6EWW",
+        "metafield_info_EeBgnA",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "logo_width": 90,
@@ -70,7 +79,7 @@
     "text_boxes_shadow_horizontal_offset": 0,
     "text_boxes_shadow_vertical_offset": 4,
     "text_boxes_shadow_blur": 5,
-    "media_border_thickness": 1,
+    "media_border_thickness": 0,
     "media_border_opacity": 5,
     "media_radius": 0,
     "media_shadow_opacity": 0,
@@ -134,13 +143,13 @@
           "image_hyxMKF": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Sanstitre2_1.jpg"
+              "image": "shopify://shop_images/Sanstitre2_1.jpg"
             }
           },
           "image_pwaygw": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Librairie_sanstitre_etapes1_1.jpg"
+              "image": "shopify://shop_images/Librairie_sanstitre_etapes1_1.jpg"
             }
           }
         },
