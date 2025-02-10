@@ -1,0 +1,141 @@
+{% comment %}Event Article Template{% endcomment %}
+
+<article class="lst-max-w-4xl lst-mx-auto lst-px-4 lst-py-8">
+  <header class="lst-mb-8">
+    <h1 class="lst-text-4xl lst-font-bold lst-mb-4">{{ article.title }}</h1>
+
+    {% if article.image %}
+      <div class="lst-mb-6">
+        <img
+          src="{{ article.image | image_url: width: 1000 }}"
+          alt="{{ article.title }}"
+          class="lst-w-full lst-h-auto lst-rounded-lg lst-shadow-lg"
+          width="1000"
+          height="auto"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+
+    <div class="lst-flex lst-items-center lst-text-gray-600 lst-mb-4">
+      {% if article.published_at %}
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+          {{ article.published_at | date: '%B %d, %Y' }}
+        </time>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="lst-prose lst-max-w-none">
+    {{ article.content }}
+  </div>
+
+  {% if blog.comments_enabled? %}
+    <div class="lst-mt-12">
+      {% if article.comments_count > 0 %}
+        <h2 class="lst-text-2xl lst-font-bold lst-mb-4">{{ article.comments_count }} comments</h2>
+        {% paginate article.comments by 5 %}
+          {% for comment in article.comments %}
+            <div id="{{ comment.id }}" class="lst-border-b lst-border-gray-200 lst-py-4">
+              <div class="lst-mb-2">
+                {{ comment.content }}
+              </div>
+              <div class="lst-text-sm lst-text-gray-600">
+                {{ comment.author }} on {{ comment.created_at | date: '%B %d, %Y' }}
+              </div>
+            </div>
+          {% endfor %}
+
+          {% if paginate.pages > 1 %}
+            <div class="lst-mt-8 lst-flex lst-justify-center lst-gap-4">
+              {% if paginate.previous %}
+                <a href="{{ paginate.previous.url }}" class="lst-text-black hover:lst-text-primary">Previous</a>
+              {% endif %}
+
+              {% for part in paginate.parts %}
+                {% if part.is_link %}
+                  <a href="{{ part.url }}" class="lst-text-black hover:lst-text-primary">{{ part.title }}</a>
+                {% else %}
+                  <span class="lst-text-primary">{{ part.title }}</span>
+                {% endif %}
+              {% endfor %}
+
+              {% if paginate.next %}
+                <a href="{{ paginate.next.url }}" class="lst-text-black hover:lst-text-primary">Next</a>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endpaginate %}
+      {% endif %}
+
+      <div class="lst-mt-8">
+        {% form 'new_comment', article %}
+          <h3 class="lst-text-xl lst-font-bold lst-mb-4">Leave a comment</h3>
+
+          {% if form.errors %}
+            <div class="lst-mb-4 lst-p-4 lst-bg-red-100 lst-text-red-700 lst-rounded">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+
+          <div class="lst-mb-4">
+            <label for="CommentAuthor" class="lst-block lst-mb-2">Name</label>
+            <input
+              type="text"
+              name="comment[author]"
+              id="CommentAuthor"
+              class="lst-w-full lst-p-2 lst-border lst-border-gray-300 lst-rounded"
+              value="{{ form.author }}"
+              required
+            >
+          </div>
+
+          <div class="lst-mb-4">
+            <label for="CommentEmail" class="lst-block lst-mb-2">Email</label>
+            <input
+              type="email"
+              name="comment[email]"
+              id="CommentEmail"
+              class="lst-w-full lst-p-2 lst-border lst-border-gray-300 lst-rounded"
+              value="{{ form.email }}"
+              required
+            >
+          </div>
+
+          <div class="lst-mb-4">
+            <label for="CommentBody" class="lst-block lst-mb-2">Comment</label>
+            <textarea
+              name="comment[body]"
+              id="CommentBody"
+              class="lst-w-full lst-p-2 lst-border lst-border-gray-300 lst-rounded"
+              required
+            >{{ form.body }}</textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="lst-bg-black lst-text-white lst-px-6 lst-py-2 lst-rounded hover:lst-bg-primary lst-transition-colors"
+          >
+            Post comment
+          </button>
+        {% endform %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="lst-mt-12 lst-border-t lst-border-gray-200 lst-pt-8">
+    <div class="lst-flex lst-justify-between">
+      {% if blog.previous_article %}
+        <a href="{{ blog.previous_article.url }}" class="lst-text-black hover:lst-text-primary"
+          >&larr; {{ blog.previous_article.title -}}
+        </a>
+      {% endif %}
+
+      {% if blog.next_article %}
+        <a href="{{ blog.next_article.url }}" class="lst-text-black hover:lst-text-primary">
+          {{- blog.next_article.title }} &rarr;</a
+        >
+      {% endif %}
+    </div>
+  </div>
+</article>
