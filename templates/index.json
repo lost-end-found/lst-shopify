@@ -59,25 +59,25 @@
         "featured_collection_Em3iWz": {
           "type": "featured_collection",
           "settings": {
-            "collection": "tous-les-livres-photo"
+            "collection": "architecture-urbanisme"
           }
         },
         "featured_collection_ahyz9d": {
           "type": "featured_collection",
           "settings": {
-            "collection": "romance"
+            "collection": "revue-beaux-arts"
           }
         },
         "featured_collection_FbEpHt": {
           "type": "featured_collection",
           "settings": {
-            "collection": "fanzines-micro-editions"
+            "collection": "revue-design-graphique"
           }
         },
         "featured_collection_Xtwqtx": {
           "type": "featured_collection",
           "settings": {
-            "collection": "objets"
+            "collection": "revue-photographie"
           }
         }
       },
@@ -183,8 +183,8 @@
     "carousel_BJXnET",
     "collection_list_brCEnF",
     "featured_blog_9TTkkj",
-    "events_list_DEtdVK",
     "featured_collection_D9Qa6r",
-    "featured_collection_UXHiaU"
+    "featured_collection_UXHiaU",
+    "events_list_DEtdVK"
   ]
 }

@@ -132,26 +132,10 @@
             "hide_if_empty": true
           }
         },
-        "metafield_info_MmnJDA": {
-          "type": "metafield_info",
-          "settings": {
-            "metafield_type": "pages_count",
-            "show_label": true,
-            "hide_if_empty": true
-          }
-        },
         "metafield_info_E78cKY": {
           "type": "metafield_info",
           "settings": {
             "metafield_type": "paper",
-            "show_label": true,
-            "hide_if_empty": true
-          }
-        },
-        "metafield_info_YW6EWW": {
-          "type": "metafield_info",
-          "settings": {
-            "metafield_type": "pages_count",
             "show_label": true,
             "hide_if_empty": true
           }
@@ -225,9 +209,7 @@
         "metafield_info_9cbJiM",
         "metafield_info_yRHdHE",
         "metafield_info_V6Rh6y",
-        "metafield_info_MmnJDA",
         "metafield_info_E78cKY",
-        "metafield_info_YW6EWW",
         "metafield_info_EeBgnA",
         "collapsible-row-0",
         "collapsible-row-1",

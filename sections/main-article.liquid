@@ -84,8 +84,10 @@
                   <div class="lst-text-right">
                     <strong class="lst-text-black">{{ 'blogs.article.event_details.time_label' | t }} : </strong>
                     <span>
-                      {{ article.metafields.blog_event.start_date_time.value | date: '%-Hh %-Mm' }} —
-                      {{ article.metafields.blog_event.end_date_time.value | date: '%-Hh %-Mm' }}
+                      {% assign start_time = article.metafields.blog_event.start_date_time.value | date: '%-H:%M' %}
+                      {% assign end_time = article.metafields.blog_event.end_date_time.value | date: '%-H:%M' %}
+                      {{ start_time | replace: ':00', 'h' | replace: ':', 'h ' | replace: 'h m', 'h' }} —
+                      {{ end_time | replace: ':00', 'h' | replace: ':', 'h ' | replace: 'h m', 'h' }}
                     </span>
                   </div>
                 {% else %}
