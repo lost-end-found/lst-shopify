@@ -25,22 +25,27 @@
             "blog_show_author": false
           }
         },
+        "event_details": {
+          "type": "event_details",
+          "settings": {}
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
         "share": {
           "type": "share",
           "settings": {
             "share_label": "Share"
           }
-        },
-        "content": {
-          "type": "content",
-          "settings": {}
         }
       },
       "block_order": [
         "featured_image",
         "title",
-        "share",
-        "content"
+        "event_details",
+        "content",
+        "share"
       ],
       "settings": {}
     }

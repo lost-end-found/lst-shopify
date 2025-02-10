@@ -65,9 +65,50 @@
           {%- endif -%}
         </header>
 
+      {%- when 'event_details' -%}
+        <div
+          class="article-template__event-details page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          <div class="event-details-container lst-bg-[#F7F2EB] lst-p-4 lst-rounded-lg lst-mb-3 lst-mt-6">
+            {% if article.metafields.blog_event.start_date_time %}
+              {%- assign start_date = article.metafields.blog_event.start_date_time.value | date: '%d %b %Y' -%}
+              {%- assign end_date = article.metafields.blog_event.end_date_time.value | date: '%d %b %Y' -%}
+
+              <div class="lst-grid lst-grid-cols-2">
+                {%- if start_date == end_date -%}
+                  <div>
+                    <strong class="lst-text-black">{{ 'blogs.article.event_details.date_label' | t }} : </strong>
+                    <span>{{ start_date }}</span>
+                  </div>
+                  <div class="lst-text-right">
+                    <strong class="lst-text-black">{{ 'blogs.article.event_details.time_label' | t }} : </strong>
+                    <span>
+                      {{ article.metafields.blog_event.start_date_time.value | date: '%-Hh %-Mm' }} —
+                      {{ article.metafields.blog_event.end_date_time.value | date: '%-Hh %-Mm' }}
+                    </span>
+                  </div>
+                {% else %}
+                  <div class="lst-col-span-2">
+                    <strong class="lst-text-black">{{ 'blogs.article.event_details.date_label' | t }} : </strong>
+                    <span>{{ start_date }} — {{ end_date }}</span>
+                  </div>
+                {%- endif -%}
+              </div>
+            {% endif %}
+
+            {% if article.metafields.blog_event.location %}
+              <div class="lst-mt-2">
+                <strong class="lst-text-black">{{ 'blogs.article.event_details.location_label' | t }} : </strong>
+                <span>{{ article.metafields.blog_event.location }}</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
       {%- when 'content' -%}
         <div
-          class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="article-template__content page-width page-width--narrow rte lst-prose {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           itemprop="articleBody"
           {{ block.shopify_attributes }}
         >
@@ -367,6 +408,11 @@
           "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
         }
       ]
+    },
+    {
+      "type": "event_details",
+      "name": "t:sections.main-article.blocks.event_details.name",
+      "limit": 1
     },
     {
       "type": "content",

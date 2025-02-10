@@ -89,6 +89,12 @@
         "other": "{{ count }} commentaires",
         "many": "{{ count }} commentaires"
       },
+      "event_details": {
+        "name": "Détails de l'événement",
+        "date_label": "Date",
+        "time_label": "Heure",
+        "location_label": "Lieu"
+      },
       "moderated": "Veuillez noter que les commentaires doivent être approuvés avant d'être publiés.",
       "comment_form_title": "Laisser un commentaire",
       "name": "Nom",

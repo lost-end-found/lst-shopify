@@ -22,6 +22,11 @@ export default {
         },
       },
       typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: null, // add required value here
+          },
+        },
         xl: {
           css: {
             p: {
