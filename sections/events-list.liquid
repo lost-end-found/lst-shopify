@@ -1,62 +1,92 @@
 {{ 'component-carousel-vite.css' | asset_url | stylesheet_tag }}
 {%- style -%}
 {%- endstyle -%}
+
 {% assign current_time = 'now' | date: '%s' %}
 {% assign upcoming_events = null | sort %}
 
-{% for event in shop.metaobjects.events.values %}
-  {% assign event_time = event.start_date_time | date: '%s' %}
+{% for article in blogs.events.articles %}
+  {% assign event_time = article.metafields.blog_event.start_date_time.value | date: '%s' %}
   {% if event_time > current_time %}
-    {% assign event_object = event | sort %}
-    {% assign upcoming_events = upcoming_events | concat: event_object %}
+    <script>
+      console.log('event is upcoming');
+    </script>
+    {% assign upcoming_events = upcoming_events | concat: article %}
+  {% endif %}
+  <script>
+    console.log({
+      current_time: '{{ current_time }}',
+      start_date_time: '{{ event_time }}',
+    });
+  </script>
+  {% assign event_time = article.metafields.blog_event.start_date_time.value | date: '%s' %}
+  {% if event_time > current_time %}
+    {% assign article_event = article | sort %}
+    {% assign upcoming_events = upcoming_events | concat: article_event %}
   {% endif %}
 {% endfor %}
 
+<script>
+  console.log({
+    upcoming_events: {{ upcoming_events | json }}
+  })
+</script>
+
 {% if upcoming_events.size != 0 %}
-  <div class="color-{{ section.settings.color_scheme }} gradient lst-border-x lst-border-b  lst-border-black">
+  <div class="color-{{ section.settings.color_scheme }} isolate gradient lst-border-b lst-border-black">
     <div class="slideshow js-slideshow " data-swipe="on">
-      <a href="{{ pages.events.url }}" class="lst-text-center">
-        <p class="h2 lst-text-black lst-px-3 lg:lst-px-5 lst-py-5lst-underline">
+      <div class="lst-px-3 lg:lst-px-5 lst-py-5 lst-border-b lst-border-black lst-text-left lst-uppercase lst-flex lst-items-center lst-justify-between">
+        <h2 class="h2 {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {{ 'sections.events.events' | t }}
-        </p>
-      </a>
+        </h2>
+        <div class="">
+          <a
+            href="{{ blogs.events.url }}"
+            class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
+            aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
+          >
+            {{ 'sections.featured_collection.view_all' | t }}
+          </a>
+        </div>
+      </div>
       <ul class="slideshow__content">
-        {% for event in upcoming_events %}
+        {% for article in upcoming_events %}
           <div class="lst-grid lg:lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-y lst-border-black">
             <div class="lst-bg-[#F7F2EB] lst-p-3 lg:lst-p-5 lst-border-r lst-border-black">
               <div class="lst-grid lst-grid-cols-2">
-                {%- assign start_date = event.start_date_time | date: '%d %b %Y' -%}
-                {%- assign end_date = event.end_date_time | date: '%d %b %Y' -%}
+                {%- assign start_date = article.metafields.blog_event.start_date_time.value | date: '%d %b %Y' -%}
+                {%- assign end_date = article.metafields.blog_event.end_date_time.value | date: '%d %b %Y' -%}
 
                 {%- if start_date == end_date -%}
                   <div>
                     {{ start_date }}
                   </div>
                   <div class="lst-text-right">
-                    {{ event.start_date_time | date: '%-Hh %-Mm' }} — {{ event.end_date_time | date: '%-Hh %-Mm' }}
+                    {{ article.metafields.blog_event.start_date_time.value | date: '%-Hh %-Mm' }} —
+                    {{ article.metafields.blog_event.end_date_time.value | date: '%-Hh %-Mm' }}
                   </div>
                 {% else %}
                   <div class="lst-col-span-2">{{ start_date }} — {{ end_date }}</div>
                 {%- endif -%}
               </div>
-              <h2 class="h1">{{ event.title }}</h2>
+              <h2 class="h1">{{ article.title }}</h2>
               <div class="lst-prose">
-                {{ event.description }}
+                {{ article.metafields.blog_event.description }}
               </div>
             </div>
             <div>
               <img
-                src="{{ event.image | image_url: width: 500, height: 300, crop: 'center' }}"
+                src="{{ article.image | image_url: width: 1000, height: 600, crop: 'center' }}"
                 class="lst-h-full lst-w-full lst-object-cover"
-                alt="{{ event.image.alt }}"
-                width="500px"
-                height="300px"
+                alt="{{ article.image.alt }}"
+                width="1000px"
+                height="600px"
               >
             </div>
             <div class="lg:lst-col-span-2 lst-grid lg:lst-grid-cols-4 lst-h-[45px] lst-items-center lst-border-t lst-border-black">
               <a
                 class="h4 lst-text-black hover:lst-bg-primary lst-px-3 lg:lst-px-5 lst-h-full lst-flex lst-items-center lst-space-x-2 lg:lst-col-span-2"
-                href="{{ event.system.url }}"
+                href="{{ article.url }}"
               >
                 {% render 'icon-arrow' %}
                 <span>{{ 'sections.events.more_info' | t }}</span>

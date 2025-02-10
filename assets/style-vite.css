@@ -1669,10 +1669,6 @@ select {
   order: 1;
 }
 
-.lst-order-2 {
-  order: 2;
-}
-
 .lst-col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -1720,14 +1716,14 @@ select {
   margin-bottom: 0.5rem;
 }
 
-.lst-my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .lst-my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.lst-my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .\!lst-mb-0 {
@@ -1838,10 +1834,6 @@ select {
   height: 1rem;
 }
 
-.lst-h-6 {
-  height: 1.5rem;
-}
-
 .lst-h-8 {
   height: 2rem;
 }
@@ -1888,10 +1880,6 @@ select {
 
 .lst-w-4 {
   width: 1rem;
-}
-
-.lst-w-6 {
-  width: 1.5rem;
 }
 
 .lst-w-8 {
@@ -2017,10 +2005,6 @@ select {
 
 .lst-justify-between {
   justify-content: space-between;
-}
-
-.lst-gap-1 {
-  gap: 0.25rem;
 }
 
 .lst-gap-2 {
@@ -2628,10 +2612,6 @@ select {
 
   .lg\:lst-justify-center {
     justify-content: center;
-  }
-
-  .lg\:lst-gap-1\.5 {
-    gap: 0.375rem;
   }
 
   .lg\:lst-divide-x > :not([hidden]) ~ :not([hidden]) {
