@@ -1664,6 +1664,10 @@ select {
   z-index: 5;
 }
 
+.lst-z-\[1\] {
+  z-index: 1;
+}
+
 .lst-order-1 {
   order: 1;
 }
@@ -2351,6 +2355,10 @@ select {
 
 .lst-pt-64 {
   padding-top: 16rem;
+}
+
+.lst-pt-6 {
+  padding-top: 1.5rem;
 }
 
 .lst-text-left {

@@ -210,8 +210,9 @@
 
 /* Product info */
 
-.product__info-container {
+.product__info-wrapper {
   margin-bottom: -1px;
+  margin-top: -1px;
 }
 
 .product__info-container > * + * {
