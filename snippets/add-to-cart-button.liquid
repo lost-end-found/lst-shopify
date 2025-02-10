@@ -42,11 +42,17 @@
           class="product-variant-id"
         >
 
-        <div class="product-form__buttons">
+        <div class="product-form__buttons lst-grid lst-grid-cols-2 lst-items-center">
+          <div class="lst-px-4 lst-py-2 lst-border-r lst-border-black lst-bg-[#F7F2EB] lst-text-center">
+            <span class="lst-text-lg lst-font-medium">
+              {{ product.selected_or_first_available_variant.price | money }}
+            </span>
+          </div>
+
           <button
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width button--primary !lst-mb-0"
+            class="product-form__submit button button--full-width button--primary !lst-mb-0 lst-h-full disabled:lst-bg-yellow-200 disabled:lst-text-gray-600 disabled:lst-opacity-100"
             {% if product.selected_or_first_available_variant.available == false %}
               disabled
             {% endif %}
@@ -55,8 +61,7 @@
               {%- if product.selected_or_first_available_variant.available == false -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }} -
-                {{ product.selected_or_first_available_variant.price | money }}
+                {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
@@ -66,14 +71,19 @@
     </product-form>
   {%- else -%}
     <div class="product-form">
-      <div class="product-form__buttons">
-        <button
-          type="submit"
-          disabled
-          class="product-form__submit button button--full-width button--primary !lst-mb-0"
-        >
-          {{ 'products.product.sold_out' | t }}
-        </button>
+      <div class="product-form__buttons lst-grid lst-grid-cols-2 lst-items-center">
+        <div class="lst-px-4 lst-py-2 lst-border-r lst-border-black">
+          <span class="lst-text-lg lst-font-medium">--</span>
+        </div>
+        <div class="lst-px-4">
+          <button
+            type="submit"
+            disabled
+            class="product-form__submit button button--full-width button--primary !lst-mb-0"
+          >
+            {{ 'products.product.sold_out' | t }}
+          </button>
+        </div>
       </div>
     </div>
   {%- endif -%}

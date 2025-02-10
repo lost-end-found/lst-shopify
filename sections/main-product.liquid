@@ -85,9 +85,9 @@
           id="ProductInfo-{{ section.id }}"
           data-section="{{ section.id }}"
           data-url="{{ product.url }}"
-          class="product__info-container lst-border-l lst-border-b lst-border-black lst-flex lst-h-full {% if section.settings.enable_sticky_info %} product__column-sticky{% endif %} "
+          class="product__info-container lst-w-full lst-border-l lst-border-b lst-border-black lst-flex lst-h-full {% if section.settings.enable_sticky_info %} product__column-sticky{% endif %} "
         >
-          <div class="">
+          <div class="lst-w-full">
             {%- assign product_form_id = 'product-form-' | append: section.id -%}
             {%- for block in section.blocks -%}
               {%- case block.type -%}
@@ -2464,15 +2464,16 @@
 
       var foldLineOffset = this.fold ? this.fold.offsetTop : 0;
 
-      var rightColumn = this.productInfoContent
+      var rightColumn = this.productInfoContent;
 
       if (rightColumn) {
-        rightColumn.style.paddingTop = "calc(100vh - " + foldLineOffset + "px - " + topbarHeight + "px - 52px ");
+        rightColumn.style.paddingTop = 'calc(100vh - ' + foldLineOffset + 'px - ' + topbarHeight + 'px - 108px)';
         var rightColumnHeight = rightColumn.getBoundingClientRect().height;
-        var topPosition = -rightColumnHeight + window.innerHeight + 45 > 150 ?
-                                -rightColumnHeight + window.innerHeight - 12 :
-                                -rightColumnHeight + window.innerHeight + 45;
-        rightColumn.style.top = topPosition + "px";
+        var topPosition =
+          -rightColumnHeight + window.innerHeight + 45 > 150
+            ? -rightColumnHeight + window.innerHeight - 12
+            : -rightColumnHeight + window.innerHeight + 45;
+        rightColumn.style.top = topPosition + 'px';
       }
     }
   }

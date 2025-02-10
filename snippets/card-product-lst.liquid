@@ -39,7 +39,7 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover lst-bg-[#D9D9D9] lst-bg-opacity-0 hover:lst-bg-opacity-50 lst-transition-all">
+  <div class="card-wrapper product-card-wrapper underline-links-hover lst-bg-[#D9D9D9] lst-bg-opacity-0 hover:lst-bg-opacity-50 lst-transition-all group lst-group">
     <div
       class="card lst-justify-between lst-w-full lst-h-auto lst-relative"
     >
@@ -86,7 +86,7 @@
                   src="{{ card_product.media[1] | image_url: width: 533 }}"
                   sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 1024px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                   alt=""
-                  class="motion-reduce"
+                  class="motion-reduce lst-absolute lst-inset-0 lst-object-cover lst-opacity-0 group-hover:lst-opacity-100 lst-transition-all"
                   loading="lazy"
                   width="{{ card_product.media[1].width }}"
                   height="{{ card_product.media[1].height }}"
