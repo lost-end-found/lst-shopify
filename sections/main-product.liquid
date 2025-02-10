@@ -262,79 +262,6 @@
                     >
                       {{ product.description }}
                     </div>
-                    <ul class="lst-text-sm">
-                      <li>
-                        <strong>{{ 'products.product.authors' | t }}:</strong>
-                        {% assign authors_string = product.metafields.alexandrie.authors
-                          | replace: '[', ''
-                          | replace: ']', ''
-                          | replace: '"', ''
-                        %}
-                        {% assign authors_array = authors_string | split: ',' %}
-
-                        {% for author in authors_array %}
-                          {{ author -}}
-                          {%- unless forloop.last %},{% endunless %}
-                        {% endfor %}
-                      </li>
-                      {% if product.metafields.alexandrie.publisher_name %}
-                        <li>
-                          <strong>{{ 'products.product.publishers' | t }}</strong>:
-                          {{ product.metafields.alexandrie.publisher_name }}
-                        </li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.supplier_name %}
-                        <li class="lst-hidden">
-                          <strong>{{ 'products.product.suppliers' | t }}</strong>:
-                          {{ product.metafields.alexandrie.supplier_name }}
-                        </li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.published_at %}
-                        <li>
-                          <strong>{{ 'products.product.date_of_publication' | t }}</strong>:
-                          {{ product.metafields.alexandrie.published_at }}
-                        </li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.language %}
-                        <li>
-                          <strong>{{ 'products.product.language' | t }}</strong>:
-                          {{ product.metafields.alexandrie.language }}
-                        </li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.format %}
-                        <li>
-                          <strong>{{ 'products.product.format' | t }}</strong>:
-                          {{ product.metafields.alexandrie.format }}
-                        </li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.design %}
-                        <li>
-                          <strong>{{ 'products.product.design' | t }}</strong>:
-                          {{ product.metafields.alexandrie.design }}
-                        </li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.print %}
-                        <li>{{ product.metafields.alexandrie.print }}</li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.limited_edition %}
-                        <li>{{ product.metafields.alexandrie.limited_edition }}</li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.paper %}
-                        <li>{{ product.metafields.alexandrie.paper }}</li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.pages_count %}
-                        <li>
-                          <strong>{{ 'products.product.pages' | t }}</strong>:
-                          {{ product.metafields.alexandrie.pages_count }}
-                        </li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.availability %}
-                        <li>{{ product.metafields.alexandrie.availability }}</li>
-                      {% endif %}
-                      {% if product.metafields.alexandrie.return_conditions_limit_date %}
-                        <li>{{ product.metafields.alexandrie.return_conditions_limit_date }}</li>
-                      {% endif %}
-                    </ul>
                   {%- endif -%}
 
                 {%- when 'sku' -%}
@@ -764,6 +691,8 @@
                       <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                     {%- endif -%}
                   </product-recommendations>
+                {%- when 'metafield_info' -%}
+                  {% render 'metafield-info', block: block %}
                 {%- when 'icon-with-text' -%}
                   {% render 'icon-with-text', block: block %}
               {%- endcase -%}
@@ -1605,6 +1534,84 @@
           "id": "enable_quick_add",
           "label": "t:sections.main-product.blocks.complementary_products.settings.enable_quick_add.label",
           "default": false
+        }
+      ]
+    },
+    {
+      "type": "metafield_info",
+      "name": "Product Metafield Info",
+      "settings": [
+        {
+          "type": "select",
+          "id": "metafield_type",
+          "label": "Metafield Information",
+          "options": [
+            {
+              "value": "authors",
+              "label": "Authors"
+            },
+            {
+              "value": "publisher_name",
+              "label": "Publisher"
+            },
+            {
+              "value": "supplier_name",
+              "label": "Supplier"
+            },
+            {
+              "value": "published_at",
+              "label": "Publication Date"
+            },
+            {
+              "value": "language",
+              "label": "Language"
+            },
+            {
+              "value": "format",
+              "label": "Format"
+            },
+            {
+              "value": "design",
+              "label": "Design"
+            },
+            {
+              "value": "print",
+              "label": "Print"
+            },
+            {
+              "value": "limited_edition",
+              "label": "Limited Edition"
+            },
+            {
+              "value": "paper",
+              "label": "Paper"
+            },
+            {
+              "value": "pages_count",
+              "label": "Pages Count"
+            },
+            {
+              "value": "availability",
+              "label": "Availability"
+            },
+            {
+              "value": "return_conditions_limit_date",
+              "label": "Return Conditions"
+            }
+          ],
+          "default": "authors"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_label",
+          "label": "Show Label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_if_empty",
+          "label": "Hide if Empty",
+          "default": true
         }
       ]
     },

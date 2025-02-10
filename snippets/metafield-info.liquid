@@ -1,0 +1,58 @@
+{% assign metafield_value = '' %}
+{% assign label = '' %}
+
+{% case block.settings.metafield_type %}
+  {% when 'authors' %}
+    {% assign authors_string = product.metafields.alexandrie.authors
+      | replace: '[', ''
+      | replace: ']', ''
+      | replace: '"', ''
+    %}
+    {% assign metafield_value = authors_string | split: ',' | join: ', ' %}
+    {% assign label = 'products.product.authors' | t %}
+  {% when 'publisher_name' %}
+    {% assign metafield_value = product.metafields.alexandrie.publisher_name %}
+    {% assign label = 'products.product.publishers' | t %}
+  {% when 'supplier_name' %}
+    {% assign metafield_value = product.metafields.alexandrie.supplier_name %}
+    {% assign label = 'products.product.suppliers' | t %}
+  {% when 'published_at' %}
+    {% assign metafield_value = product.metafields.alexandrie.published_at %}
+    {% assign label = 'products.product.date_of_publication' | t %}
+  {% when 'language' %}
+    {% assign metafield_value = product.metafields.alexandrie.language %}
+    {% assign label = 'products.product.language' | t %}
+  {% when 'format' %}
+    {% assign metafield_value = product.metafields.alexandrie.format %}
+    {% assign label = 'products.product.format' | t %}
+  {% when 'design' %}
+    {% assign metafield_value = product.metafields.alexandrie.design %}
+    {% assign label = 'products.product.design' | t %}
+  {% when 'print' %}
+    {% assign metafield_value = product.metafields.alexandrie.print %}
+    {% assign label = 'products.product.print' | t %}
+  {% when 'limited_edition' %}
+    {% assign metafield_value = product.metafields.alexandrie.limited_edition %}
+    {% assign label = 'products.product.limited_edition' | t %}
+  {% when 'paper' %}
+    {% assign metafield_value = product.metafields.alexandrie.paper %}
+    {% assign label = 'products.product.paper' | t %}
+  {% when 'pages_count' %}
+    {% assign metafield_value = product.metafields.alexandrie.pages_count %}
+    {% assign label = 'products.product.pages' | t %}
+  {% when 'availability' %}
+    {% assign metafield_value = product.metafields.alexandrie.availability %}
+    {% assign label = 'products.product.availability' | t %}
+  {% when 'return_conditions_limit_date' %}
+    {% assign metafield_value = product.metafields.alexandrie.return_conditions_limit_date %}
+    {% assign label = 'products.product.return_conditions' | t %}
+{% endcase %}
+
+{% if metafield_value != blank or block.settings.hide_if_empty == false %}
+  <li class="lst-text-sm" {{ block.shopify_attributes }}>
+    {% if block.settings.show_label %}
+      <strong>{{ label }}:</strong>
+    {% endif %}
+    {{ metafield_value }}
+  </li>
+{% endif %}

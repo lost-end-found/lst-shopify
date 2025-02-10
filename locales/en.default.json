@@ -192,14 +192,19 @@
       "xr_button_label": "View in your space, loads item in augmented reality window",
       "include_taxes": "Tax included.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
-      "authors": "authors",
-      "publishers": "publishers",
-      "suppliers": "suppliers",
-      "language": "language",
-      "format": "format",
-      "design": "design",
-      "pages": "pages",
-      "date_of_publication": "date of publication"
+      "authors": "Authors",
+      "publishers": "Publishers",
+      "suppliers": "Suppliers",
+      "language": "Language",
+      "format": "Format",
+      "design": "Design",
+      "pages": "Pages",
+      "date_of_publication": "Date of Publication",
+      "print": "Print",
+      "limited_edition": "Limited Edition",
+      "paper": "Paper",
+      "availability": "Availability",
+      "return_conditions": "Return Conditions"
     },
     "modal": {
       "label": "Media gallery"
@@ -242,7 +247,7 @@
   },
   "templates": {
     "search": {
-      "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
+      "no_results": "No results found for \"{{ terms }}\". Check the spelling or use a different word or phrase.",
       "page": "Page",
       "products": "Products",
       "results_pages_with_count": {
@@ -264,12 +269,12 @@
         "many": "{{ count }} results"
       },
       "results_with_count_and_term": {
-        "one": "{{ count }} result found for “{{ terms }}”",
-        "other": "{{ count }} results found for “{{ terms }}”",
-        "many": "{{ count }} results found for “{{ terms }}”"
+        "one": "{{ count }} result found for \"{{ terms }}\"",
+        "other": "{{ count }} results found for \"{{ terms }}\"",
+        "many": "{{ count }} results found for \"{{ terms }}\""
       },
       "title": "Search results",
-      "search_for": "Search for “{{ terms }}”",
+      "search_for": "Search for \"{{ terms }}\"",
       "suggestions": "Suggestions",
       "pages": "Pages"
     },
