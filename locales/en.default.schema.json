@@ -1045,7 +1045,7 @@
               "label": "Text"
             },
             "featured_image_info": {
-              "content": "If you include a link in social media posts, the page’s featured image will be shown as the preview image. [Learn more](https://help.shopify.com/manual/online-store/images/showing-social-media-thumbnail-images)"
+              "content": "If you include a link in social media posts, the page's featured image will be shown as the preview image. [Learn more](https://help.shopify.com/manual/online-store/images/showing-social-media-thumbnail-images)"
             },
             "title_info": {
               "content": "A store title and description are included with the preview image. [Learn more](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)"
@@ -1083,7 +1083,7 @@
           }
         },
         "hide_variants": {
-          "label": "Hide unselected variants’ media on desktop"
+          "label": "Hide unselected variants' media on desktop"
         },
         "enable_video_looping": {
           "label": "Enable video looping"
@@ -1144,7 +1144,7 @@
         },
         "header__1": {
           "content": "Email Signup",
-          "info": "Subscribers added automatically to your “accepted marketing” customer list. [Learn more](https://help.shopify.com/manual/customers/manage-customers)"
+          "info": "Subscribers added automatically to your "accepted marketing" customer list. [Learn more](https://help.shopify.com/manual/customers/manage-customers)"
         },
         "header__2": {
           "content": "Social media icons",
@@ -1818,7 +1818,7 @@
               "label": "Text"
             },
             "featured_image_info": {
-              "content": "If you include a link in social media posts, the page’s featured image will be shown as the preview image. [Learn more](https://help.shopify.com/manual/online-store/images/showing-social-media-thumbnail-images)."
+              "content": "If you include a link in social media posts, the page's featured image will be shown as the preview image. [Learn more](https://help.shopify.com/manual/online-store/images/showing-social-media-thumbnail-images)."
             },
             "title_info": {
               "content": "A store title and description are included with the preview image. [Learn more](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)."
@@ -2196,7 +2196,7 @@
               "label": "Text"
             },
             "featured_image_info": {
-              "content": "If you include a link in social media posts, the page’s featured image will be shown as the preview image. [Learn more](https://help.shopify.com/manual/online-store/images/showing-social-media-thumbnail-images)."
+              "content": "If you include a link in social media posts, the page's featured image will be shown as the preview image. [Learn more](https://help.shopify.com/manual/online-store/images/showing-social-media-thumbnail-images)."
             },
             "title_info": {
               "content": "A store title and description are included with the preview image. [Learn more](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)."
@@ -2549,7 +2549,7 @@
           }
         },
         "hide_variants": {
-          "label": "Hide other variants’ media after selecting a variant"
+          "label": "Hide other variants' media after selecting a variant"
         },
         "enable_video_looping": {
           "label": "Enable video looping"
@@ -3492,6 +3492,107 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "main-event": {
+      "name": "Main event",
+      "blocks": {
+        "title": {
+          "name": "Title",
+          "settings": {
+            "blog_show_date": {
+              "label": "Show date"
+            },
+            "blog_show_author": {
+              "label": "Show author"
+            }
+          }
+        },
+        "event_details": {
+          "name": "Event Details"
+        },
+        "content": {
+          "name": "Content"
+        },
+        "share": {
+          "name": "Share",
+          "settings": {
+            "share_label": {
+              "label": "Share button label"
+            }
+          }
+        }
+      },
+      "settings": {
+        "enable_sticky_info": {
+          "label": "Enable sticky info"
+        },
+        "media_size": {
+          "label": "Media size",
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          }
+        },
+        "constrain_to_viewport": {
+          "label": "Constrain media to viewport"
+        },
+        "media_fit": {
+          "label": "Media fit",
+          "options__1": {
+            "label": "Contain"
+          },
+          "options__2": {
+            "label": "Cover"
+          }
+        },
+        "gallery_layout": {
+          "label": "Gallery layout",
+          "options__1": {
+            "label": "Stacked"
+          },
+          "options__2": {
+            "label": "Thumbnail"
+          }
+        },
+        "media_position": {
+          "label": "Media position",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Right"
+          }
+        },
+        "image_zoom": {
+          "label": "Image zoom",
+          "options__1": {
+            "label": "Lightbox"
+          },
+          "options__2": {
+            "label": "Hover"
+          },
+          "options__3": {
+            "label": "None"
+          }
+        },
+        "mobile_thumbnails": {
+          "label": "Mobile thumbnails",
+          "options__1": {
+            "label": "Show"
+          },
+          "options__2": {
+            "label": "Hide"
+          }
+        },
+        "enable_video_looping": {
+          "label": "Enable video looping"
+        }
       }
     }
   }

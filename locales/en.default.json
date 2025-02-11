@@ -113,7 +113,8 @@
         "date_label": "Date",
         "time_label": "Time",
         "location_label": "Location"
-      }
+      },
+      "by_author": "By {{ author }}"
     }
   },
   "onboarding": {
@@ -315,7 +316,12 @@
     },
     "events": {
       "events": "Events",
-      "more_info": "More Information"
+      "more_info": "More Information",
+      "event": {
+        "date": "Date",
+        "time": "Time",
+        "location": "Location"
+      }
     },
     "announcements": {
       "previous_announcement": "Previous announcement",
