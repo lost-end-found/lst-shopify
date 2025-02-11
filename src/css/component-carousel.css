@@ -63,32 +63,67 @@ Usage: codyhouse.co/license
 }
 
 .carousel__control {
-  --size: 40px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  @apply lst-bg-white;
-  border-radius: 50%;
-  @apply lst-shadow-md;
-  z-index: 1;
-  transition: 0.2s;
-}
-.carousel__control:active {
-  -webkit-transform: translateY(1px);transform: translateY(1px);
-}
-.carousel__control:hover {
-  @apply lst-bg-white;
-  @apply lst-shadow-lg;
-}
-.carousel__control[disabled] {
-  pointer-events: none;
-  opacity: 0.5;
-  box-shadow: none;
-}
-.carousel__control .icon {
-  --size: 20px;
   display: block;
-  margin: auto;
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel__control:first-of-type {
+  left: var(--carousel-btn-offset, 0.5rem);
+}
+
+.carousel__control:last-of-type {
+  right: var(--carousel-btn-offset, 0.5rem);
+}
+
+@media (min-width: 64rem) {
+  .carousel[data-swipe=on] .carousel__control {
+    display: block;
+  }
+}
+
+.carousel__btn {
+  display: block;
+  @apply lst-bg-gray-900/75;
+  height: var(--carousel-btn-height, 3.2em);
+  width: var(--carousel-btn-width, 1.6em);
+  @apply lst-rounded;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+
+.carousel__btn .icon {
+  display: block;
+  width: var(--carousel-btn-icon-size, 1.6em);
+  height: var(--carousel-btn-icon-size, 1.6em);
+  margin: 0 auto;
+  transition: color 0.2s;
+  @apply lst-text-white;
+}
+
+@supports (grid-area: auto) {
+  .carousel__btn {
+    background-color: transparent;
+  }
+  .carousel__btn .icon {
+    @apply lst-text-gray-900;
+  }
+}
+
+.carousel[data-controls=hover] .carousel__control {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.carousel[data-controls=hover]:hover .carousel__control {
+  opacity: 1;
+}
+
+.carousel[data-swipe=on] .carousel__control {
+  display: none;
 }
 
 .carousel__navigation {

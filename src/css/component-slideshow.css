@@ -290,12 +290,7 @@ Usage: codyhouse.co/license
   transition: background 0.2s, transform 0.2s;
   transition: background 0.2s, transform 0.2s, -webkit-transform 0.2s;
 }
-.slideshow__btn:hover {
-  @apply lst-bg-yellow-500/[.85];
-}
-.slideshow__btn:hover .icon {
-  @apply lst-text-white;
-}
+
 /* .slideshow:not(.slideshow--is-animating) .slideshow__btn:active {
   transform: translateY(2px);
 } */
