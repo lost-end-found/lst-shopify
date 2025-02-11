@@ -3,6 +3,8 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Librairie Sans Titre",
   description: "Documentation",
+  lastUpdated: true,
+  cleanUrls: true,
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
