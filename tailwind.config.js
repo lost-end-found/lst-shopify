@@ -39,6 +39,38 @@ export default {
             },
           },
         },
+        '3xl': {
+          css: {
+            fontSize: '1.875rem',
+            lineHeight: '2.25rem',
+            p: {
+              marginTop: '1.5rem',
+              marginBottom: '1.5rem',
+              '+ p': {
+                marginTop: '1.5rem',
+                marginBottom: '1.5rem',
+              },
+            },
+            h1: {
+              fontSize: '4rem',
+              lineHeight: '4.5rem',
+              marginTop: '0',
+              marginBottom: '2rem',
+            },
+            h2: {
+              fontSize: '3rem',
+              lineHeight: '3.5rem',
+              marginTop: '3rem',
+              marginBottom: '1.5rem',
+            },
+            h3: {
+              fontSize: '2.25rem',
+              lineHeight: '2.75rem',
+              marginTop: '2.5rem',
+              marginBottom: '1.25rem',
+            },
+          },
+        },
         black: {
           css: {
             '--tw-prose-body': theme('colors.black'),
