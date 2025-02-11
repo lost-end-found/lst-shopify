@@ -4,53 +4,29 @@
   <h1>{{ blog.title }}</h1>
 </div>
 
-<div class="events-container lst-grid lg:lst-grid-cols-2 lst-divide-x lst-divide-black">
-  {% paginate blog.articles by 10 %}
-    {% for article in blog.articles %}
-      <div class="event-item lst-bg-[#F7F2EB] lst-border-b lst-border-black">
-        <div class="lst-px-4 lst-pt-4">
-          {% if article.image %}
-            <img
-              width="300"
-              height="auto"
-              src="{{ article.image | image_url: width: 800 }}"
-              class="lst-w-full lst-aspect-video lst-object-cover"
-              alt="{{ article.title }}"
-            >
-          {% endif %}
-        </div>
-        <div class="lst-grid lst-grid-cols-2">
-          <h2 class="lst-col-span-2 lst-text-base lst-text-black lst-p-2 lst-border-b lst-border-black lst-px-4">
-            {{ article.title }}
-          </h2>
-          <div class="lst-text-base lst-text-black lst-py-2 lst-px-4 lst-border-r lst-border-black">
-            {% if article.published_at %}
-              <p>Date: {{ article.published_at | date: '%B %d, %Y' }}</p>
-            {% endif %}
-          </div>
-          <a class="lst-text-base lst-text-black lst-p-2 hover:lst-bg-primary" href="{{ article.url }}">Infos +</a>
-        </div>
-      </div>
-    {% endfor %}
+<div class="lst-mb-12">
+  {% assign articles_string = '' %}
+  {% for article in blog.articles %}
+    {% assign timestamp = article.metafields.blog_event.start_date_time.value | date: '%s' %}
+    {% assign article_data = timestamp | append: '::' | append: article.handle %}
+    {% assign articles_string = articles_string | append: article_data | append: '||' %}
+  {% endfor %}
 
-    {% if paginate.pages > 1 %}
-      <div class="pagination lst-col-span-2 lst-p-4 lst-flex lst-justify-center lst-gap-4">
-        {% if paginate.previous %}
-          <a href="{{ paginate.previous.url }}" class="lst-text-black hover:lst-text-primary">Previous</a>
-        {% endif %}
+  {% assign articles_array = articles_string | split: '||' %}
+  {% assign sorted_articles = articles_array | sort | reverse %}
 
-        {% for part in paginate.parts %}
-          {% if part.is_link %}
-            <a href="{{ part.url }}" class="lst-text-black hover:lst-text-primary">{{ part.title }}</a>
-          {% else %}
-            <span class="lst-text-primary">{{ part.title }}</span>
+  <div class="events-container lst-grid lg:lst-grid-cols-2 lst-divide-x lst-divide-black">
+    {% for article_data in sorted_articles %}
+      {% if article_data != '' %}
+        {% assign parts = article_data | split: '::' %}
+        {% assign article_handle = parts[1] %}
+        {% for article in blog.articles %}
+          {% if article.handle == article_handle %}
+            {% render 'event-card', article: article %}
+            {% break %}
           {% endif %}
         {% endfor %}
-
-        {% if paginate.next %}
-          <a href="{{ paginate.next.url }}" class="lst-text-black hover:lst-text-primary">Next</a>
-        {% endif %}
-      </div>
-    {% endif %}
-  {% endpaginate %}
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
