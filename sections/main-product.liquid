@@ -2410,73 +2410,75 @@
   ]
 }
 {% endschema %}
-<script>
-  class ProductInfo extends HTMLElement {
-    constructor() {
-      super();
-      this.fold = document.querySelector('.js-fold');
-      this.media = document.querySelector('.product__media-wrapper');
-      this.header = document.querySelector('sticky-header');
-      this.productInfoContent = document.querySelector('.js-product-info-content');
-      this.pickupAvailability = document.querySelector('pickup-availability');
+{% if product.images.size > 1 %}
+  <script>
+    class ProductInfo extends HTMLElement {
+      constructor() {
+        super();
+        this.fold = document.querySelector('.js-fold');
+        this.media = document.querySelector('.product__media-wrapper');
+        this.header = document.querySelector('sticky-header');
+        this.productInfoContent = document.querySelector('.js-product-info-content');
+        this.pickupAvailability = document.querySelector('pickup-availability');
 
-      console.log('Elements found:', {
-        fold: this.fold,
-        media: this.media,
-        header: this.header,
-        productInfoContent: this.productInfoContent,
-        pickupAvailability: this.pickupAvailability,
-      });
-
-      // Initial setup after a short delay to ensure DOM is ready
-      setTimeout(() => this.setupPadding(), 100);
-
-      // Update on window resize
-      window.addEventListener('resize', () => this.setupPadding());
-
-      // Update on DOM content loaded
-      document.addEventListener('DOMContentLoaded', () => this.setupPadding());
-
-      // Update when images load as they might affect layout
-      window.addEventListener('load', () => this.setupPadding());
-    }
-
-    setupPadding() {
-      if (!this.fold || !this.productInfoContent) {
-        console.log('Missing required elements:', {
+        console.log('Elements found:', {
           fold: this.fold,
+          media: this.media,
+          header: this.header,
           productInfoContent: this.productInfoContent,
+          pickupAvailability: this.pickupAvailability,
         });
-        return;
+
+        // Initial setup after a short delay to ensure DOM is ready
+        setTimeout(() => this.setupPadding(), 100);
+
+        // Update on window resize
+        window.addEventListener('resize', () => this.setupPadding());
+
+        // Update on DOM content loaded
+        document.addEventListener('DOMContentLoaded', () => this.setupPadding());
+
+        // Update when images load as they might affect layout
+        window.addEventListener('load', () => this.setupPadding());
       }
 
-      console.log('Starting setupPadding calculation...');
+      setupPadding() {
+        if (!this.fold || !this.productInfoContent) {
+          console.log('Missing required elements:', {
+            fold: this.fold,
+            productInfoContent: this.productInfoContent,
+          });
+          return;
+        }
 
-      // Make fold visible for debugging
-      this.fold.style.height = '1px';
-      this.fold.style.width = '100%';
-      this.fold.style.background = 'transparent';
-      this.fold.style.position = 'relative';
-      this.fold.style.display = 'block';
+        console.log('Starting setupPadding calculation...');
 
-      // Get header height
-      var topbarHeight = this.header ? this.header.offsetHeight : 0;
+        // Make fold visible for debugging
+        this.fold.style.height = '1px';
+        this.fold.style.width = '100%';
+        this.fold.style.background = 'transparent';
+        this.fold.style.position = 'relative';
+        this.fold.style.display = 'block';
 
-      var foldLineOffset = this.fold ? this.fold.offsetTop : 0;
+        // Get header height
+        var topbarHeight = this.header ? this.header.offsetHeight : 0;
 
-      var rightColumn = this.productInfoContent;
+        var foldLineOffset = this.fold ? this.fold.offsetTop : 0;
 
-      if (rightColumn) {
-        rightColumn.style.paddingTop = 'calc(100vh - ' + foldLineOffset + 'px - ' + topbarHeight + 'px - 208px)';
-        var rightColumnHeight = rightColumn.getBoundingClientRect().height;
-        var topPosition =
-          -rightColumnHeight + window.innerHeight + 45 > 150
-            ? -rightColumnHeight + window.innerHeight - 12
-            : -rightColumnHeight + window.innerHeight + 45;
-        rightColumn.style.top = topPosition + 'px';
+        var rightColumn = this.productInfoContent;
+
+        if (rightColumn) {
+          rightColumn.style.paddingTop = 'calc(100vh - ' + foldLineOffset + 'px - ' + topbarHeight + 'px - 208px)';
+          var rightColumnHeight = rightColumn.getBoundingClientRect().height;
+          var topPosition =
+            -rightColumnHeight + window.innerHeight + 45 > 150
+              ? -rightColumnHeight + window.innerHeight - 12
+              : -rightColumnHeight + window.innerHeight + 45;
+          rightColumn.style.top = topPosition + 'px';
+        }
       }
     }
-  }
 
-  customElements.define('product-info', ProductInfo);
-</script>
+    customElements.define('product-info', ProductInfo);
+  </script>
+{% endif %}
