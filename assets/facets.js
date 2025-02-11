@@ -224,7 +224,7 @@ const CustomSelect = (function () {
 
   CustomSelect.prototype.getSelectLabelSR = function () {
     return this.label
-      ? '<p class="sr-only lst-px-3 lg:lst-px-4 lst-text-xs" id="' +
+      ? '<p class="lst-sr-only lst-px-3 lg:lst-px-4 lst-text-xs" id="' +
           this.selectId +
           '-description">' +
           this.label.textContent +

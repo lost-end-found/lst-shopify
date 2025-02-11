@@ -411,6 +411,9 @@ Util.extend = function () {
     startAutoplay(carousel);
     // reset tab index
     resetItemsTabIndex(carousel);
+
+    // Add arrow color update
+    updateArrowColors(carousel);
   }
 
   function updateClones(carousel, direction) {
@@ -587,9 +590,9 @@ Util.extend = function () {
     var closestHidden = carousel.listWrapper.closest('.sr-only');
     if (closestHidden) {
       // carousel is inside an .sr-only (visually hidden) element
-      closestHidden.classList.remove('sr-only');
+      closestHidden.classList.remove('lst-sr-only');
       computedWidth = carousel.listWrapper.offsetWidth;
-      closestHidden.classList.add('sr-only');
+      closestHidden.classList.add('lst-sr-only');
     } else if (isNaN(computedWidth)) {
       computedWidth = getHiddenParentWidth(carousel.element, carousel);
     }
@@ -666,7 +669,7 @@ Util.extend = function () {
 
     var dotsNr = Math.ceil(carousel.items.length / carousel.visibItemsNb),
       selectedDot = getSelectedDot(carousel),
-      indexClass = carousel.options.navigationPagination ? '' : 'sr-only';
+      indexClass = carousel.options.navigationPagination ? '' : 'lst-sr-only';
     for (var i = 0; i < dotsNr; i++) {
       var className =
         i == selectedDot
@@ -776,6 +779,97 @@ Util.extend = function () {
       if (indexPrev >= 0) carousel.items[indexPrev].removeAttribute('tabindex');
       var indexNext = j + carousel.visibItemsNb + i; // next element
       if (indexNext < carousel.items.length) carousel.items[indexNext].removeAttribute('tabindex');
+    }
+  }
+
+  function getImageColorAt(img, x, y) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+
+    ctx.drawImage(img, 0, 0);
+
+    try {
+      const imageData = ctx.getImageData(x, y, 1, 1).data;
+      return {
+        r: imageData[0],
+        g: imageData[1],
+        b: imageData[2],
+        a: imageData[3],
+        hex: `#${imageData[0].toString(16).padStart(2, '0')}${imageData[1].toString(16).padStart(2, '0')}${imageData[2]
+          .toString(16)
+          .padStart(2, '0')}`,
+      };
+    } catch (e) {
+      console.error('Error getting image data:', e);
+      return null;
+    } finally {
+      canvas.remove();
+    }
+  }
+
+  function analyzeMultiplePoints(img, element) {
+    const points = [
+      { x: -5, y: -5 }, // top-left
+      { x: -5, y: 0 }, // left
+      { x: 0, y: -5 }, // top
+      { x: 5, y: 5 }, // bottom-right
+      { x: 0, y: 5 }, // bottom
+      { x: 5, y: 0 }, // right
+    ];
+
+    const rect = element.getBoundingClientRect();
+    const imgRect = img.getBoundingClientRect();
+
+    const results = points
+      .map((point) => {
+        const relativeX = Math.floor((rect.left - imgRect.left + point.x) * (img.naturalWidth / imgRect.width));
+        const relativeY = Math.floor((rect.top - imgRect.top + point.y) * (img.naturalHeight / imgRect.height));
+
+        return getImageColorAt(img, relativeX, relativeY);
+      })
+      .filter(Boolean);
+
+    if (results.length === 0) return null;
+
+    const avgBrightness =
+      results.reduce((sum, color) => {
+        return sum + (color.r * 299 + color.g * 587 + color.b * 114) / 1000;
+      }, 0) / results.length;
+
+    return avgBrightness;
+  }
+
+  function updateArrowColors(carousel) {
+    if (carousel.controls.length === 0) return;
+
+    // Get the first and last visible items
+    const firstVisibleIndex = carousel.selectedItem;
+    const lastVisibleIndex = Math.min(firstVisibleIndex + carousel.visibItemsNb - 1, carousel.items.length - 1);
+
+    const leftArrow = carousel.controls[0];
+    const rightArrow = carousel.controls[1];
+
+    // Analyze first visible item for left arrow
+    const firstVisibleItem = carousel.items[firstVisibleIndex];
+    const firstImage = firstVisibleItem.querySelector('img');
+    if (firstImage && firstImage.complete) {
+      const leftBrightness = analyzeMultiplePoints(firstImage, leftArrow);
+      if (leftBrightness !== null) {
+        leftArrow.style.color = leftBrightness > 128 ? '#000000' : '#ffffff';
+      }
+    }
+
+    // Analyze last visible item for right arrow
+    const lastVisibleItem = carousel.items[lastVisibleIndex];
+    const lastImage = lastVisibleItem.querySelector('img');
+    if (lastImage && lastImage.complete) {
+      const rightBrightness = analyzeMultiplePoints(lastImage, rightArrow);
+      if (rightBrightness !== null) {
+        rightArrow.style.color = rightBrightness > 128 ? '#000000' : '#ffffff';
+      }
     }
   }
 

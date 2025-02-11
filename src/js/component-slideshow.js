@@ -327,6 +327,91 @@ Util.extend = function () {
     }
   }
 
+  function getImageColorAt(img, x, y) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+
+    ctx.drawImage(img, 0, 0);
+
+    try {
+      const imageData = ctx.getImageData(x, y, 1, 1).data;
+      return {
+        r: imageData[0],
+        g: imageData[1],
+        b: imageData[2],
+        a: imageData[3],
+        hex: `#${imageData[0].toString(16).padStart(2, '0')}${imageData[1].toString(16).padStart(2, '0')}${imageData[2]
+          .toString(16)
+          .padStart(2, '0')}`,
+      };
+    } catch (e) {
+      console.error('Error getting image data:', e);
+      return null;
+    } finally {
+      canvas.remove();
+    }
+  }
+
+  function analyzeMultiplePoints(img, element) {
+    const points = [
+      { x: -5, y: -5 }, // top-left
+      { x: -5, y: 0 }, // left
+      { x: 0, y: -5 }, // top
+      { x: 5, y: 5 }, // bottom-right
+      { x: 0, y: 5 }, // bottom
+      { x: 5, y: 0 }, // right
+    ];
+
+    const rect = element.getBoundingClientRect();
+    const imgRect = img.getBoundingClientRect();
+
+    const results = points
+      .map((point) => {
+        const relativeX = Math.floor((rect.left - imgRect.left + point.x) * (img.naturalWidth / imgRect.width));
+        const relativeY = Math.floor((rect.top - imgRect.top + point.y) * (img.naturalHeight / imgRect.height));
+
+        return getImageColorAt(img, relativeX, relativeY);
+      })
+      .filter(Boolean); // Remove null results
+
+    if (results.length === 0) return null;
+
+    // Average the brightness of all points
+    const avgBrightness =
+      results.reduce((sum, color) => {
+        return sum + (color.r * 299 + color.g * 587 + color.b * 114) / 1000;
+      }, 0) / results.length;
+
+    return avgBrightness;
+  }
+
+  function updateArrowColor(slideshow) {
+    const currentSlide = slideshow.items[slideshow.selectedSlide];
+    const slideImage = currentSlide.querySelector('img');
+
+    console.log(slideImage);
+
+    if (!slideImage || !slideImage.complete) {
+      // If there's no image or it's not loaded, skip color analysis
+      return;
+    }
+
+    const arrowIcons = slideshow.controls;
+
+    for (let i = 0; i < arrowIcons.length; i++) {
+      const arrowIcon = arrowIcons[i];
+      const brightness = analyzeMultiplePoints(slideImage, arrowIcon);
+
+      if (brightness !== null) {
+        // Set contrasting color based on background brightness
+        arrowIcon.style.color = brightness > 128 ? '#000000' : '#ffffff';
+      }
+    }
+  }
+
   function resetAnimationEnd(slideshow, item) {
     setTimeout(function () {
       // add a delay between the end of animation and slideshow reset - improve animation performance
@@ -393,11 +478,30 @@ Util.extend = function () {
     resetSlideshowTheme(slideshow, index);
     // emit event
     emitSlideshowEvent(slideshow, 'newItemSelected', slideshow.selectedSlide);
+
+    updateArrowColor(slideshow);
+
     if (slideshow.animationOff) {
       slideshow.animating = false;
       Util.removeClass(slideshow.element, slideshow.animatingClass);
     }
     setCounterItem(slideshow);
+
+    // After setting the new slide
+    const newSlideImage = slideshow.items[index].querySelector('img');
+    if (newSlideImage) {
+      if (newSlideImage.complete) {
+        updateArrowColor(slideshow);
+      } else {
+        newSlideImage.addEventListener(
+          'load',
+          () => {
+            updateArrowColor(slideshow);
+          },
+          { once: true }
+        );
+      }
+    }
   }
 
   function getExitItemClass(slideshow, bool, oldIndex, newIndex) {

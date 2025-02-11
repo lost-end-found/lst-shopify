@@ -220,7 +220,11 @@ export default (function () {
   function getSelectLabelSR(t) {
     if (t.label) {
       return (
-        '<p class="sr-only lst-px-2 lst-text-xs" id="' + t.selectId + '-description">' + t.label.textContent + '</p>'
+        '<p class="lst-sr-only lst-px-2 lst-text-xs" id="' +
+        t.selectId +
+        '-description">' +
+        t.label.textContent +
+        '</p>'
       );
     } else {
       return '';
