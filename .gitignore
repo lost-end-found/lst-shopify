@@ -36,4 +36,5 @@ dist-ssr
 .shopify
 
 .shopify
-docs/.*
+docs/.vitepress/cache
+docs/.vitepress/temp

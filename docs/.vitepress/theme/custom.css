@@ -1,0 +1,10 @@
+/* .vitepress/theme/custom.css */
+:root {
+    --vp-c-brand-1: rgb(0,0,0);
+    --vp-c-brand-2: rgb(0,0,0);
+  }
+
+.dark {
+    --vp-c-brand-1: rgb(255,255,0);
+    --vp-c-brand-2: rgb(255,255,0);
+}
