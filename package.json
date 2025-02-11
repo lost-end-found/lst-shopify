@@ -7,8 +7,11 @@
     "dev": "shopify theme dev --store librairie-sans-titre-2 & vite build & npx tailwindcss -i ./style.css -o ./assets/style-vite.css --watch",
     "vite:dev": "vite dev",
     "vite:build": "vite build",
-    "push": "shopify theme push",
-    "pull": "shopify theme pull"
+    "push": "shopify theme push --ignore ./docs/*",
+    "pull": "shopify theme pull --ignore ./docs/*",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
@@ -17,6 +20,7 @@
     "chokidar": "^3.6.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vitepress": "^1.6.3"
   }
 }
