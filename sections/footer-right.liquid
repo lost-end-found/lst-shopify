@@ -59,7 +59,7 @@
                         type="email"
                         name="contact[email]"
                         value="{{ form.email }}"
-                        class="lst-font-thin lst-text-xl lst-border-0"
+                        class="lst-font-thin lst-text-xl lst-border-0 focus:lst-ring-0 focus:lst-outline-none"
                         aria-required="true"
                         autocorrect="off"
                         autocapitalize="off"
@@ -94,7 +94,7 @@
                       value="true"
                       required
                     >
-                    <label for="accepts_marketing" class="lst-text-xs lst-cursor-pointer">
+                    <label for="accepts_marketing" class="lst-text-xs lst-cursor-pointer lst-ml-2">
                       {{ block.settings.newsletter_info_privacy_text }}
                     </label>
                   </div>
