@@ -183,7 +183,7 @@
                     </p>
                   {%- when 'title' -%}
                     <div class="product__title md:lst-pt-52 lst-pt-6" {{ block.shopify_attributes }}>
-                      <h1>{{ product.title | escape }}</h1>
+                      <h1 class="lst-text-2xl lg:lst-text-4xl">{{ product.title | escape }}</h1>
                       <a href="{{ product.url }}" class="product__title">
                         <h2 class="h1">
                           {{ product.title | escape }}
@@ -2467,7 +2467,7 @@
       var rightColumn = this.productInfoContent;
 
       if (rightColumn) {
-        rightColumn.style.paddingTop = 'calc(100vh - ' + foldLineOffset + 'px - ' + topbarHeight + 'px - 108px)';
+        rightColumn.style.paddingTop = 'calc(100vh - ' + foldLineOffset + 'px - ' + topbarHeight + 'px - 208px)';
         var rightColumnHeight = rightColumn.getBoundingClientRect().height;
         var topPosition =
           -rightColumnHeight + window.innerHeight + 45 > 150
