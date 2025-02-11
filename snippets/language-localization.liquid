@@ -1,9 +1,6 @@
 {%- comment -%}
   Renders a single language button for switching to the non-active language
 {%- endcomment -%}
-<script>
-  console.log({{ localization.available_languages | json }})
-</script>
 
 {%- for language in localization.available_languages -%}
   {% if language.iso_code != localization.language.iso_code %}
