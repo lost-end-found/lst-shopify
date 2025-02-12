@@ -13,7 +13,7 @@
       "type": "main-event",
       "blocks": {
         "featured_image": {
-          "type": "featured_image",
+          "type": "image",
           "settings": {
             "image_height": "adapt",
             "media_fit": "contain",
