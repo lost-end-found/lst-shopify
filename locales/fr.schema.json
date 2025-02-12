@@ -377,6 +377,23 @@
           }
         }
       }
+    },
+    "store_information": {
+      "name": "Informations de la boutique",
+      "settings": {
+        "store_phone": {
+          "label": "Numéro de téléphone"
+        },
+        "store_email": {
+          "label": "E-mail"
+        },
+        "store_address": {
+          "label": "Adresse"
+        },
+        "store_hours": {
+          "label": "Horaires d'ouverture"
+        }
+      }
     }
   },
   "sections": {
@@ -3365,23 +3382,6 @@
       },
       "presets": {
         "name": "Liste rapide des commandes"
-      }
-    }
-  },
-  "store_information": {
-    "name": "Informations de la boutique",
-    "settings": {
-      "store_phone": {
-        "label": "Numéro de téléphone"
-      },
-      "store_email": {
-        "label": "E-mail"
-      },
-      "store_address": {
-        "label": "Adresse"
-      },
-      "store_hours": {
-        "label": "Horaires d'ouverture"
       }
     }
   }
