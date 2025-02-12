@@ -20,7 +20,7 @@
             "heading_size": "h1",
             "subheading": "COLLECTION BOOKS IS HOT",
             "button_label": "PLUS INFO",
-            "link": "shopify://products/t-shirt-collecting-books-is-hot"
+            "link": "shopify://products/tshirt-collecting-book-is-hot-noir-jaune"
           }
         },
         "slide_6dN7X3": {
@@ -31,7 +31,7 @@
             "heading_size": "h1",
             "subheading": "COLLECTION BOOKS IS HOT",
             "button_label": "PLUS INFO",
-            "link": "shopify://products/t-shirt-collecting-books-is-hot"
+            "link": "shopify://products/tshirt-collecting-book-is-hot-gris-bleu"
           }
         },
         "slide_yraig6": {
@@ -42,7 +42,7 @@
             "heading_size": "h1",
             "subheading": "COLLECTION BOOKS IS HOT",
             "button_label": "PLUS INFO",
-            "link": "shopify://products/t-shirt-collecting-books-is-hot"
+            "link": "shopify://products/tshirt-collecting-book-is-hot-blanc-rouge"
           }
         }
       },
@@ -92,6 +92,8 @@
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "1",

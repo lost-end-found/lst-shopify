@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -9,21 +18,21 @@
           "type": "social_link",
           "settings": {
             "social_link_text": "Instagram",
-            "social_link_url": "https:\/\/www.instagram.com\/librairiesanstitre\/"
+            "social_link_url": "https://www.instagram.com/librairiesanstitre/"
           }
         },
         "social_link_qY79wa": {
           "type": "social_link",
           "settings": {
             "social_link_text": "Facebook",
-            "social_link_url": "https:\/\/www.facebook.com\/librairiesanstitre\/"
+            "social_link_url": "https://www.facebook.com/librairiesanstitre/"
           }
         },
         "social_link_gyEmLM": {
           "type": "social_link",
           "settings": {
             "social_link_text": "Threads",
-            "social_link_url": "https:\/\/www.threads.net\/@librairiesanstitre"
+            "social_link_url": "https://www.threads.net/@librairiesanstitre"
           }
         }
       },
@@ -39,14 +48,16 @@
       "blocks": {
         "rich_text_TBtwbY": {
           "type": "rich_text",
+          "disabled": true,
           "settings": {
-            "rich_text_content": "<p>2, rue Auguste Barbier 75011 Paris<\/p><p>Ouvert du lundi au samedi de 10h30 à 20h et le dimanche de 11h à 19h<\/p>"
+            "rich_text_content": "<p>2, rue Auguste Barbier 75011 Paris</p><p>Ouvert du lundi au samedi de 10h30 à 20h et le dimanche de 11h à 19h</p>"
           }
         },
         "rich_text_9XhUDD": {
           "type": "rich_text",
+          "disabled": true,
           "settings": {
-            "rich_text_content": "<p>+ 31 1 56 86 34 24 15 | contact@librairiesanstitre.com<\/p>"
+            "rich_text_content": "<p>+ 31 1 56 86 34 24 15 | contact@librairiesanstitre.com</p>"
           }
         },
         "link_with_icon_dFHFcp": {
@@ -54,8 +65,8 @@
           "disabled": true,
           "settings": {
             "link_with_icon_text": "Question",
-            "link_with_icon_url": "shopify:\/\/collections\/frontpage",
-            "link_with_icon_icon": "shopify:\/\/shop_images\/Icone_about_1.svg"
+            "link_with_icon_url": "shopify://collections/frontpage",
+            "link_with_icon_icon": "shopify://shop_images/Icone_about_1.svg"
           }
         },
         "link_with_icon_YFCEiW": {
@@ -63,8 +74,8 @@
           "disabled": true,
           "settings": {
             "link_with_icon_text": "Question",
-            "link_with_icon_url": "shopify:\/\/collections\/frontpage",
-            "link_with_icon_icon": "shopify:\/\/shop_images\/Icone_about_1.svg"
+            "link_with_icon_url": "shopify://collections/frontpage",
+            "link_with_icon_icon": "shopify://shop_images/Icone_about_1.svg"
           }
         },
         "link_with_icon_kYNnHd": {
@@ -72,8 +83,8 @@
           "disabled": true,
           "settings": {
             "link_with_icon_text": "Secure payment",
-            "link_with_icon_url": "shopify:\/\/products\/animal-print-hair-band-various-colours",
-            "link_with_icon_icon": "shopify:\/\/shop_images\/Icone_about_1.svg"
+            "link_with_icon_url": "shopify://products/animal-print-hair-band-various-colours",
+            "link_with_icon_icon": "shopify://shop_images/Icone_about_1.svg"
           }
         }
       },
@@ -95,28 +106,28 @@
             "newsletter_info_label": "Abonnez-vous à notre newsletter:",
             "newsletter_info_placeholder": "Votre adresse e-mail",
             "newsletter_info_button_text": "S'abonner",
-            "newsletter_info_privacy_text": "<p>Je comprends qu'en m'abonnant, je choisis explicitement de recevoir la newsletter de la librairie sans titre et que je peux facilement me désinscrire à tout moment. me désinscrire à tout moment.<\/p>"
+            "newsletter_info_privacy_text": "<p>Je comprends qu'en m'abonnant, je choisis explicitement de recevoir la newsletter de la librairie sans titre et que je peux facilement me désinscrire à tout moment. me désinscrire à tout moment.</p>"
           }
         },
         "links_list_RnteVh": {
           "type": "links_list",
           "settings": {
             "links_list_link_text": "c.v.g",
-            "links_list_link_url": "shopify:\/\/pages\/conditions-generales-de-ventes"
+            "links_list_link_url": "shopify://pages/conditions-generales-de-ventes"
           }
         },
         "links_list_BEWzqT": {
           "type": "links_list",
           "settings": {
             "links_list_link_text": "Mentions légales",
-            "links_list_link_url": "shopify:\/\/pages\/mentions-legales"
+            "links_list_link_url": "shopify://pages/mentions-legales"
           }
         },
         "links_list_Uci87C": {
           "type": "links_list",
           "settings": {
             "links_list_link_text": "Livraisons",
-            "links_list_link_url": "shopify:\/\/pages\/livraisons"
+            "links_list_link_url": "shopify://pages/livraisons"
           }
         },
         "links_list_LwWkk9": {
@@ -124,7 +135,7 @@
           "disabled": true,
           "settings": {
             "links_list_link_text": "Press inquiries",
-            "links_list_link_url": "shopify:\/\/pages\/contact"
+            "links_list_link_url": "shopify://pages/contact"
           }
         },
         "links_list_GHaBYQ": {
@@ -132,7 +143,7 @@
           "disabled": true,
           "settings": {
             "links_list_link_text": "Localisation et horaires",
-            "links_list_link_url": "shopify:\/\/pages\/contact"
+            "links_list_link_url": "shopify://pages/contact"
           }
         }
       },
