@@ -377,6 +377,23 @@
           "label": "Vertical space"
         }
       }
+    },
+    "store_information": {
+      "name": "Store information",
+      "settings": {
+        "store_phone": {
+          "label": "Phone number"
+        },
+        "store_email": {
+          "label": "Email"
+        },
+        "store_address": {
+          "label": "Address"
+        },
+        "store_hours": {
+          "label": "Store hours"
+        }
+      }
     }
   },
   "sections": {
@@ -3614,23 +3631,6 @@
         "enable_video_looping": {
           "label": "Enable video looping"
         }
-      }
-    }
-  },
-
-  "store_information": {
-    "settings": {
-      "store_phone": {
-        "label": "Phone number"
-      },
-      "store_email": {
-        "label": "Email"
-      },
-      "store_address": {
-        "label": "Address"
-      },
-      "store_hours": {
-        "label": "Store hours"
       }
     }
   }
