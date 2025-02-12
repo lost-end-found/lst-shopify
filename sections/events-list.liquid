@@ -1,5 +1,8 @@
 {{ 'component-carousel-vite.css' | asset_url | stylesheet_tag }}
 {%- style -%}
+  .event-more-info:hover {
+    background-color: yellow;
+  }
 {%- endstyle -%}
 
 {% assign current_time = 'now' | date: '%s' %}
@@ -51,7 +54,7 @@
       </div>
       <ul class="slideshow__content">
         {% for article in upcoming_events %}
-          <div class="lst-grid lg:lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-y lst-border-black">
+          <div class="lst-grid lg:lst-grid-cols-2 slideshow__item js-slideshow__item lst-items-stretch lst-min-h-0 lst-border-b lst-border-black">
             <div class="lst-bg-[#F7F2EB] lst-p-3 lg:lst-p-5 lst-border-r lst-border-black">
               <div class="lst-grid lst-grid-cols-2">
                 {%- assign start_date = article.metafields.blog_event.start_date_time.value | date: '%d %b %Y' -%}
@@ -76,7 +79,7 @@
                 {{ article.metafields.blog_event.description }}
               </div>
             </div>
-            <div>
+            <a href="{{ article.url }}" class="lst-block lst-peer">
               <img
                 src="{{ article.image | image_url: width: 1000, height: 600, crop: 'center' }}"
                 class="lst-h-full lst-w-full lst-object-cover"
@@ -84,16 +87,14 @@
                 width="1000px"
                 height="600px"
               >
-            </div>
-            <div class="lg:lst-col-span-2 lst-grid lg:lst-grid-cols-4 lst-h-[45px] lst-items-center lst-border-t lst-border-black">
-              <a
-                class="h4 lst-text-black hover:lst-bg-primary lst-px-3 lg:lst-px-5 lst-h-full lg:lst-border-r lg:lst-border-black lst-flex lst-items-center lst-space-x-2 lg:lst-col-span-2"
-                href="{{ article.url }}"
-              >
-                {% render 'icon-arrow' %}
-                <span>{{ 'sections.events.more_info' | t }}</span>
-              </a>
-            </div>
+            </a>
+            <a
+              class="event-more-info h4 lst-text-black hover:lst-bg-primary peer-hover:lst-bg-primary lst-px-3 lg:lst-px-5 lg:lst-border-r lg:lst-border-black lst-items-center lst-space-x-2 lg:lst-col-span-1 lst-grid lg:lst-grid-cols-4 lst-h-[45px] lst-border-t lst-border-black"
+              href="{{ article.url }}"
+            >
+              {% render 'icon-arrow' %}
+              <span>{{ 'sections.events.more_info' | t }}</span>
+            </a>
           </div>
         {% endfor %}
       </ul>

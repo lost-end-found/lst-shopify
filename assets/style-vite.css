@@ -2513,6 +2513,11 @@ select {
   }
 }
 
+.\*-\[\.lst-peer\:hover\~\.lst-group_\.lst-text-base\]\:lst-bg-primary > * {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
+}
+
 .last\:\!lst-border-r:last-child {
   border-right-width: 1px !important;
 }
@@ -2568,6 +2573,31 @@ select {
   opacity: 1;
 }
 
+.lst-grouppeer:hover .group-\[peer\:hover\]\:lst-bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
+}
+
+.lst-peer~* .lst-group .group-\[\.lst-peer\~\*_\&\]\:lst-bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
+}
+
+.lst-group.lst-peer~ .group-\[\.lst-peer\~\]\:lst-bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
+}
+
+.lst-group.lst-peer:hover~ .group-\[\.lst-peer\:hover\~\]\:lst-bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
+}
+
+.lst-peer:hover ~ .peer-hover\:lst-bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
+}
+
 @media (min-width: 640px) {
   .sm\:lst-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2609,12 +2639,28 @@ select {
     grid-column-start: 4;
   }
 
+  .md\:lst-col-start-2 {
+    grid-column-start: 2;
+  }
+
+  .md\:lst-col-start-1 {
+    grid-column-start: 1;
+  }
+
+  .md\:lst-row-start-1 {
+    grid-row-start: 1;
+  }
+
   .md\:lst-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:lst-grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:lst-border-r {
+    border-right-width: 1px;
   }
 
   .md\:lst-px-5 {
@@ -2630,6 +2676,10 @@ select {
 @media (min-width: 1024px) {
   .lg\:lst-col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .lg\:lst-col-span-1 {
+    grid-column: span 1 / span 1;
   }
 
   .lg\:lst-mx-1 {
@@ -2795,4 +2845,9 @@ select {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+}
+
+.lst-peer:hover ~ .lst-peer~* .peer-hover\:\[\.lst-peer\~\*_\&\]\:lst-bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
 }

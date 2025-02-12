@@ -30,3 +30,15 @@
     {% endfor %}
   </div>
 </div>
+<script>
+  const eventItems = document.querySelectorAll('.js-event-item');
+  eventItems.forEach((item) => {
+    const img = item.getElementsByTagName('img')[0];
+    img.addEventListener('mouseenter', () => {
+      item.getElementsByTagName('a')[1].classList.add('lst-bg-primary');
+    });
+    img.addEventListener('mouseleave', () => {
+      item.getElementsByTagName('a')[1].classList.remove('lst-bg-primary');
+    });
+  });
+</script>

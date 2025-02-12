@@ -28,7 +28,7 @@
   {% endif %}
 
   <div class="lst-grid md:lst-grid-cols-2">
-    <div class="event__media-wrapper lst-overflow-hidden">
+    <div class="event__media-wrapper lst-overflow-hidden md:lst-col-start-2 md:lst-row-start-1">
       {% if article.image != blank %}
         <div class="event__media">
           <img
@@ -57,11 +57,11 @@
         </div>
       {% endif %}
     </div>
-    <div class="event__info-wrapper lst-bg-[#F7F2EB]  !lst-px-0 {% if settings.page_width > 1400 and section.settings.media_size == "small" %} event__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="event__info-wrapper lst-bg-[#F7F2EB] md:lst-col-start-1 md:lst-row-start-1 !lst-px-0 {% if settings.page_width > 1400 and section.settings.media_size == "small" %} event__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <event-info
         id="EventInfo-{{ section.id }}"
         data-section="{{ section.id }}"
-        class="event__info-container lst-w-full lst-border-l lst-border-b lst-border-black lst-flex lst-h-full {% if section.settings.enable_sticky_info %} event__column-sticky{% endif %}"
+        class="event__info-container lst-w-full md:lst-border-r lst-border-b lst-border-black lst-flex lst-h-full {% if section.settings.enable_sticky_info %} event__column-sticky{% endif %}"
       >
         <div class="lst-w-full">
           {%- for block in section.blocks -%}

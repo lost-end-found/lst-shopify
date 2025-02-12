@@ -1,5 +1,5 @@
-<div class="event-item lst-bg-[#F7F2EB] lst-border-b lst-border-black">
-  <div class="lst-px-4 lst-pt-4">
+<div class="event-item lst-bg-[#F7F2EB] lst-border-b lst-border-black js-event-item">
+  <a href="{{ article.url }}" class="lst-px-4 lst-pt-4 lst-block lst-peer">
     {% if article.image %}
       <img
         width="800"
@@ -9,8 +9,8 @@
         alt="{{ article.title }}"
       >
     {% endif %}
-  </div>
-  <div class="lst-grid lst-grid-cols-2">
+  </a>
+  <div class="lst-grid lst-grid-cols-2 lst-group">
     <h2 class="lst-col-span-2 lst-text-base lst-text-black lst-p-2 lst-border-b lst-border-black lst-px-4">
       {{ article.title }}
     </h2>
@@ -19,6 +19,10 @@
         <p>Date: {{ article.metafields.blog_event.start_date_time.value | date: '%B %d, %Y' }}</p>
       {% endif %}
     </div>
-    <a class="lst-text-base lst-text-black lst-p-2 hover:lst-bg-primary" href="{{ article.url }}">Infos +</a>
+    <a
+      class="lst-text-base lst-text-black lst-p-2 hover:lst-bg-primary"
+      href="{{ article.url }}"
+      >Infos +</a
+    >
   </div>
 </div>
