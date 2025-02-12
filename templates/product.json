@@ -37,10 +37,82 @@
             "hide_if_empty": true
           }
         },
-        "metafield_info_UMwXKa": {
+        "metafield_info_RVKyVz": {
           "type": "metafield_info",
           "settings": {
-            "metafield_type": "supplier_name",
+            "metafield_type": "print",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_7xaBUn": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "language",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_p3teMp": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "format",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_Kq4zRH": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "design",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_G6ChPb": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "published_at",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_9cbJiM": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "availability",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_yRHdHE": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "return_conditions_limit_date",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_V6Rh6y": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "pages_count",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_E78cKY": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "paper",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
+        "metafield_info_EeBgnA": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "limited_edition",
             "show_label": true,
             "hide_if_empty": true
           }
