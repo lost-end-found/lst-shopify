@@ -1728,6 +1728,10 @@ select {
   margin-bottom: 0px;
 }
 
+.lst-mb-12 {
+  margin-bottom: 3rem;
+}
+
 .lst-mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1780,18 +1784,6 @@ select {
   margin-top: 1.5rem;
 }
 
-.lst-mb-12 {
-  margin-bottom: 3rem;
-}
-
-.lst-mb-8 {
-  margin-bottom: 2rem;
-}
-
-.lst-mt-8 {
-  margin-top: 2rem;
-}
-
 .\!lst-block {
   display: block !important;
 }
@@ -1840,10 +1832,6 @@ select {
   aspect-ratio: 16 / 9;
 }
 
-.lst-aspect-\[6\/15\] {
-  aspect-ratio: 6/15;
-}
-
 .\!lst-h-5 {
   height: 1.25rem !important;
 }
@@ -1884,16 +1872,12 @@ select {
   min-height: 0px;
 }
 
-.lst-min-h-\[54px\] {
-  min-height: 54px;
-}
-
-.lst-min-h-72 {
-  min-height: 18rem;
-}
-
 .lst-min-h-96 {
   min-height: 24rem;
+}
+
+.lst-min-h-\[54px\] {
+  min-height: 54px;
 }
 
 .\!lst-w-5 {
@@ -2207,11 +2191,6 @@ select {
   background-color: transparent;
 }
 
-.lst-bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-}
-
 .lst-bg-opacity-0 {
   --tw-bg-opacity: 0;
 }
@@ -2373,10 +2352,6 @@ select {
   text-align: right;
 }
 
-.lst-font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
 .lst-text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2409,11 +2384,6 @@ select {
 .lst-text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.lst-text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .lst-font-medium {
@@ -2451,11 +2421,6 @@ select {
 
 .lst-text-inherit {
   color: inherit;
-}
-
-.lst-text-primary {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 0 / var(--tw-text-opacity, 1));
 }
 
 .lst-text-red-500 {
@@ -2563,11 +2528,6 @@ select {
 
 .hover\:lst-bg-opacity-50:hover {
   --tw-bg-opacity: 0.5;
-}
-
-.hover\:lst-text-primary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 0 / var(--tw-text-opacity, 1));
 }
 
 .focus\:lst-outline-none:focus {
@@ -2792,6 +2752,11 @@ select {
     text-align: center;
   }
 
+  .lg\:lst-text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .lg\:lst-text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -2800,11 +2765,6 @@ select {
   .lg\:lst-text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .lg\:lst-text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .lg\:first\:\!lst-border-l-0:first-child {

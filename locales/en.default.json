@@ -8,6 +8,24 @@
  * ------------------------------------------------------------
  */
 {
+  "settings_schema": {
+    "store_information": {
+      "settings": {
+        "store_phone": {
+          "label": "Phone number"
+        },
+        "store_email": {
+          "label": "Email"
+        },
+        "store_address": {
+          "label": "Address"
+        },
+        "store_hours": {
+          "label": "Store hours"
+        }
+      }
+    }
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Enter store using password:",

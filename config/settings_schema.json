@@ -4,8 +4,8 @@
     "theme_name": "Dawn",
     "theme_version": "14.0.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -30,6 +30,35 @@
         "id": "favicon",
         "label": "t:settings_schema.logo.settings.favicon.label",
         "info": "t:settings_schema.logo.settings.favicon.info"
+      }
+    ]
+  }, 
+  {
+    "name": "Store Information",
+    "settings": [
+      {
+        "type": "text",
+        "id": "store_phone",
+        "label": "t:settings_schema.store_information.settings.store_phone.label",
+        "default": "+33 1 48 07 51 34"
+      },
+      {
+        "type": "text",
+        "id": "store_email",
+        "label": "t:settings_schema.store_information.settings.store_email.label",
+        "default": "librairiesanstitre@gmail.com"
+      },
+      {
+        "type": "text",
+        "id": "store_address",
+        "label": "t:settings_schema.store_information.settings.store_address.label",
+        "default": "2 rue Auguste Barbier 75011 Paris"
+      },
+      {
+        "type": "text",
+        "id": "store_hours",
+        "label": "t:settings_schema.store_information.settings.store_hours.label",
+        "default": "Ouvert du lundi au samedi de  10h30 à 19h30 et le dimanche de 11h à 18h"
       }
     ]
   },

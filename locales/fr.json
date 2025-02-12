@@ -581,5 +581,24 @@
       "expanded": "Formulaire de destinataire de carte-cadeau agrandi",
       "collapsed": "Formulaire de destinataire de carte-cadeau réduit"
     }
+  },
+  "settings_schema": {
+    "store_information": {
+      "name": "Informations de la boutique",
+      "settings": {
+        "store_phone": {
+          "label": "Numéro de téléphone"
+        },
+        "store_email": {
+          "label": "E-mail"
+        },
+        "store_address": {
+          "label": "Adresse"
+        },
+        "store_hours": {
+          "label": "Horaires d'ouverture"
+        }
+      }
+    }
   }
 }
