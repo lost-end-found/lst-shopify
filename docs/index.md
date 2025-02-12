@@ -5,7 +5,7 @@ Welcome to the documentation for Librairie Sans Titre's Shopify theme. This docu
 ## Getting Started
 
 - [Introduction](/guide/introduction)
-- [Getting Started Guide](/guide/getting-started)
+- [General Settings](/guide/general-settings)
 
 ## Features
 

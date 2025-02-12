@@ -8,7 +8,10 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/introduction' },
+      { text: 'Guide', items: [
+        { text: 'Introduction', link: '/guide/introduction' },
+        { text: 'General Settings', link: '/guide/general-settings' },
+      ] },
       { text: 'Events', link: '/events/creating-events' }
     ],
     sidebar: [
@@ -16,7 +19,7 @@ export default defineConfig({
         text: 'Guide',
         items: [
           { text: 'Introduction', link: '/guide/introduction' },
-          { text: 'Getting Started', link: '/guide/getting-started' }
+          { text: 'General Settings', link: '/guide/general-settings' },
         ]
       },
       {
