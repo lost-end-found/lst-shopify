@@ -12,26 +12,26 @@
     "carousel_BJXnET": {
       "type": "carousel",
       "blocks": {
-        "slide_X4tamD": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/banniere1.jpg",
-            "heading": "T-SHIRT",
-            "heading_size": "h1",
-            "subheading": "COLLECTION BOOKS IS HOT",
-            "button_label": "PLUS INFO",
-            "link": "shopify://products/tshirt-collecting-book-is-hot-noir-jaune"
-          }
-        },
         "slide_6dN7X3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banniere3.jpg",
-            "heading": "T-SHIRT",
+            "image": "shopify://shop_images/LANCEMENT_BANNIERE_shopify_test.jpg",
+            "heading": "Signature - Rencontre",
             "heading_size": "h1",
-            "subheading": "COLLECTION BOOKS IS HOT",
+            "subheading": "Plain Texte 1",
             "button_label": "PLUS INFO",
-            "link": "shopify://products/tshirt-collecting-book-is-hot-gris-bleu"
+            "link": "shopify://blogs/events/lancement-plain-text-1"
+          }
+        },
+        "slide_X4tamD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/4x5contactprint_2048x2048_e0635a00-39c8-4dc0-bb04-dd3b02416f4a.jpg",
+            "heading": "Pia-Paulina Guilmoth",
+            "heading_size": "h1",
+            "subheading": "FLOWERS DRINK THE RIVER",
+            "button_label": "PLUS INFO",
+            "link": "shopify://products/9781913288761"
           }
         },
         "slide_yraig6": {
@@ -47,8 +47,8 @@
         }
       },
       "block_order": [
-        "slide_X4tamD",
         "slide_6dN7X3",
+        "slide_X4tamD",
         "slide_yraig6"
       ],
       "settings": {}
@@ -56,36 +56,92 @@
     "collection_list_brCEnF": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_CmTY7V": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "photographie"
+          }
+        },
+        "featured_collection_RtjiPC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beaux-arts"
+          }
+        },
         "featured_collection_Em3iWz": {
           "type": "featured_collection",
           "settings": {
             "collection": "architecture-urbanisme"
           }
         },
-        "featured_collection_ahyz9d": {
+        "featured_collection_6ez3dM": {
           "type": "featured_collection",
           "settings": {
-            "collection": "revue-beaux-arts"
+            "collection": "design-graphique"
           }
         },
-        "featured_collection_FbEpHt": {
+        "featured_collection_biH9rb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "revue-design-graphique"
+            "collection": "fanzines"
           }
         },
-        "featured_collection_Xtwqtx": {
+        "featured_collection_AFUnF6": {
           "type": "featured_collection",
           "settings": {
-            "collection": "revue-photographie"
+            "collection": "art-brut"
+          }
+        },
+        "featured_collection_bw6fAG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "design-dobjets"
+          }
+        },
+        "featured_collection_GRfDPh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "dessin-illustration"
+          }
+        },
+        "featured_collection_pPmmVE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "arts-decoratifs-1"
+          }
+        },
+        "featured_collection_widLKn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cuisine"
+          }
+        },
+        "featured_collection_Rq9Wtj": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tous-les-objets"
+          }
+        },
+        "featured_collection_FYzmhx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ecrits-essais"
           }
         }
       },
       "block_order": [
+        "featured_collection_CmTY7V",
+        "featured_collection_RtjiPC",
         "featured_collection_Em3iWz",
-        "featured_collection_ahyz9d",
-        "featured_collection_FbEpHt",
-        "featured_collection_Xtwqtx"
+        "featured_collection_6ez3dM",
+        "featured_collection_biH9rb",
+        "featured_collection_AFUnF6",
+        "featured_collection_bw6fAG",
+        "featured_collection_GRfDPh",
+        "featured_collection_pPmmVE",
+        "featured_collection_widLKn",
+        "featured_collection_Rq9Wtj",
+        "featured_collection_FYzmhx"
       ],
       "settings": {
         "title": "Catégories",
