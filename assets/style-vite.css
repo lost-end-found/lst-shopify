@@ -2513,11 +2513,6 @@ select {
   }
 }
 
-.\*-\[\.lst-peer\:hover\~\.lst-group_\.lst-text-base\]\:lst-bg-primary > * {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
-}
-
 .last\:\!lst-border-r:last-child {
   border-right-width: 1px !important;
 }
@@ -2573,26 +2568,6 @@ select {
   opacity: 1;
 }
 
-.lst-grouppeer:hover .group-\[peer\:hover\]\:lst-bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
-}
-
-.lst-peer~* .lst-group .group-\[\.lst-peer\~\*_\&\]\:lst-bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
-}
-
-.lst-group.lst-peer~ .group-\[\.lst-peer\~\]\:lst-bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
-}
-
-.lst-group.lst-peer:hover~ .group-\[\.lst-peer\:hover\~\]\:lst-bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
-}
-
 .lst-peer:hover ~ .peer-hover\:lst-bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
@@ -2635,16 +2610,16 @@ select {
     position: static;
   }
 
-  .md\:lst-col-start-4 {
-    grid-column-start: 4;
+  .md\:lst-col-start-1 {
+    grid-column-start: 1;
   }
 
   .md\:lst-col-start-2 {
     grid-column-start: 2;
   }
 
-  .md\:lst-col-start-1 {
-    grid-column-start: 1;
+  .md\:lst-col-start-4 {
+    grid-column-start: 4;
   }
 
   .md\:lst-row-start-1 {
@@ -2674,10 +2649,6 @@ select {
 }
 
 @media (min-width: 1024px) {
-  .lg\:lst-col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
   .lg\:lst-col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -2691,16 +2662,16 @@ select {
     margin-top: -45px;
   }
 
+  .lg\:-lst-mt-\[46px\] {
+    margin-top: -46px;
+  }
+
   .lg\:lst-mb-3 {
     margin-bottom: 0.75rem;
   }
 
   .lg\:lst-ml-2 {
     margin-left: 0.5rem;
-  }
-
-  .lg\:-lst-mt-\[46px\] {
-    margin-top: -46px;
   }
 
   .lg\:\!lst-block {
@@ -2849,9 +2820,4 @@ select {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-}
-
-.lst-peer:hover ~ .lst-peer~* .peer-hover\:\[\.lst-peer\~\*_\&\]\:lst-bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 0 / var(--tw-bg-opacity, 1));
 }
