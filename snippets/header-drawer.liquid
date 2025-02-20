@@ -126,18 +126,20 @@
           <div class="menu-drawer__utility-links lst-px-12">
             {%- if localization.available_countries or localization.available_languages -%}
               <div class="menu-drawer__localization header-localization">
-                {%- if localization.available_countries and localization.available_countries.size > 1 -%}
-                  <language-switch-form>
-                    {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
-                      <div>
-                        <h2 class="visually-hidden" id="HeaderCountryMobileLabel">
-                          {{ 'localization.country_label' | t }}
-                        </h2>
-                        {%- render 'country-localization', localPosition: 'HeaderCountryMobile' -%}
-                      </div>
-                    {%- endform -%}
-                  </language-switch-form>
-                {% endif %}
+                <!--
+                  {%- if localization.available_countries and localization.available_countries.size > 1 -%}
+                    <language-switch-form>
+                      {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
+                        <div>
+                          <h2 class="visually-hidden" id="HeaderCountryMobileLabel">
+                            {{ 'localization.country_label' | t }}
+                          </h2>
+                          {%- render 'country-localization', localPosition: 'HeaderCountryMobile' -%}
+                        </div>
+                      {%- endform -%}
+                    </language-switch-form>
+                  {% endif %}
+                -->
 
                 {%- if localization.available_languages and localization.available_languages.size > 1 -%}
                   <language-switch-form>
