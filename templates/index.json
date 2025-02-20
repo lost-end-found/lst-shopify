@@ -15,23 +15,12 @@
         "slide_6dN7X3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/LANCEMENT_BANNIERE_shopify_test.jpg",
-            "heading": "Signature - Rencontre",
+            "image": "shopify://shop_images/Sans-titre-1.gif",
+            "heading": "Notre nouveau site est en ligne !",
             "heading_size": "h1",
-            "subheading": "Plain Texte 1",
+            "subheading": "",
             "button_label": "PLUS INFO",
-            "link": "shopify://blogs/events/lancement-plain-text-1"
-          }
-        },
-        "slide_X4tamD": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/4x5contactprint_2048x2048_e0635a00-39c8-4dc0-bb04-dd3b02416f4a.jpg",
-            "heading": "Pia-Paulina Guilmoth",
-            "heading_size": "h1",
-            "subheading": "FLOWERS DRINK THE RIVER",
-            "button_label": "PLUS INFO",
-            "link": "shopify://products/9781913288761"
+            "link": "shopify://collections/all"
           }
         },
         "slide_yraig6": {
@@ -44,12 +33,23 @@
             "button_label": "PLUS INFO",
             "link": "shopify://products/tshirt-collecting-book-is-hot-blanc-rouge"
           }
+        },
+        "slide_X4tamD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/4x5contactprint_2048x2048_e0635a00-39c8-4dc0-bb04-dd3b02416f4a.jpg",
+            "heading": "Pia-Paulina Guilmoth",
+            "heading_size": "h1",
+            "subheading": "FLOWERS DRINK THE RIVER",
+            "button_label": "PLUS INFO",
+            "link": "shopify://products/9781913288761"
+          }
         }
       },
       "block_order": [
         "slide_6dN7X3",
-        "slide_X4tamD",
-        "slide_yraig6"
+        "slide_yraig6",
+        "slide_X4tamD"
       ],
       "settings": {}
     },
