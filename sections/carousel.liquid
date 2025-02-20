@@ -14,7 +14,7 @@
               <a href="{{ block.settings.link }}">
                 <img
                   src="{{ block.settings.image | img_url: 'master'  }}"
-                  class="lst-w-full lg:lst-max-h-[calc(100vh-153px)] lst-min-h-96 lst-aspect-video lst-object-cover"
+                  class="lst-w-full lg:lst-max-h-[calc(100vh-153px)] lst-min-h-52 lst-aspect-video lst-object-cover"
                   width="100%"
                   height="100%"
                   alt="Placeholder image"
@@ -23,14 +23,14 @@
             {% else %}
               <img
                 src="{{ block.settings.image | img_url: 'master'  }}"
-                class="lst-w-full lg:lst-max-h-[calc(100vh-153px)] lst-min-h-96 lst-aspect-video lst-object-cover"
+                class="lst-w-full lg:lst-max-h-[calc(100vh-153px)] lst-min-h-52 lst-aspect-video lst-object-cover"
                 width="100%"
                 height="100%"
                 alt="Placeholder image"
               >
             {% endif %}
           {% else %}
-            <div class="lst-w-full lg:lst-max-h-[calc(100vh-153px)] lst-min-h-96 lst-aspect-video lst-object-cover lst-bg-primary">
+            <div class="lst-w-full lg:lst-max-h-[calc(100vh-153px)] lst-min-h-52 lst-aspect-video lst-object-cover lst-bg-primary">
               <div class="lst-flex lst-items-center lst-justify-center lst-h-full">
                 <p class="lst-text-white lst-text-2xl lst-sr-only">No image selected</p>
               </div>
