@@ -79,6 +79,7 @@
         },
         "metafield_info_9cbJiM": {
           "type": "metafield_info",
+          "disabled": true,
           "settings": {
             "metafield_type": "availability",
             "show_label": true,
@@ -87,6 +88,7 @@
         },
         "metafield_info_yRHdHE": {
           "type": "metafield_info",
+          "disabled": true,
           "settings": {
             "metafield_type": "return_conditions_limit_date",
             "show_label": true,
