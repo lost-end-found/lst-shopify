@@ -12,6 +12,41 @@
     "carousel_BJXnET": {
       "type": "carousel",
       "blocks": {
+        "slide_kwqw4t": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banniere_3c0bbf5f-f468-440c-8681-6bbbfffefed8.jpg",
+            "heading": "Jeudi 03 avril",
+            "heading_size": "h1",
+            "subheading": "Présentation \"The Lines We Draw\" de Lavinia Parlamenti & Manfredi Pantanella",
+            "button_label": "Info",
+            "link": "shopify://blogs/events/presentation-the-lines-we-draw-de-lavinia-parlamenti-et-manfredi-pantanella"
+          }
+        },
+        "slide_ztfA86": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/couv_fa724b02-4a79-41b2-9401-402f369bbcfa.jpg",
+            "heading": "Mercredi 26 mars à 18h",
+            "heading_size": "h1",
+            "subheading": "Graphic Matter vous invite à fêter ses 3 ans et le lancement de ses éditions",
+            "button_label": "PLUS D'INFOS",
+            "link": "shopify://blogs/events/graphic-matter-vous-invite-a-feter-ses-3-ans-et-le-lancement-de-ses-editions"
+          }
+        },
+        "slide_X4tamD": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Banniere16_9.gif",
+            "heading": "Lancement \"L'escapade\"",
+            "heading_size": "h1",
+            "subheading": "Mardi 4 Mars 2025",
+            "button_label": "PLUS INFO",
+            "link": "shopify://blogs/events/lescapade"
+          }
+        },
         "slide_6dN7X3": {
           "type": "slide",
           "settings": {
@@ -33,23 +68,14 @@
             "button_label": "PLUS INFO",
             "link": "shopify://products/tshirt-collecting-book-is-hot-blanc-rouge"
           }
-        },
-        "slide_X4tamD": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/4x5contactprint_2048x2048_e0635a00-39c8-4dc0-bb04-dd3b02416f4a.jpg",
-            "heading": "Pia-Paulina Guilmoth",
-            "heading_size": "h1",
-            "subheading": "FLOWERS DRINK THE RIVER",
-            "button_label": "PLUS INFO",
-            "link": "shopify://products/9781913288761"
-          }
         }
       },
       "block_order": [
+        "slide_kwqw4t",
+        "slide_ztfA86",
+        "slide_X4tamD",
         "slide_6dN7X3",
-        "slide_yraig6",
-        "slide_X4tamD"
+        "slide_yraig6"
       ],
       "settings": {}
     },
