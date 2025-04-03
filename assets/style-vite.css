@@ -1784,6 +1784,13 @@ select {
   margin-top: 1.5rem;
 }
 
+.lst-line-clamp-6 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
 .\!lst-block {
   display: block !important;
 }
@@ -1872,8 +1879,8 @@ select {
   min-height: 0px;
 }
 
-.lst-min-h-96 {
-  min-height: 24rem;
+.lst-min-h-52 {
+  min-height: 13rem;
 }
 
 .lst-min-h-\[54px\] {
@@ -2338,6 +2345,10 @@ select {
 
 .lst-pt-6 {
   padding-top: 1.5rem;
+}
+
+.lst-pb-8 {
+  padding-bottom: 2rem;
 }
 
 .lst-text-left {
