@@ -46,13 +46,35 @@
   {% when 'return_conditions_limit_date' %}
     {% assign metafield_value = product.metafields.alexandrie.return_conditions_limit_date %}
     {% assign label = 'products.product.return_conditions' | t %}
+  {% when 'dimensions' %}
+    {% assign height = product.metafields.alexandrie.height %}
+    {% assign width = product.metafields.alexandrie.width %}
+    {% assign thickness = product.metafields.alexandrie.thikness %}
+    {% if height != blank and width != blank %}
+      {% if thickness != blank %}
+        {% assign metafield_value = height
+          | append: 'mm x '
+          | append: width
+          | append: 'mm x '
+          | append: thickness
+          | append: 'mm'
+        %}
+      {% else %}
+        {% assign metafield_value = height | append: 'mm x ' | append: width | append: 'mm' %}
+      {% endif %}
+    {% endif %}
+    {% assign label = 'products.product.dimensions' | t %}
 {% endcase %}
 
 {% if metafield_value != blank or block.settings.hide_if_empty == false %}
   <li class="lst-text-sm" {{ block.shopify_attributes }}>
     {% if block.settings.show_label %}
       <strong>{{ label }}:</strong>
+      {% if block.settings.metafield_type == 'dimensions' %}
+        {{ metafield_value }}
+      {% else %}
+        {{ metafield_value }}
+      {% endif %}
     {% endif %}
-    {{ metafield_value }}
   </li>
 {% endif %}
