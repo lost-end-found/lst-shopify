@@ -119,6 +119,14 @@
             "hide_if_empty": true
           }
         },
+        "metafield_info_REMqRg": {
+          "type": "metafield_info",
+          "settings": {
+            "metafield_type": "dimensions",
+            "show_label": true,
+            "hide_if_empty": true
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -200,6 +208,7 @@
         "metafield_info_V6Rh6y",
         "metafield_info_E78cKY",
         "metafield_info_EeBgnA",
+        "metafield_info_REMqRg",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",

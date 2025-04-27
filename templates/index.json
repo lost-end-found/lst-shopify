@@ -12,50 +12,37 @@
     "carousel_BJXnET": {
       "type": "carousel",
       "blocks": {
-        "slide_kwqw4t": {
+        "slide_XrtPJi": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/banniere_3c0bbf5f-f468-440c-8681-6bbbfffefed8.jpg",
-            "heading": "Jeudi 03 avril",
+            "image": "shopify://shop_images/Capture_d_ecran_2025-04-25_a_10.42.26.png",
+            "heading": "Mardi 29 avril, 18-20h",
             "heading_size": "h1",
-            "subheading": "Présentation \"The Lines We Draw\" de Lavinia Parlamenti & Manfredi Pantanella",
-            "button_label": "Info",
-            "link": "shopify://blogs/events/presentation-the-lines-we-draw-de-lavinia-parlamenti-et-manfredi-pantanella"
+            "subheading": "Lancement de Bookself de Pirate Baratte",
+            "button_label": "Plus d'infos",
+            "link": ""
           }
         },
-        "slide_ztfA86": {
+        "slide_Bn6CDJ": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/couv_fa724b02-4a79-41b2-9401-402f369bbcfa.jpg",
-            "heading": "Mercredi 26 mars à 18h",
+            "image": "shopify://shop_images/Capture_d_ecran_2025-04-19_a_11.20.38.png",
+            "heading": "Mercredi 07 mai, 18h-20h",
             "heading_size": "h1",
-            "subheading": "Graphic Matter vous invite à fêter ses 3 ans et le lancement de ses éditions",
-            "button_label": "PLUS D'INFOS",
-            "link": "shopify://blogs/events/graphic-matter-vous-invite-a-feter-ses-3-ans-et-le-lancement-de-ses-editions"
+            "subheading": "Lancement : Debris Magazine Issue 05",
+            "button_label": "More infos",
+            "link": ""
           }
         },
-        "slide_X4tamD": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Banniere16_9.gif",
-            "heading": "Lancement \"L'escapade\"",
-            "heading_size": "h1",
-            "subheading": "Mardi 4 Mars 2025",
-            "button_label": "PLUS INFO",
-            "link": "shopify://blogs/events/lescapade"
-          }
-        },
-        "slide_6dN7X3": {
+        "slide_KY9yab": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Sans-titre-1.gif",
-            "heading": "Notre nouveau site est en ligne !",
+            "image": "shopify://shop_images/Capture_d_ecran_2025-04-19_a_11.36.24.png",
+            "heading": "Jeudi 15 mai, 18h-20h",
             "heading_size": "h1",
-            "subheading": "",
-            "button_label": "PLUS INFO",
-            "link": "shopify://collections/all"
+            "subheading": "Lancement : Restos Routiers de Guillaume Blot",
+            "button_label": "Plus d'infos",
+            "link": ""
           }
         },
         "slide_yraig6": {
@@ -68,14 +55,25 @@
             "button_label": "PLUS INFO",
             "link": "shopify://products/tshirt-collecting-book-is-hot-blanc-rouge"
           }
+        },
+        "slide_6dN7X3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Sans-titre-1.gif",
+            "heading": "Notre nouveau site est en ligne !",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "PLUS INFO",
+            "link": "shopify://collections/all"
+          }
         }
       },
       "block_order": [
-        "slide_kwqw4t",
-        "slide_ztfA86",
-        "slide_X4tamD",
-        "slide_6dN7X3",
-        "slide_yraig6"
+        "slide_XrtPJi",
+        "slide_Bn6CDJ",
+        "slide_KY9yab",
+        "slide_yraig6",
+        "slide_6dN7X3"
       ],
       "settings": {}
     },
