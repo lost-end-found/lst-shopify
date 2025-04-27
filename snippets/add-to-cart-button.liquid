@@ -8,6 +8,7 @@
 <div>
   {%- if product != blank -%}
     <product-form
+      id="product-form-{{ section.id }}"
       class="product-form !lst-my-0 lst-border-y lst-border-black"
       data-section-id="{{ section.id }}"
     >
@@ -50,6 +51,7 @@
           </div>
 
           <button
+            id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
             class="product-form__submit button button--full-width button--primary !lst-mb-0 lst-h-full disabled:lst-bg-yellow-200 disabled:lst-text-gray-600 disabled:lst-opacity-100"
