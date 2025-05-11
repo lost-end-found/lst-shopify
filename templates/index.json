@@ -12,68 +12,68 @@
     "carousel_BJXnET": {
       "type": "carousel",
       "blocks": {
-        "slide_XrtPJi": {
+        "slide_jAjiHA": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2025-04-25_a_10.42.26.png",
-            "heading": "Mardi 29 avril, 18-20h",
+            "image": "shopify://shop_images/revu-diapo-2_3d88060d-3717-49dc-8ab6-9fecb2c66f09.jpg",
+            "heading": "Mardi 13 mai, 18h-20h",
             "heading_size": "h1",
-            "subheading": "Lancement de Bookself de Pirate Baratte",
+            "subheading": "Lancement REVUE DIAPO 003 de Kanade Hamamoto et Ryoko Sekiguchi",
             "button_label": "Plus d'infos",
-            "link": ""
-          }
-        },
-        "slide_Bn6CDJ": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2025-04-19_a_11.20.38.png",
-            "heading": "Mercredi 07 mai, 18h-20h",
-            "heading_size": "h1",
-            "subheading": "Lancement : Debris Magazine Issue 05",
-            "button_label": "More infos",
-            "link": ""
+            "link": "shopify://blogs/events/presentation-revue-diapo-003"
           }
         },
         "slide_KY9yab": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2025-04-19_a_11.36.24.png",
+            "image": "shopify://shop_images/BANNIEREbis.png",
             "heading": "Jeudi 15 mai, 18h-20h",
             "heading_size": "h1",
-            "subheading": "Lancement : Restos Routiers de Guillaume Blot",
+            "subheading": "Signature Restos Routiers de Guillaume Blot",
             "button_label": "Plus d'infos",
             "link": ""
           }
         },
-        "slide_yraig6": {
+        "slide_Qz9nPq": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/IMG_4520_testsiteinternet_3.png",
-            "heading": "T-SHIRT",
+            "image": "shopify://shop_images/Capture_d_ecran_2025-05-10_a_14.55.29.png",
+            "heading": "Jeudi 22 mai, 18h-20h",
             "heading_size": "h1",
-            "subheading": "COLLECTION BOOKS IS HOT",
-            "button_label": "PLUS INFO",
-            "link": "shopify://products/tshirt-collecting-book-is-hot-blanc-rouge"
+            "subheading": "Signature : Spectra de de Julien Lacroix",
+            "button_label": "Plus d'infos",
+            "link": ""
           }
         },
-        "slide_6dN7X3": {
+        "slide_UNypVt": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Sans-titre-1.gif",
-            "heading": "Notre nouveau site est en ligne !",
+            "image": "shopify://shop_images/Capture_d_ecran_2025-05-11_a_13.26.26.png",
+            "heading": "Mercredi 28 mai, 18h-20h",
             "heading_size": "h1",
-            "subheading": "",
-            "button_label": "PLUS INFO",
-            "link": "shopify://collections/all"
+            "subheading": "Signature de More Beautiful Than They Are de Caroline Ventura",
+            "button_label": "Plus d'infos",
+            "link": ""
+          }
+        },
+        "slide_hegQ4V": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2025-05-11_a_13.32.19.png",
+            "heading": "Jeudi 5 juin, 18h-20h",
+            "heading_size": "h1",
+            "subheading": "Lancement de Pour allumer un feu de Lalie Thébault Maviel, édité par Dumpling Books",
+            "button_label": "Plus d'infos",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "slide_XrtPJi",
-        "slide_Bn6CDJ",
+        "slide_jAjiHA",
         "slide_KY9yab",
-        "slide_yraig6",
-        "slide_6dN7X3"
+        "slide_Qz9nPq",
+        "slide_UNypVt",
+        "slide_hegQ4V"
       ],
       "settings": {}
     },
