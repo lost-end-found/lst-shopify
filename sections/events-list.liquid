@@ -80,20 +80,32 @@
               </div>
             </div>
             <a href="{{ article.url }}" class="lst-block lst-peer">
-              <img
-                src="{{ article.image | image_url: width: 1000, height: 600, crop: 'center' }}"
-                class="lst-h-full lst-w-full lst-object-cover"
-                alt="{{ article.image.alt }}"
-                width="1000px"
-                height="600px"
-              >
+              {% if article.metafields.blog_event.homepage_image %}
+                <img
+                  src="{{ article.metafields.blog_event.homepage_image | image_url: width: 1000, height: 600, crop: 'center' }}"
+                  class="lst-h-full lst-w-full lst-object-cover"
+                  alt="{{ article.metafields.blog_event.homepage_image.alt }}"
+                  width="1000px"
+                  height="600px"
+                  loading="lazy"
+                >
+              {% else %}
+                <img
+                  src="{{ article.image | image_url: width: 1000, height: 600, crop: 'center' }}"
+                  class="lst-h-full lst-w-full lst-object-cover"
+                  alt="{{ article.image.alt }}"
+                  width="1000px"
+                  height="600px"
+                  loading="lazy"
+                >
+              {% endif %}
             </a>
             <a
               class="event-more-info h4 lst-text-black hover:lst-bg-primary peer-hover:lst-bg-primary lst-px-3 lg:lst-px-5 lg:lst-border-r lg:lst-border-black lst-items-center lst-space-x-2 lg:lst-col-span-1 lst-grid lg:lst-grid-cols-4 lst-h-[45px] lst-border-t lst-border-black"
               href="{{ article.url }}"
             >
               {% render 'icon-arrow' %}
-              <span>{{ 'sections.events.more_info' | t }}</span>
+              <span class="lst-col-span-3">{{ 'sections.events.more_info' | t }}</span>
             </a>
           </div>
         {% endfor %}
