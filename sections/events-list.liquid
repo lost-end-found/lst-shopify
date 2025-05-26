@@ -83,7 +83,7 @@
               {% if article.metafields.blog_event.homepage_image %}
                 <img
                   src="{{ article.metafields.blog_event.homepage_image | image_url: width: 1000, height: 600, crop: 'center' }}"
-                  class="lst-h-full lst-w-full lst-object-cover"
+                  class="lst-h-full lst-w-full lst-object-cover lst-aspect-[1000/600]"
                   alt="{{ article.metafields.blog_event.homepage_image.alt }}"
                   width="1000px"
                   height="600px"
@@ -92,7 +92,7 @@
               {% else %}
                 <img
                   src="{{ article.image | image_url: width: 1000, height: 600, crop: 'center' }}"
-                  class="lst-h-full lst-w-full lst-object-cover"
+                  class="lst-h-full lst-w-full lst-object-cover lst-aspect-[1000/600]"
                   alt="{{ article.image.alt }}"
                   width="1000px"
                   height="600px"

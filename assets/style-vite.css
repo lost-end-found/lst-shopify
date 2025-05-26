@@ -1671,10 +1671,6 @@ select {
   grid-column: span 2 / span 2;
 }
 
-.lst-col-span-4 {
-  grid-column: span 4 / span 4;
-}
-
 .lst-col-span-3 {
   grid-column: span 3 / span 3;
 }
@@ -1845,6 +1841,30 @@ select {
 
 .lst-aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+.lst-aspect-\[100\/600\] {
+  aspect-ratio: 100/600;
+}
+
+.lst-aspect-\[1009\/600\] {
+  aspect-ratio: 1009/600;
+}
+
+.lst-aspect-\[1000\/600\] {
+  aspect-ratio: 1000/600;
+}
+
+.lst-aspect-\[16\/9\] {
+  aspect-ratio: 16/9;
+}
+
+.lst-aspect-\[3\/2\] {
+  aspect-ratio: 3/2;
+}
+
+.lst-aspect-\[16\/7\] {
+  aspect-ratio: 16/7;
 }
 
 .\!lst-h-5 {
@@ -2593,6 +2613,10 @@ select {
 }
 
 @media (min-width: 640px) {
+  .sm\:lst-aspect-\[2\/1\] {
+    aspect-ratio: 2/1;
+  }
+
   .sm\:lst-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2643,6 +2667,14 @@ select {
 
   .md\:lst-row-start-1 {
     grid-row-start: 1;
+  }
+
+  .md\:lst-aspect-\[3\/1\] {
+    aspect-ratio: 3/1;
+  }
+
+  .md\:lst-aspect-\[2\.5\/1\] {
+    aspect-ratio: 2.5/1;
   }
 
   .md\:lst-grid-cols-2 {
@@ -2703,6 +2735,14 @@ select {
 
   .lg\:lst-hidden {
     display: none;
+  }
+
+  .lg\:lst-aspect-\[2\.5\/1\] {
+    aspect-ratio: 2.5/1;
+  }
+
+  .lg\:lst-aspect-\[3\/1\] {
+    aspect-ratio: 3/1;
   }
 
   .lg\:lst-max-h-\[calc\(100vh-153px\)\] {

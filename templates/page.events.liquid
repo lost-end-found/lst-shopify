@@ -15,11 +15,12 @@
       <a href="{{ event.system.url }}" class="lst-px-4 lst-pt-4">
         {% if event.image.value %}
           <img
-            width="300"
-            height="auto"
-            src="{{ event.image.value | image_url: width: 300 }}"
-            class="lst-w-full lst-aspect-video lst-object-cover"
+            src="{{ event.image.value | image_url: width: 1000, height: 600, crop: 'center' }}"
+            class="lst-h-full lst-w-full lst-object-cover lst-aspect-[1000/600]"
             alt="{{ event.title.value }}"
+            width="1000px"
+            height="600px"
+            loading="lazy"
           >
         {% endif %}
       </a>
