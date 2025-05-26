@@ -12,55 +12,22 @@
     "carousel_BJXnET": {
       "type": "carousel",
       "blocks": {
-        "slide_jAjiHA": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/revu-diapo-2_3d88060d-3717-49dc-8ab6-9fecb2c66f09.jpg",
-            "heading": "Mardi 13 mai, 18h-20h",
-            "heading_size": "h1",
-            "subheading": "Lancement REVUE DIAPO 003 de Kanade Hamamoto et Ryoko Sekiguchi",
-            "button_label": "Plus d'infos",
-            "link": "shopify://blogs/events/presentation-revue-diapo-003"
-          }
-        },
-        "slide_KY9yab": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BANNIEREbis.png",
-            "heading": "Jeudi 15 mai, 18h-20h",
-            "heading_size": "h1",
-            "subheading": "Signature Restos Routiers de Guillaume Blot",
-            "button_label": "Plus d'infos",
-            "link": ""
-          }
-        },
-        "slide_Qz9nPq": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2025-05-10_a_14.55.29.png",
-            "heading": "Jeudi 22 mai, 18h-20h",
-            "heading_size": "h1",
-            "subheading": "Signature : Spectra de de Julien Lacroix",
-            "button_label": "Plus d'infos",
-            "link": ""
-          }
-        },
         "slide_UNypVt": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2025-05-11_a_13.26.26.png",
+            "image": "shopify://shop_images/Banniere_Eventacceuil.jpg",
             "heading": "Mercredi 28 mai, 18h-20h",
             "heading_size": "h1",
             "subheading": "Signature de More Beautiful Than They Are de Caroline Ventura",
             "button_label": "Plus d'infos",
-            "link": ""
+            "link": "shopify://blogs/events/signature-more-beautiful-than-they-are-de-caroline-ventura"
           }
         },
         "slide_hegQ4V": {
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Capture_d_ecran_2025-05-11_a_13.32.19.png",
-            "heading": "Jeudi 5 juin, 18h-20h",
+            "heading": "Vendredi 6 juin, 18h-20h",
             "heading_size": "h1",
             "subheading": "Lancement de Pour allumer un feu de Lalie Thébault Maviel, édité par Dumpling Books",
             "button_label": "Plus d'infos",
@@ -69,9 +36,6 @@
         }
       },
       "block_order": [
-        "slide_jAjiHA",
-        "slide_KY9yab",
-        "slide_Qz9nPq",
         "slide_UNypVt",
         "slide_hegQ4V"
       ],
