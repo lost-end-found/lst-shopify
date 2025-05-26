@@ -14,7 +14,7 @@
               <a href="{{ block.settings.link }}">
                 <img
                   src="{{ block.settings.image | img_url: 'master'  }}"
-                  class="lg:lst-aspect-[3/1] md:lst-aspect-[2.5/1] sm:lst-aspect-[2/1] lst-aspect-square lst-object-cover"
+                  class="md:lst-aspect-[2.5/1] sm:lst-aspect-[2/1] lst-aspect-square lst-object-cover"
                   width="100%"
                   height="100%"
                   alt="Placeholder image"
@@ -23,14 +23,14 @@
             {% else %}
               <img
                 src="{{ block.settings.image | img_url: 'master'  }}"
-                class="lg:lst-aspect-[3/1] md:lst-aspect-[2.5/1] sm:lst-aspect-[2/1] lst-aspect-square lst-object-cover"
+                class="md:lst-aspect-[2.5/1] sm:lst-aspect-[2/1] lst-aspect-square lst-object-cover"
                 width="100%"
                 height="100%"
                 alt="Placeholder image"
               >
             {% endif %}
           {% else %}
-            <div class="lst-aspect-[16/9] lst-bg-primary">
+            <div class="md:lst-aspect-[2.5/1] sm:lst-aspect-[2/1] lst-aspect-square lst-object-cover lst-bg-primary">
               <div class="lst-flex lst-items-center lst-justify-center lst-h-full">
                 <p class="lst-text-white lst-text-2xl lst-sr-only">No image selected</p>
               </div>
