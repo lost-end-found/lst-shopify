@@ -46,7 +46,7 @@
         "type": "text",
         "id": "store_email",
         "label": "t:settings_schema.store_information.settings.store_email.label",
-        "default": "librairiesanstitre@gmail.com"
+        "default": "info@librairiesanstitre.com"
       },
       {
         "type": "text",
