@@ -9,7 +9,9 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/Mathilde_de_Galbert_-_2025-05-26_17.35.10.jpg",
     "logo_width": 90,
+    "favicon": "shopify://shop_images/Mathilde_de_Galbert_-_2025-05-26_17.35.10.jpg",
     "store_hours": "Ouvert du mardi au samedi de  10h30 à 19h30 et le dimanche de 12h à 18h",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,

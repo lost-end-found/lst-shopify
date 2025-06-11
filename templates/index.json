@@ -12,32 +12,56 @@
     "carousel_BJXnET": {
       "type": "carousel",
       "blocks": {
-        "slide_UNypVt": {
+        "slide_4P8tC3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Banniere_Eventacceuil.jpg",
-            "heading": "Mercredi 28 mai, 18h-20h",
+            "image": "shopify://shop_images/Capture_d_ecran_2025-05-30_a_17.44.21.png",
+            "heading": "Vendredi 13 juin de 18h à 20h",
             "heading_size": "h1",
-            "subheading": "Signature de More Beautiful Than They Are de Caroline Ventura",
+            "subheading": "Lancement de \"Sur le motif\" de Charles Villa",
             "button_label": "Plus d'infos",
-            "link": "shopify://blogs/events/signature-more-beautiful-than-they-are-de-caroline-ventura"
+            "link": "shopify://blogs/events/lancement-de-sur-le-motif-de-charles-villa"
           }
         },
-        "slide_hegQ4V": {
+        "slide_h6nqEP": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Capture_d_ecran_2025-05-11_a_13.32.19.png",
-            "heading": "Vendredi 6 juin, 18h-20h",
+            "image": "shopify://shop_images/banniere_c9c7d7f9-d53a-4a6b-aa39-45106e426a41.jpg",
+            "heading": "Mercredi 18 juin de 18h à 20h",
             "heading_size": "h1",
-            "subheading": "Lancement de Pour allumer un feu de Lalie Thébault Maviel, édité par Dumpling Books",
+            "subheading": "Lancement \"La Bascule\" de Jean Chauvelot & Aymeric Swiatoka-Novais",
+            "button_label": "Plus d'infos",
+            "link": ""
+          }
+        },
+        "slide_yfhHXb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banniere_95056d6a-d4ab-4d8e-9e08-01759fe11861.jpg",
+            "heading": "Jeudi 19 juin de 18h à 20h",
+            "heading_size": "h1",
+            "subheading": "Signature de \"La Haine - Jusque ici rien n'a changé\", le livre de la comédie musicale",
+            "button_label": "Plus d'infos",
+            "link": ""
+          }
+        },
+        "slide_grh6Em": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banniere_d7ba63ba-eda0-4cc0-896b-ef418a3d0517.jpg",
+            "heading": "Jeudi 26 juin de 18h à 20h",
+            "heading_size": "h1",
+            "subheading": "Signature de \"I've always wanted to be a mom\" de Valentine de Villemeur",
             "button_label": "Plus d'infos",
             "link": ""
           }
         }
       },
       "block_order": [
-        "slide_UNypVt",
-        "slide_hegQ4V"
+        "slide_4P8tC3",
+        "slide_h6nqEP",
+        "slide_yfhHXb",
+        "slide_grh6Em"
       ],
       "settings": {}
     },
@@ -47,61 +71,61 @@
         "featured_collection_CmTY7V": {
           "type": "featured_collection",
           "settings": {
-            "collection": "photographie"
+            "collection": "photographie-nouveau"
           }
         },
         "featured_collection_RtjiPC": {
           "type": "featured_collection",
           "settings": {
-            "collection": "beaux-arts"
+            "collection": "beaux-arts-nouveau"
           }
         },
         "featured_collection_Em3iWz": {
           "type": "featured_collection",
           "settings": {
-            "collection": "architecture-urbanisme"
+            "collection": "architecture-urbanisme-1"
           }
         },
         "featured_collection_6ez3dM": {
           "type": "featured_collection",
           "settings": {
-            "collection": "design-graphique"
+            "collection": "design-graphique-1"
           }
         },
         "featured_collection_biH9rb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "fanzines"
+            "collection": "fanzines-1"
           }
         },
         "featured_collection_AFUnF6": {
           "type": "featured_collection",
           "settings": {
-            "collection": "art-brut"
+            "collection": "art-brut-1"
           }
         },
         "featured_collection_bw6fAG": {
           "type": "featured_collection",
           "settings": {
-            "collection": "design-dobjets"
+            "collection": "design-dobjets-1"
           }
         },
         "featured_collection_GRfDPh": {
           "type": "featured_collection",
           "settings": {
-            "collection": "dessin-illustration"
+            "collection": "dessin-illustration-1"
           }
         },
         "featured_collection_pPmmVE": {
           "type": "featured_collection",
           "settings": {
-            "collection": "arts-decoratifs-1"
+            "collection": "arts-decoratifs"
           }
         },
         "featured_collection_widLKn": {
           "type": "featured_collection",
           "settings": {
-            "collection": "cuisine"
+            "collection": "cuisine-1"
           }
         },
         "featured_collection_Rq9Wtj": {
@@ -113,7 +137,7 @@
         "featured_collection_FYzmhx": {
           "type": "featured_collection",
           "settings": {
-            "collection": "ecrits-essais"
+            "collection": "ecrits-essais-1"
           }
         }
       },
